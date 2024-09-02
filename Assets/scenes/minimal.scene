@@ -122,7 +122,7 @@
             {
               "__type": "SpellMaker",
               "__guid": "ce15c6c0-f514-4591-a1ae-e4a60ca727eb",
-              "interactState": "Finding"
+              "CurrentInteractionState": "Finding"
             }
           ],
           "Children": [
@@ -212,14 +212,14 @@
                     {
                       "__type": "NodeOutput",
                       "__guid": "b6776b25-d808-4f8a-89a5-47108d89b504",
-                      "Connected": [],
-                      "Detours": [],
-                      "vectorLineRenderer": {
+                      "ConnectedInputs": [],
+                      "LineRenderer": {
                         "_type": "component",
                         "component_id": "20cf8d28-cf0e-4f46-9d7e-d10a43fd3994",
                         "go": "aa8efc44-8488-40df-9488-9bfd16254015",
                         "component_type": "VectorLineRenderer"
-                      }
+                      },
+                      "PathDetours": []
                     },
                     {
                       "__type": "Sandbox.VectorLineRenderer",
@@ -234,8 +234,9 @@
                         "alpha": []
                       },
                       "EndCap": "None",
+                      "IsOpaque": true,
+                      "IsWireframe": false,
                       "Noise": 0,
-                      "Opaque": true,
                       "Points": [],
                       "RunBySelf": true,
                       "SplineBias": 0,
@@ -251,8 +252,7 @@
                             "y": 1
                           }
                         ]
-                      },
-                      "Wireframe": false
+                      }
                     }
                   ],
                   "Children": [
@@ -478,7 +478,7 @@
                     {
                       "__type": "NodeInput",
                       "__guid": "a6d22908-0592-41e2-b25e-a897063e914c",
-                      "Value": false
+                      "Value": true
                     }
                   ],
                   "Children": [
