@@ -6,8 +6,11 @@ public sealed class SpellMaker : Component
 	Vector3 MouseDragOrigin;
 	Vector3 NodeDragOrigin;
 	float DragDis;
-	[Property] InteractState interactState;
 
+	[Property]NodeOutput currentOutput;
+
+	[Property] InteractState interactState;
+	
 	enum InteractState
 	{
 		Finding,
@@ -15,6 +18,8 @@ public sealed class SpellMaker : Component
 		Connecting
 	}
 	SceneTraceResult mouseRay;
+
+	InteractState lastInteractState;
 	protected override void OnUpdate()
 	{
 	
@@ -32,6 +37,8 @@ public sealed class SpellMaker : Component
 			case InteractState.Connecting:
 			{Connecting();break;}
 		}
+
+		lastInteractState = interactState;
 	}
 
 	void Finding()
@@ -39,6 +46,19 @@ public sealed class SpellMaker : Component
 		if(!Input.Down("attack1")) return;
 
 		if(!mouseRay.Hit) return;
+		if(mouseRay.GameObject.Tags.Contains("input")) return;
+
+		if(mouseRay.GameObject.Tags.Contains("output"))
+		{
+			currentOutput = mouseRay.GameObject.Components.Get<NodeOutput>();
+			interactState = InteractState.Connecting;
+			Vector3 cameraForward = Scene.Camera.Transform.World.Forward;
+			Vector3 cameraPosition = Scene.Camera.Transform.Position;
+
+			DragDis = Vector3.Dot(mouseRay.HitPosition - cameraPosition, cameraForward);
+			
+			return;
+		}
 
 		if(mouseRay.GameObject.Tags.Contains("node"))
 		{
@@ -46,11 +66,10 @@ public sealed class SpellMaker : Component
 			
 			Vector3 cameraForward = Scene.Camera.Transform.World.Forward;
 			Vector3 cameraPosition = Scene.Camera.Transform.Position;
-			Vector3 nodePosition = DraggedNode.Transform.LocalPosition;
 
-			DragDis = Vector3.Dot(nodePosition - cameraPosition, cameraForward);
+			DragDis = Vector3.Dot(mouseRay.HitPosition - cameraPosition, cameraForward);
 
-			MouseDragOrigin = nodePosition;
+			MouseDragOrigin = mouseRay.HitPosition;
 
 			NodeDragOrigin = DraggedNode.Transform.Position;
 
@@ -74,8 +93,45 @@ public sealed class SpellMaker : Component
 		DraggedNode.Transform.Position = NodeDragOrigin + (projectedPosition - MouseDragOrigin);
 
 	}
+	List<Vector3> TempDetours = new List<Vector3>();
 	void Connecting()
 	{
+		if(lastInteractState!=InteractState.Connecting)
+		{
+			TempDetours = new List<Vector3>();
+		}
 
+		if(Input.Down("attack2"))
+		{
+			interactState = InteractState.Finding;
+			return;
+		}
+
+		var ray = Scene.Camera.ScreenPixelToRay(Mouse.Position);
+
+		Vector3 cameraForward = Scene.Camera.Transform.World.Forward;
+
+		Vector3 projectedPosition = ray.Position + ray.Forward * (DragDis / Vector3.Dot(ray.Forward, cameraForward));
+
+		currentOutput.DrawLineTo(projectedPosition,TempDetours);
+
+		if(Input.Pressed("attack1"))
+		{
+			if(mouseRay.Hit)
+			{
+				if(mouseRay.GameObject.Tags.Contains("input"))
+				{
+					NodeInput nodeInput = mouseRay.GameObject.Components.Get<NodeInput>();
+					currentOutput.Connected.Add(nodeInput);
+					currentOutput.Detours.Add(TempDetours);
+					interactState = InteractState.Finding;
+					return;
+				}
+			}
+
+			TempDetours.Add(projectedPosition);
+		}
+
+		
 	}
 }
