@@ -1,3 +1,4 @@
+using System.Drawing;
 using Sandbox;
 
 public sealed class NodeOutput : Component
@@ -16,10 +17,15 @@ public sealed class NodeOutput : Component
 
     public void DrawLineTo(Vector3 pos, List<Vector3> Detours)
     {
-        vectorLineRenderer.Points = new List<Vector3>{Transform.Position};
-        vectorLineRenderer.Points.AddRange(Detours);
-        vectorLineRenderer.Points.Add(pos);
-        vectorLineRenderer.Run();
+        Vector3 startPoint = Transform.Position;
+
+        foreach (var detour in Detours)
+        {
+            Gizmo.Draw.Line(startPoint, detour);
+            startPoint = detour;
+        }
+
+        Gizmo.Draw.Line(startPoint, pos);
     }
 
 	protected override void OnUpdate()

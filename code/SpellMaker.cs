@@ -43,9 +43,22 @@ public sealed class SpellMaker : Component
 
 	void Finding()
 	{
-		if(!Input.Down("attack1")) return;
-
 		if(!mouseRay.Hit) return;
+
+		if(Input.Pressed("attack2"))
+		{
+			if(mouseRay.GameObject.Tags.Contains("output"))
+			{
+				NodeOutput nodeOutput = mouseRay.GameObject.Components.Get<NodeOutput>();
+				if(nodeOutput.Connected.Count > 0)
+				{
+					nodeOutput.Connected.RemoveAt(nodeOutput.Connected.Count-1);
+					nodeOutput.Detours.RemoveAt(nodeOutput.Detours.Count-1);
+				}
+			}
+		}
+
+		if(!Input.Pressed("attack1")) return;
 		if(mouseRay.GameObject.Tags.Contains("input")) return;
 
 		if(mouseRay.GameObject.Tags.Contains("output"))
@@ -96,11 +109,6 @@ public sealed class SpellMaker : Component
 	List<Vector3> TempDetours = new List<Vector3>();
 	void Connecting()
 	{
-		if(lastInteractState!=InteractState.Connecting)
-		{
-			TempDetours = new List<Vector3>();
-		}
-
 		if(Input.Down("attack2"))
 		{
 			interactState = InteractState.Finding;
@@ -124,6 +132,7 @@ public sealed class SpellMaker : Component
 					NodeInput nodeInput = mouseRay.GameObject.Components.Get<NodeInput>();
 					currentOutput.Connected.Add(nodeInput);
 					currentOutput.Detours.Add(TempDetours);
+					TempDetours = new List<Vector3>();
 					interactState = InteractState.Finding;
 					return;
 				}

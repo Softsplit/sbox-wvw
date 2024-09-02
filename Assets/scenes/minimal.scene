@@ -130,7 +130,7 @@
               "__guid": "22087767-0bb9-4059-a5ef-64a5c0e13e3c",
               "Flags": 0,
               "Name": "Node",
-              "Position": "7.336723,0.000000834465,64.11652",
+              "Position": "7.336723,0.5640665,64.88824",
               "Tags": "node",
               "Enabled": true,
               "Components": [
@@ -282,7 +282,7 @@
               "__guid": "6e3a42c0-edf3-4dfb-a107-b03f00569e37",
               "Flags": 0,
               "Name": "Node (1)",
-              "Position": "7.336723,-1.223332,64.11652",
+              "Position": "7.336723,-0.6592665,64.88824",
               "Tags": "node",
               "Enabled": true,
               "Components": [
@@ -297,7 +297,7 @@
                 {
                   "__type": "TestLogNode",
                   "__guid": "3f75463c-acee-4d71-a6fe-bc5bb89013f2",
-                  "LogText": "sex",
+                  "LogText": "Sex",
                   "NodeInput": {
                     "_type": "component",
                     "component_id": "e2d365ce-1c33-4177-8835-199c57c45c05",
@@ -395,7 +395,7 @@
               "__guid": "f0ad80ca-50b8-4c39-93e9-ce1c1e4836f7",
               "Flags": 0,
               "Name": "Node (1)",
-              "Position": "7.336723,-1.223332,62.92436",
+              "Position": "7.336723,-0.651017,63.74935",
               "Tags": "node",
               "Enabled": true,
               "Components": [
@@ -410,7 +410,7 @@
                 {
                   "__type": "TestLogNode",
                   "__guid": "00103f97-0ee7-4a07-8e2c-3f5bc238d764",
-                  "LogText": "balls",
+                  "LogText": "Balls",
                   "NodeInput": {
                     "_type": "component",
                     "component_id": "a6d22908-0592-41e2-b25e-a897063e914c",
