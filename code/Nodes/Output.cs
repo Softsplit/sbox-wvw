@@ -4,9 +4,15 @@ public sealed class NodeOutput : Component
 	[Property] public List<List<Vector3>> PathDetours {get;set;} = new List<List<Vector3>>();
 	[Property] public Color NeutralColour {get;set;} = Color.White;
 	[Property] public Color SendColour {get;set;} = Color.Green;
+	[Property] public OutputType outputType {get;set;} = OutputType.Normal;
 
     public const float VisualSendTime = 0.2f;
 
+    public enum OutputType
+    {
+        Normal,
+        Number
+    }
 
     float SendTime;
     public void DrawLineTo(Vector3 pos, List<Vector3> Detours)
@@ -36,6 +42,15 @@ public sealed class NodeOutput : Component
         foreach(NodeInput nodeInput in ConnectedInputs)
         {
             nodeInput.node.Tick(nodeInput.index);
+        }
+    }
+
+    public void SendNumberSignal(float number)
+    {
+        SendTime = Time.Now;
+        foreach(NodeInput nodeInput in ConnectedInputs)
+        {
+            nodeInput.node.NumberTick(nodeInput.index, number);
         }
     }
 

@@ -139,11 +139,14 @@ public sealed class SpellMaker : Component
 			if ( _mouseRay.Hit && _mouseRay.GameObject.Tags.Contains( "input" ) )
 			{
 				var nodeInput = _mouseRay.GameObject.Components.Get<NodeInput>();
-				CurrentOutput.ConnectedInputs.Add( nodeInput );
-				CurrentOutput.PathDetours.Add( _temporaryDetours );
-				_temporaryDetours = new List<Vector3>();
-				CurrentInteractionState = InteractionState.Finding;
-				return;
+				if(CurrentOutput.outputType == nodeInput.AcceptedType)
+				{
+					CurrentOutput.ConnectedInputs.Add( nodeInput );
+					CurrentOutput.PathDetours.Add( _temporaryDetours );
+					_temporaryDetours = new List<Vector3>();
+					CurrentInteractionState = InteractionState.Finding;
+					return;
+				}
 			}
 
 			_temporaryDetours.Add( projectedPosition );

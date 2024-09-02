@@ -4,10 +4,8 @@ public sealed class XorNode : Node
     bool b;
 	public override void Tick(int index)
 	{
-        if(index == 0)
-            a = true;
-        else
-            b = true;
+        if(index == 0) a = true;
+        else b = true;
 	}
 
 	protected override void OnFixedUpdate()

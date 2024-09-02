@@ -2,13 +2,10 @@ public sealed class AndNode : Node
 {
     bool a;
     bool b;
-	public override async void Tick(int index)
+	public override void Tick(int index)
 	{
-        if(index == 0)
-            a = true;
-        else
-            b = true;
- 
+        if(index == 0)  a = true;
+        else b = true;
 	}
 
 	protected override void OnFixedUpdate()
