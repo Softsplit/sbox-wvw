@@ -107,10 +107,16 @@ public sealed class SpellMaker : Component
 
 		DraggedNode.Transform.Position = _nodeDragOrigin + (projectedPosition - _mouseDragOrigin);
 
+		float RollAmount;
+
 		if(Input.Pressed("use"))
-		{
-			DraggedNode.Transform.LocalRotation = DraggedNode.Transform.LocalRotation.Angles().WithRoll(DraggedNode.Transform.LocalRotation.Angles().roll + 90);
-		}
+			RollAmount = -90;
+		else if (Input.Pressed("reload"))
+			RollAmount = 90;
+		else
+			return;
+
+		DraggedNode.Transform.LocalRotation = DraggedNode.Transform.LocalRotation.Angles().WithRoll(DraggedNode.Transform.LocalRotation.Angles().roll + RollAmount);
 	}
 
 	private void HandleConnectingState()
