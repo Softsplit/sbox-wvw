@@ -8,7 +8,7 @@ public abstract class Node : Component
             nodeOutput.SendSignal();
         }
     }
-	public virtual void Tick()
+	public virtual void Tick(int index)
     {
 
     }

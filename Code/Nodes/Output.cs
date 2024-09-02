@@ -35,7 +35,7 @@ public sealed class NodeOutput : Component
         SendTime = Time.Now;
         foreach(NodeInput nodeInput in ConnectedInputs)
         {
-            nodeInput.node.Tick();
+            nodeInput.node.Tick(nodeInput.index);
         }
     }
 

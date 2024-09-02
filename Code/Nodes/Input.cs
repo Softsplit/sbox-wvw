@@ -4,5 +4,6 @@ public sealed class NodeInput : Component
 	{
 		node = Components.GetInParent<Node>();
 	}
+	[Property] public int index {get;set;}
 	[Property] public Node node {get;set;}
 }
