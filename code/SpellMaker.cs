@@ -15,7 +15,7 @@ public sealed class SpellMaker : Component
 	{
 		Finding,
 		Dragging,
-		Connecting
+		ConnectingB
 	}
 	SceneTraceResult mouseRay;
 
@@ -34,8 +34,8 @@ public sealed class SpellMaker : Component
 			{Finding();break;}
 			case InteractState.Dragging:
 			{Dragging();break;}
-			case InteractState.Connecting:
-			{Connecting();break;}
+			case InteractState.ConnectingB:
+			{ConnectingB();break;}
 		}
 
 		lastInteractState = interactState;
@@ -64,7 +64,7 @@ public sealed class SpellMaker : Component
 		if(mouseRay.GameObject.Tags.Contains("output"))
 		{
 			currentOutput = mouseRay.GameObject.Components.Get<NodeOutput>();
-			interactState = InteractState.Connecting;
+			interactState = InteractState.ConnectingB;
 			Vector3 cameraForward = Scene.Camera.Transform.World.Forward;
 			Vector3 cameraPosition = Scene.Camera.Transform.Position;
 
@@ -97,6 +97,11 @@ public sealed class SpellMaker : Component
 			interactState = InteractState.Finding;
 			return;
 		}
+		if(Input.Pressed("use"))
+		{
+			DraggedNode.Transform.LocalRotation = DraggedNode.Transform.LocalRotation.Angles().WithRoll(DraggedNode.Transform.LocalRotation.Angles().roll + 90);
+		}
+
 		var mouseRay = Scene.Camera.ScreenPixelToRay(Mouse.Position);
 
 		Vector3 cameraForward = Scene.Camera.Transform.World.Forward;
@@ -107,7 +112,7 @@ public sealed class SpellMaker : Component
 
 	}
 	List<Vector3> TempDetours = new List<Vector3>();
-	void Connecting()
+	void ConnectingB()
 	{
 		if(Input.Down("attack2"))
 		{

@@ -144,13 +144,21 @@
                 },
                 {
                   "__type": "TestOutputNode",
-                  "__guid": "f8130fb9-fccb-46c9-a491-1544c2f81062",
+                  "__guid": "3244cd9d-978b-4cca-8344-b58e271dbaa3",
                   "NodeOutput": {
                     "_type": "component",
                     "component_id": "b6776b25-d808-4f8a-89a5-47108d89b504",
                     "go": "aa8efc44-8488-40df-9488-9bfd16254015",
                     "component_type": "NodeOutput"
-                  }
+                  },
+                  "Outputs": [
+                    {
+                      "_type": "component",
+                      "component_id": "b6776b25-d808-4f8a-89a5-47108d89b504",
+                      "go": "aa8efc44-8488-40df-9488-9bfd16254015",
+                      "component_type": "NodeOutput"
+                    }
+                  ]
                 }
               ],
               "Children": [
@@ -296,14 +304,9 @@
                 },
                 {
                   "__type": "TestLogNode",
-                  "__guid": "3f75463c-acee-4d71-a6fe-bc5bb89013f2",
+                  "__guid": "4c3b4b39-02c0-4500-a214-f45b987421fc",
                   "LogText": "Sex",
-                  "NodeInput": {
-                    "_type": "component",
-                    "component_id": "e2d365ce-1c33-4177-8835-199c57c45c05",
-                    "go": "c21b561e-3dc2-44ca-b569-077cedc52246",
-                    "component_type": "NodeInput"
-                  }
+                  "Outputs": []
                 }
               ],
               "Children": [
@@ -364,8 +367,7 @@
                     },
                     {
                       "__type": "NodeInput",
-                      "__guid": "e2d365ce-1c33-4177-8835-199c57c45c05",
-                      "Value": false
+                      "__guid": "e2d365ce-1c33-4177-8835-199c57c45c05"
                     }
                   ],
                   "Children": [
@@ -409,14 +411,9 @@
                 },
                 {
                   "__type": "TestLogNode",
-                  "__guid": "00103f97-0ee7-4a07-8e2c-3f5bc238d764",
+                  "__guid": "17f5633d-bf3e-4a45-8802-68d5ea38e46a",
                   "LogText": "Balls",
-                  "NodeInput": {
-                    "_type": "component",
-                    "component_id": "a6d22908-0592-41e2-b25e-a897063e914c",
-                    "go": "7ed8e284-32cf-4b9d-b754-8dc293dbd4b9",
-                    "component_type": "NodeInput"
-                  }
+                  "Outputs": []
                 }
               ],
               "Children": [
@@ -477,8 +474,7 @@
                     },
                     {
                       "__type": "NodeInput",
-                      "__guid": "a6d22908-0592-41e2-b25e-a897063e914c",
-                      "Value": false
+                      "__guid": "a6d22908-0592-41e2-b25e-a897063e914c"
                     }
                   ],
                   "Children": [

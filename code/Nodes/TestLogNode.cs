@@ -1,15 +1,10 @@
 using Sandbox;
 
-public sealed class TestLogNode : Component
+public sealed class TestLogNode : Node
 {
-	[Property] public NodeInput NodeInput {get;set;}
 	[Property] public string LogText {get;set;} = "sex";
-	protected override void OnUpdate()
+	public override void Tick()
 	{
-		if(NodeInput.Value)
-		{
-			Log.Info(LogText);
-			NodeInput.Value = false;
-		}
+		Log.Info(LogText);
 	}
 }

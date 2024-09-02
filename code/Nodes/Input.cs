@@ -2,5 +2,9 @@ using Sandbox;
 
 public sealed class NodeInput : Component
 {
-	[Property] public bool Value {get;set;}
+	protected override void OnStart()
+	{
+		node = Components.GetInParent<Node>();
+	}
+	[Property] public Node node {get;set;}
 }

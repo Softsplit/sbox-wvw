@@ -40,7 +40,7 @@ public sealed class NodeOutput : Component
     {
         foreach(NodeInput nodeInput in Connected)
         {
-            nodeInput.Value = true;
+            nodeInput.node.Tick();
         }
     }
 
