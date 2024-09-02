@@ -1,14 +1,10 @@
-public sealed class TestLogNode : Component
-{
-	[Property] public NodeInput NodeInput { get; set; }
-	[Property] public string LogText { get; set; } = "Hello world!";
+using Sandbox;
 
-	protected override void OnUpdate()
+public sealed class TestLogNode : Node
+{
+	[Property] public string LogText {get;set;} = "sex";
+	public override void Tick()
 	{
-		if ( NodeInput.Value )
-		{
-			Log.Info( LogText );
-			NodeInput.Value = false;
-		}
+		Log.Info(LogText);
 	}
 }

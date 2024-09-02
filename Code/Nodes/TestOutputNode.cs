@@ -1,9 +1,11 @@
-public sealed class TestOutputNode : Component
-{
-	[Property] public NodeOutput NodeOutput { get; set; }
+using Sandbox;
 
+public sealed class TestOutputNode : Node
+{
+	[Property] public NodeOutput NodeOutput {get;set;}
 	protected override void OnFixedUpdate()
 	{
-		if ( Input.Pressed( "use" ) ) NodeOutput.SendSignal();
+		if(Input.Pressed("use"))
+			Output();
 	}
 }
