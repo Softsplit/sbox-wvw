@@ -1,5 +1,3 @@
-using Sandbox;
-
 public sealed class TestLogNode : Node
 {
 	[Property] public string LogText {get;set;} = "sex";

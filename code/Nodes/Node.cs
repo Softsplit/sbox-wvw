@@ -1,5 +1,3 @@
-using Sandbox;
-
 public abstract class Node : Component
 {
     [Property] public List<NodeOutput> Outputs {get;set;}
@@ -7,7 +5,7 @@ public abstract class Node : Component
     {
         foreach(NodeOutput nodeOutput in Outputs)
         {
-            nodeOutput.Send();
+            nodeOutput.SendSignal();
         }
     }
 	public virtual void Tick()

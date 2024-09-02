@@ -1,5 +1,3 @@
-using Sandbox;
-
 public sealed class NodeInput : Component
 {
 	protected override void OnStart()

@@ -1,5 +1,3 @@
-using Sandbox;
-
 public sealed class TestOutputNode : Node
 {
 	[Property] public NodeOutput NodeOutput {get;set;}
