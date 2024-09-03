@@ -255,7 +255,6 @@ public sealed class SpellMaker : Component
 		}
 
 		if(!input) return;
-		Log.Info("added");
 		CurrentNumberInput.TextRenderer.Text += added;
 	}
 
