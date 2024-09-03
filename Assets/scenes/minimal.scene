@@ -366,6 +366,14 @@
             "go": "13dc5eb4-0b59-4b14-a6a1-e61c228d06dc"
           },
           "InSpell": false,
+          "LeftHand": {
+            "_type": "gameobject",
+            "go": "0f9bf7c7-91f1-4a55-a0fe-5f78e3c2325c"
+          },
+          "RightHand": {
+            "_type": "gameobject",
+            "go": "f5cc6e6d-0569-421d-973d-62d1093a0d85"
+          },
           "SpellCam": {
             "_type": "gameobject",
             "go": "1e5beefc-4450-413c-a36b-41d98e74598c"
@@ -2977,6 +2985,15 @@
                                                           "go": "4183fe92-0df4-4a1c-8a76-6fbd55a8ecef",
                                                           "component_type": "NodeOutput"
                                                         }
+                                                      ],
+                                                      "Projectiles": [
+                                                        {
+                                                          "Projectile": {
+                                                            "_type": "gameobject",
+                                                            "prefab": "prefabs/projectiles/level1fireball.prefab"
+                                                          },
+                                                          "MaxLevel": 10
+                                                        }
                                                       ]
                                                     }
                                                   ],
@@ -3832,6 +3849,21 @@
           ]
         }
       ]
+    },
+    {
+      "__guid": "19e6eb50-1c96-4992-9da4-02c6ffebf6bc",
+      "Flags": 0,
+      "Name": "Level1FireBall",
+      "Position": "68.94447,0.000004109411,44.4643",
+      "Enabled": true,
+      "__Prefab": "prefabs/projectiles/level1fireball.prefab",
+      "__PrefabVariables": {}
+    },
+    {
+      "__guid": "cf45a132-3419-44f4-badd-f3f25a15e69e",
+      "Flags": 0,
+      "Name": "GameObject",
+      "Enabled": true
     }
   ],
   "SceneProperties": {

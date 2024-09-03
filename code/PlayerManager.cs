@@ -6,6 +6,8 @@ public sealed class PlayerManager : Component
 	[Property] public GameObject ThirdPersonCam {get;set;}
 	[Property] public GameObject SpellCam {get;set;}
 	[Property] public GameObject DefaultLookPos {get;set;}
+	[Property] public GameObject LeftHand {get;set;}
+	[Property] public GameObject RightHand {get;set;}
 	[Property] public float TransitionSpeed {get;set;} = 10f;
 	[Property] public bool InSpell {get;set;}
 	bool Transitioning;

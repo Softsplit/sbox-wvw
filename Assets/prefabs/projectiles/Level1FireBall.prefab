@@ -1,0 +1,76 @@
+{
+  "RootObject": {
+    "__guid": "19e6eb50-1c96-4992-9da4-02c6ffebf6bc",
+    "Flags": 0,
+    "Name": "level1fireball",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "Level1FireBall",
+        "__guid": "b55affee-1743-441e-8d1a-c493d2e1c540",
+        "DamageRange": "1,30",
+        "Life": 3,
+        "Shooter": {
+          "_type": "gameobject",
+          "go": "2eabd8f7-ac7c-498e-83df-a7a18e39d11d"
+        },
+        "SpeedRange": "150,300",
+        "Strength": 0,
+        "Visual": {
+          "_type": "gameobject",
+          "go": "2eabd8f7-ac7c-498e-83df-a7a18e39d11d"
+        },
+        "Width": {
+          "rangey": "0.1,0.7",
+          "frames": [
+            {},
+            {
+              "x": 1,
+              "y": 1
+            }
+          ]
+        }
+      },
+      {
+        "__type": "Sandbox.Rigidbody",
+        "__guid": "b4e1c41b-70b0-4da1-bb18-f2b9e3c13d58",
+        "AngularDamping": 0,
+        "Gravity": false,
+        "LinearDamping": 0,
+        "Locking": {},
+        "MassCenterOverride": "0,0,0",
+        "MassOverride": 0,
+        "MotionEnabled": true,
+        "OverrideMassCenter": false,
+        "RigidbodyFlags": 0,
+        "StartAsleep": false
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "2eabd8f7-ac7c-498e-83df-a7a18e39d11d",
+        "Flags": 0,
+        "Name": "Sphere",
+        "Scale": "0.1,0.1,0.1",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "79c20a14-52ab-4579-adc8-7f8e3f477021",
+            "BodyGroups": 18446744073709551615,
+            "Model": "models/dev/sphere.vmdl",
+            "RenderType": "On",
+            "Tint": "1,0,0,1"
+          }
+        ]
+      }
+    ],
+    "__variables": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}
