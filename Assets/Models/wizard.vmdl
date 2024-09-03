@@ -130,7 +130,7 @@
 						source_filename = "models/main character/standing walk forward.fbx"
 						start_frame = -1
 						end_frame = -1
-						framerate = -1.0
+						framerate = 38.07
 						take = 0
 						reverse = false
 					},
@@ -153,7 +153,7 @@
 						source_filename = "models/main character/standing walk back.fbx"
 						start_frame = -1
 						end_frame = -1
-						framerate = -1.0
+						framerate = 38.07
 						take = 0
 						reverse = false
 					},
@@ -268,7 +268,7 @@
 						source_filename = "models/main character/standing walk left.fbx"
 						start_frame = -1
 						end_frame = -1
-						framerate = -1.0
+						framerate = 38.07
 						take = 0
 						reverse = false
 					},
@@ -291,7 +291,7 @@
 						source_filename = "models/main character/standing walk right.fbx"
 						start_frame = -1
 						end_frame = -1
-						framerate = -1.0
+						framerate = 38.07
 						take = 0
 						reverse = false
 					},

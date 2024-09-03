@@ -239,6 +239,27 @@
 			{
 				key = 
 				{
+					m_id = 245065605
+				}
+				value = 
+				{
+					_class = "CSequenceAnimNode"
+					m_sName = "Unnamed"
+					m_vecPosition = [ -1007.804077, 462.215912 ]
+					m_nNodeID = 
+					{
+						m_id = 245065605
+					}
+					m_sNote = ""
+					m_tagSpans = [  ]
+					m_sequenceName = "Walking"
+					m_playbackSpeed = 1.0
+					m_bLoop = false
+				}
+			},
+			{
+				key = 
+				{
 					m_id = 453453551
 				}
 				value = 
@@ -416,6 +437,27 @@
 			{
 				key = 
 				{
+					m_id = 974573805
+				}
+				value = 
+				{
+					_class = "CSequenceAnimNode"
+					m_sName = "Unnamed"
+					m_vecPosition = [ -957.780701, 560.928711 ]
+					m_nNodeID = 
+					{
+						m_id = 974573805
+					}
+					m_sNote = ""
+					m_tagSpans = [  ]
+					m_sequenceName = "Running"
+					m_playbackSpeed = 1.0
+					m_bLoop = false
+				}
+			},
+			{
+				key = 
+				{
 					m_id = 975823271
 				}
 				value = 
@@ -476,25 +518,25 @@
 							_class = "CBlend2DItem"
 							m_tagSpans = [  ]
 							m_sequenceName = "Running"
-							m_blendValue = [ 196.0, 0.0 ]
+							m_blendValue = [ 145.0, 0.0 ]
 						},
 						{
 							_class = "CBlend2DItem"
 							m_tagSpans = [  ]
 							m_sequenceName = "RunningBack"
-							m_blendValue = [ -196.0, 0.0 ]
+							m_blendValue = [ -145.0, 0.0 ]
 						},
 						{
 							_class = "CBlend2DItem"
 							m_tagSpans = [  ]
 							m_sequenceName = "RunLeft"
-							m_blendValue = [ 0.0, -196.0 ]
+							m_blendValue = [ 0.0, 145.0 ]
 						},
 						{
 							_class = "CBlend2DItem"
 							m_tagSpans = [  ]
 							m_sequenceName = "RunRight"
-							m_blendValue = [ 0.0, 196.0 ]
+							m_blendValue = [ 0.0, -145.0 ]
 						},
 						{
 							_class = "CBlend2DItem"
@@ -506,25 +548,25 @@
 							_class = "CBlend2DItem"
 							m_tagSpans = [  ]
 							m_sequenceName = "Walking"
-							m_blendValue = [ 56.0, 0.0 ]
+							m_blendValue = [ 80.0, 0.0 ]
 						},
 						{
 							_class = "CBlend2DItem"
 							m_tagSpans = [  ]
 							m_sequenceName = "WalkingBack"
-							m_blendValue = [ -56.0, 0.0 ]
+							m_blendValue = [ -80.0, 0.0 ]
 						},
 						{
 							_class = "CBlend2DItem"
 							m_tagSpans = [  ]
 							m_sequenceName = "LeftWalk"
-							m_blendValue = [ 0.0, -56.0 ]
+							m_blendValue = [ 0.0, 80.0 ]
 						},
 						{
 							_class = "CBlend2DItem"
 							m_tagSpans = [  ]
 							m_sequenceName = "RightWalk"
-							m_blendValue = [ 0.0, 56.0 ]
+							m_blendValue = [ 0.0, -80.0 ]
 						},
 					]
 					m_blendSourceX = "Parameter"

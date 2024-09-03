@@ -52,7 +52,6 @@ public sealed class PlayerController : Component
     [Property] public WizardAnimator WizardAnimator {get;set;}
 
     // State Bools
-    [Sync] public bool IsCrouching {get;set;} = false;
     public bool IsWalking = false;
     [Sync] public bool IsOnGround {get;set;} = false;
 
@@ -75,11 +74,10 @@ public sealed class PlayerController : Component
     [Property, Group("Size"), Description("CS2 Default: 72f")] private float StandingHeight {get;set;} = 72f;
     [Property, Group("Size"), Description("CS2 Default: 54f")] private float CroucingHeight {get;set;} = 54f;
     [Sync] private float Height {get;set;} = 72f;
-    [Sync] private float HeightGoal {get;set;} = 72f;
-    private BBox BoundingBox => new BBox(new Vector3(-Radius * GameObject.Transform.Scale.x, -Radius * GameObject.Transform.Scale.y, 0f), new Vector3(Radius * GameObject.Transform.Scale.x, Radius * GameObject.Transform.Scale.y, HeightGoal * GameObject.Transform.Scale.z));
+    private BBox BoundingBox => new BBox(new Vector3(-Radius * GameObject.Transform.Scale.x, -Radius * GameObject.Transform.Scale.y, 0f), new Vector3(Radius * GameObject.Transform.Scale.x, Radius * GameObject.Transform.Scale.y, Height * GameObject.Transform.Scale.z));
     private int _stuckTries;
 
-    // Synced internal vars
+    // Synced internal varss
     [Sync] private float InternalMoveSpeed {get;set;} = 250f;
     [Sync] private Vector3 LastSize {get;set;} = Vector3.Zero;
     [Sync] public Vector3 WishDir {get;set;} = Vector3.Zero;
@@ -221,12 +219,7 @@ public sealed class PlayerController : Component
         WishDir = (rot.Forward * Input.AnalogMove.x) + (rot.Left * Input.AnalogMove.y);
         if (!WishDir.IsNearZeroLength) WishDir = WishDir.Normal;
 
-        IsWalking = Input.Down("Slow");
-        if (ToggleCrouch) {
-            if (Input.Pressed("Duck")) IsCrouching = !IsCrouching;
-        } else {
-            IsCrouching = Input.Down("Duck");
-        }
+        IsWalking = !Input.Down("Run");
 
         if (Input.Pressed("Duck") || Input.Released("Duck")) CrouchTime += CrouchCost;
     }
@@ -339,7 +332,6 @@ public sealed class PlayerController : Component
         BodyRenderer = Components.GetInChildrenOrSelf<ModelRenderer>();
         
         Height = StandingHeight;
-        HeightGoal = StandingHeight;
     }
 
     protected override void OnFixedUpdate() {
@@ -362,33 +354,15 @@ public sealed class PlayerController : Component
         GatherInput();
 
         // Crouching
-        var InitHeight = HeightGoal;
-        if (IsCrouching) {
-            HeightGoal = CroucingHeight;
-        } else {
-            var startPos = GameObject.Transform.Position;
-            var endPos = GameObject.Transform.Position + new Vector3(0, 0, StandingHeight * GameObject.Transform.Scale.z);
-            var crouchTrace = Scene.Trace.Ray(startPos, endPos)
-                                        .IgnoreGameObject(GameObject)
-                                        .Size(new BBox(new Vector3(-Radius, -Radius, 0f), new Vector3(Radius * GameObject.Transform.Scale.x, Radius * GameObject.Transform.Scale.y, 0)))
-                                        .Run();
-            if (crouchTrace.Hit) {
-                HeightGoal = CroucingHeight;
-                IsCrouching = true;
-            } else {
-                HeightGoal = StandingHeight;
-            }
-        }
-        var HeightDiff = (InitHeight - HeightGoal).Clamp(0, 10);
+        var InitHeight = Height;
         
         InternalMoveSpeed = MoveSpeed;
         if (IsWalking) InternalMoveSpeed = ShiftSpeed;
-        if (IsCrouching) InternalMoveSpeed = CrouchSpeed;
         InternalMoveSpeed *= StaminaMultiplier * Weight;
 
-        Height = Height.LerpTo(HeightGoal, Time.Delta / CrouchTime.Clamp(MinCrouchTime, MaxCrouchTime));
+        Height = Height.LerpTo(Height, Time.Delta / CrouchTime.Clamp(MinCrouchTime, MaxCrouchTime));
         
-        LastSize = new Vector3(Radius * 2, Radius * 2, HeightGoal);
+        LastSize = new Vector3(Radius * 2, Radius * 2, Height);
         
         Velocity += Gravity * Time.Delta * 0.5f;
         
@@ -419,8 +393,6 @@ public sealed class PlayerController : Component
         
         Stamina += StaminaRecoveryRate * Time.Delta;
         if (Stamina > MaxStamina) Stamina = MaxStamina;
-        
-        if (HeightDiff > 0f) GameObject.Transform.Position += new Vector3(0, 0, HeightDiff * 0.5f);
         Velocity *= GameObject.Transform.Scale;
         Move();
         CategorizePosition();
