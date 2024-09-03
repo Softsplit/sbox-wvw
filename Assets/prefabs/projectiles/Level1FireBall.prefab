@@ -9,6 +9,7 @@
         "__type": "Level1FireBall",
         "__guid": "b55affee-1743-441e-8d1a-c493d2e1c540",
         "DamageRange": "1,30",
+        "InitialVelocity": "0,0,0",
         "Life": 3,
         "Shooter": {
           "_type": "gameobject",
@@ -52,6 +53,7 @@
         "Flags": 0,
         "Name": "Sphere",
         "Scale": "0.1,0.1,0.1",
+        "Tags": "particles",
         "Enabled": true,
         "Components": [
           {

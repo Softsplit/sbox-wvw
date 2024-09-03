@@ -50,6 +50,8 @@ public sealed class EmitterNode : Node
 					Mana/projectile.MaxLevel;
 			
 				projectileComponent.Shooter = PlayerManager.GameObject;
+
+				projectileComponent.InitialVelocity = PlayerManager.playerController.Velocity;
 			}
 			break;
 		}

@@ -11,7 +11,7 @@ public sealed class PlayerManager : Component
 	[Property] public float TransitionSpeed {get;set;} = 10f;
 	[Property] public bool InSpell {get;set;}
 	bool Transitioning;
-	PlayerController playerController;
+	public PlayerController playerController;
 	WizardAnimator WizardAnimator;
 	[Property] SpellMaker SpellMaker {get;set;}
 	protected override void OnStart()
