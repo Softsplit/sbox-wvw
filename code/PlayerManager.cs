@@ -1,0 +1,68 @@
+using Sandbox;
+
+public sealed class PlayerManager : Component
+{
+	[Property] public GameObject Camera {get;set;}
+	[Property] public GameObject ThirdPersonCam {get;set;}
+	[Property] public GameObject SpellCam {get;set;}
+	[Property] public float TransitionSpeed {get;set;} = 10f;
+	[Property] public bool InSpell {get;set;}
+	bool Transitioning;
+	PlayerController playerController;
+	WizardAnimator WizardAnimator;
+	[Property] SpellMaker SpellMaker {get;set;}
+	protected override void OnStart()
+	{
+		playerController = Components.Get<PlayerController>(true);
+		WizardAnimator = Components.GetInChildrenOrSelf<WizardAnimator>(true);
+		SpellMaker = Components.GetInDescendants<SpellMaker>(true);
+	}
+	protected override void OnPreRender()
+	{
+		Vector3 TargetPos = Vector3.Zero;
+		Rotation TargetRot = Rotation.Identity;
+		playerController.Enabled = !InSpell;
+		SpellMaker.Enabled = InSpell && !Transitioning;
+		WizardAnimator.SettingSpell = InSpell;
+		Mouse.Visible = InSpell;
+		if(Input.Pressed("Score") && playerController.IsOnGround)
+		{
+			InSpell = !InSpell;
+		}
+
+		if(InSpell)
+		{
+			TargetPos = SpellCam.Transform.Position;
+			TargetRot = SpellCam.Transform.Rotation;
+			WizardAnimator.MoveX = 0;
+			WizardAnimator.MoveY = 0;
+			if(!lastInSpell)
+				Transitioning = true;
+		}
+		else
+		{
+			TargetPos = ThirdPersonCam.Transform.Position;
+			TargetRot = ThirdPersonCam.Transform.Rotation;
+			if(lastInSpell)
+				Transitioning = true;
+			
+				
+		}
+
+		if(!Transitioning)
+		{
+			Camera.Transform.Position = TargetPos;
+			Camera.Transform.Rotation = TargetRot;
+		}
+		else
+		{
+			Camera.Transform.Position = Vector3.Lerp(Camera.Transform.Position,TargetPos,Time.Delta * TransitionSpeed);
+			Camera.Transform.Rotation = Rotation.Lerp(Camera.Transform.Rotation,TargetRot,Time.Delta * TransitionSpeed);
+			if(Vector3.DistanceBetween(Camera.Transform.Position,TargetPos) < 1f)
+				Transitioning = false;
+		}
+		
+		lastInSpell = InSpell;
+	}
+	bool lastInSpell;
+}

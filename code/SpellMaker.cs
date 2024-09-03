@@ -21,7 +21,6 @@ public sealed class SpellMaker : Component
 
 	protected override void OnUpdate()
 	{
-		Mouse.Visible = true;
 
 		if(Input.UsingController)
 		{

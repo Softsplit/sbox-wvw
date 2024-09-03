@@ -64,8 +64,8 @@ public sealed class PlayerController : Component
     private float jumpStartHeight = 0f;
     private float jumpHighestHeight = 0f;
     private bool AlreadyGrounded = true;
-    private Vector2 SmoothLookAngle = Vector2.Zero; // => localLookAngle.LerpTo(LookAngle, Time.Delta / 0.1f);
-    private Angles SmoothLookAngleAngles => new Angles(SmoothLookAngle.x, SmoothLookAngle.y, 0);
+    public Vector2 SmoothLookAngle = Vector2.Zero; // => localLookAngle.LerpTo(LookAngle, Time.Delta / 0.1f);
+    public Angles SmoothLookAngleAngles => new Angles(SmoothLookAngle.x, SmoothLookAngle.y, 0);
     private Angles LookAngleAngles => new Angles(LookAngle.x, LookAngle.y, 0);
     private float StaminaMultiplier => Stamina / MaxStamina;
     
