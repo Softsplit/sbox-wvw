@@ -49,6 +49,7 @@ public sealed class PlayerController : Component
     [Property, Description("Add 'player' tag to disable collisions with other players.")] public TagSet IgnoreLayers { get; set; } = new TagSet();
     [Property] public GameObject Body {get;set;}
     [Property] public BoxCollider CollisionBox {get;set;}
+    [Property] public WizardAnimator WizardAnimator {get;set;}
 
     // State Bools
     [Sync] public bool IsCrouching {get;set;} = false;
@@ -56,7 +57,6 @@ public sealed class PlayerController : Component
     [Sync] public bool IsOnGround {get;set;} = false;
 
     // Internal objects
-    private CitizenAnimationHelper animationHelper;
 	private ModelRenderer BodyRenderer;
 
     // Internal Variables
@@ -231,18 +231,6 @@ public sealed class PlayerController : Component
         if (Input.Pressed("Duck") || Input.Released("Duck")) CrouchTime += CrouchCost;
     }
 
-    private void UpdateCitizenAnims() {
-        if (animationHelper == null) return;
-
-        animationHelper.WithWishVelocity(WishDir * InternalMoveSpeed);
-        animationHelper.WithVelocity(Velocity);
-        animationHelper.AimAngle = SmoothLookAngleAngles.ToRotation();
-        animationHelper.IsGrounded = IsOnGround;
-        animationHelper.WithLook(SmoothLookAngleAngles.Forward, 1f, 0.75f, 0.5f);
-        animationHelper.MoveStyle = CitizenAnimationHelper.MoveStyles.Auto;
-        animationHelper.DuckLevel = ((1 - (Height / StandingHeight)) * 3).Clamp(0, 1);
-    }
-
     // Source engine magic functions
 
     private void ApplyFriction() {
@@ -326,7 +314,6 @@ public sealed class PlayerController : Component
         if ((AutoBunnyhopping && Input.Down("Jump")) || Input.Pressed("Jump")) {
             jumpStartHeight = GameObject.Transform.Position.z;
             jumpHighestHeight = GameObject.Transform.Position.z;
-            animationHelper.TriggerJump();
             Punch(new Vector3(0, 0, JumpForce * StaminaMultiplier));
             Stamina -= Stamina * StaminaJumpCost * 2.9625f;
             Stamina = (Stamina * 10).FloorToInt() * 0.1f;
@@ -350,7 +337,6 @@ public sealed class PlayerController : Component
         Scene.FixedUpdateFrequency = 64;
 
         BodyRenderer = Components.GetInChildrenOrSelf<ModelRenderer>();
-        animationHelper = Components.GetInChildrenOrSelf<CitizenAnimationHelper>();
         
         Height = StandingHeight;
         HeightGoal = StandingHeight;
@@ -447,10 +433,18 @@ public sealed class PlayerController : Component
 
         if (jumpHighestHeight < GameObject.Transform.Position.z) jumpHighestHeight = GameObject.Transform.Position.z;
     }
+
+    [Broadcast]
+    public void SetAnims()
+    {
+        WizardAnimator.Grounded = IsOnGround;
+        Vector3 LocalVel = new Transform(Vector3.Zero,Transform.Rotation).PointToLocal(Velocity);
+        WizardAnimator.MoveX = LocalVel.x;
+        WizardAnimator.MoveY = LocalVel.y;
+    }
     
 	protected override void OnUpdate() {
-        UpdateCitizenAnims();
-
+        SetAnims();
         if (Body == null || BodyRenderer == null) return;
         
         SmoothLookAngle = SmoothLookAngle.LerpTo(LookAngle, Time.Delta / 0.035f);

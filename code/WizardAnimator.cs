@@ -1,16 +1,18 @@
 using Sandbox;
 
-public sealed class BodyIkTest : Component
+public sealed class WizardAnimator : Component
 {
 	[Property] public GameObject LookThing {get;set;}
 	[Property] public float MoveX {get;set;}
 	[Property] public float MoveY {get;set;}
 	[Property] public bool Attacking {get;set;}
 	[Property] public bool SettingSpell {get;set;}
+	[Property] public bool Grounded {get;set;}
 	[Property] public List<GameObject> Lookers {get;set;}
 	[Property] public Angles LookRotOffsetNorm {get;set;} = new Angles(0,0,90);
 	[Property] public Angles LookRotOffsetAttack {get;set;} = new Angles(0,0,90);
 	[Property] public float AttackToSpeed {get;set;} = 0.566f;
+	[Property] public float MoveDirSmoothing {get;set;} = 100f;
 	SkinnedModelRenderer skinnedModelRenderer;
 	protected override void OnStart()
 	{
@@ -18,12 +20,16 @@ public sealed class BodyIkTest : Component
 		LookOffset = LookRotOffsetNorm;
 	}
 	Angles LookOffset;
+
+	Vector2 MoveDirSmoothed;
 	protected override void OnUpdate()
 	{
-		skinnedModelRenderer.Set("MoveX",MoveX);
-		skinnedModelRenderer.Set("MoveY",MoveY);
+		MoveDirSmoothed = Vector2.Lerp(MoveDirSmoothed, new Vector2(MoveX, MoveY),Time.Delta*MoveDirSmoothing);
+		skinnedModelRenderer.Set("MoveX",MoveDirSmoothed.x);
+		skinnedModelRenderer.Set("MoveY",MoveDirSmoothed.y);
 		skinnedModelRenderer.Set("Attacking", Attacking);
 		skinnedModelRenderer.Set("SettingSpell", SettingSpell);
+		skinnedModelRenderer.Set("Grounded", Grounded);
 
 		LookOffset = Angles.Lerp(LookOffset, Attacking ? LookRotOffsetAttack : LookRotOffsetNorm, Time.Delta * (1/AttackToSpeed));
 

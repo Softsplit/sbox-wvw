@@ -131,7 +131,13 @@
           "ToggleCrouch": false,
           "UseCustomFOV": true,
           "UseCustomGravity": true,
-          "Weight": 1
+          "Weight": 1,
+          "WizardAnimator": {
+            "_type": "component",
+            "component_id": "34dccfd8-b8f4-4666-8533-f4565ba8a402",
+            "go": "0bdcdf2f-b025-409a-a1b6-87f7c1a8c005",
+            "component_type": "WizardAnimator"
+          }
         },
         {
           "__type": "Sandbox.BoxCollider",
@@ -160,10 +166,11 @@
               "UseAnimGraph": true
             },
             {
-              "__type": "BodyIkTest",
-              "__guid": "fb1b5fac-8466-4302-8766-ba5186aaa7a9",
+              "__type": "WizardAnimator",
+              "__guid": "34dccfd8-b8f4-4666-8533-f4565ba8a402",
               "Attacking": false,
-              "AttackToSpeed": 0.566,
+              "AttackToSpeed": 0.283,
+              "Grounded": false,
               "Lookers": [
                 {
                   "_type": "gameobject",
@@ -175,11 +182,12 @@
                 }
               ],
               "LookRotOffsetAttack": "0,90,127",
-              "LookRotOffsetNorm": "0,60.3,120.2001",
+              "LookRotOffsetNorm": "0,60,120",
               "LookThing": {
                 "_type": "gameobject",
                 "go": "13dc5eb4-0b59-4b14-a6a1-e61c228d06dc"
               },
+              "MoveDirSmoothing": 5,
               "MoveX": 0,
               "MoveY": 0,
               "SettingSpell": false
@@ -398,6 +406,7 @@
                                                 {
                                                   "__type": "SpellMaker",
                                                   "__guid": "ce15c6c0-f514-4591-a1ae-e4a60ca727eb",
+                                                  "__enabled": false,
                                                   "CurrentInteractionState": "Finding"
                                                 }
                                               ],
@@ -3189,6 +3198,13 @@
           "Name": "CamPivot",
           "Position": "0,0,39.11075",
           "Enabled": true,
+          "Components": [
+            {
+              "__type": "CameraMovement",
+              "__guid": "762ca2d0-0ebc-48b6-a359-e97904a20b0e",
+              "Clamp": "-75,65"
+            }
+          ],
           "Children": [
             {
               "__guid": "043e7154-0c5d-4b31-b01c-3f47615c9e56",
@@ -3216,23 +3232,23 @@
                   "ZNear": 10
                 }
               ]
-            }
-          ]
-        },
-        {
-          "__guid": "13dc5eb4-0b59-4b14-a6a1-e61c228d06dc",
-          "Flags": 0,
-          "Name": "Object",
-          "Position": "34.55635,-0.00000001326524,52.44787",
-          "Scale": "0.02,0.02,0.02",
-          "Enabled": true,
-          "Components": [
+            },
             {
-              "__type": "Sandbox.ModelRenderer",
-              "__guid": "979edf00-c6d3-444c-83ba-ca8f6683d607",
-              "BodyGroups": 18446744073709551615,
-              "RenderType": "On",
-              "Tint": "1,1,1,1"
+              "__guid": "13dc5eb4-0b59-4b14-a6a1-e61c228d06dc",
+              "Flags": 0,
+              "Name": "Object",
+              "Position": "74.14911,-0.00000001326524,13.33712",
+              "Scale": "0.02,0.02,0.02",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.ModelRenderer",
+                  "__guid": "979edf00-c6d3-444c-83ba-ca8f6683d607",
+                  "BodyGroups": 18446744073709551615,
+                  "RenderType": "On",
+                  "Tint": "1,1,1,1"
+                }
+              ]
             }
           ]
         }
