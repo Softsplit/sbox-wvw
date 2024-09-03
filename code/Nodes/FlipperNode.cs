@@ -6,8 +6,8 @@ public sealed class FlipperNode : Node
 	[Property] public Color OffColour {get;set;}
 	[Property] public Color OnColour {get;set;}
 	[Property] public bool On {get;set;}
-	[Property] bool stateChanged;
-	[Property] bool ticked;
+	bool stateChanged;
+	bool ticked;
 
 	public override void Tick(int index)
 	{
