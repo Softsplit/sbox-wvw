@@ -1,9 +1,10 @@
 using Sandbox;
 
-public sealed class ConstantNode : Component
+public sealed class ConstantNode : Node
 {
-	protected override void OnUpdate()
+	[Property] public NumberInput NumberInput {get;set;}
+	protected override void OnFixedUpdate()
 	{
-
+		NumberOutput(NumberInput.Value);
 	}
 }

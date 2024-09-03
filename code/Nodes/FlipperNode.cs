@@ -6,16 +6,30 @@ public sealed class FlipperNode : Node
 	[Property] public Color OffColour {get;set;}
 	[Property] public Color OnColour {get;set;}
 	[Property] public bool On {get;set;}
+	[Property] bool stateChanged;
+	[Property] bool ticked;
 
 	public override void Tick(int index)
 	{
-		On = !On;
+		if (!stateChanged)
+		{
+			On = !On;
+			stateChanged = true;
+		}
+		ticked = true;
 		Visual.Tint = On ? OnColour : OffColour;
 	}
 
 	protected override void OnFixedUpdate()
 	{
-		if(On)
+		if (On)
 			Output();
+		
+		if(!ticked)
+		{
+			stateChanged = false;
+		}
+
+		ticked = false;
 	}
 }

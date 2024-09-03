@@ -117,6 +117,7 @@
           "__guid": "edaa4961-7983-49ff-99ca-a5645b9e662c",
           "Flags": 0,
           "Name": "NodeDealer",
+          "Position": "6.9907,0,65.05075",
           "Enabled": true,
           "Components": [
             {
@@ -130,7 +131,7 @@
               "__guid": "22087767-0bb9-4059-a5ef-64a5c0e13e3c",
               "Flags": 0,
               "Name": "EOut",
-              "Position": "7.336723,0.5640665,64.88824",
+              "Position": "0.3460226,-0.6398134,-0.1625137",
               "Tags": "node",
               "Enabled": true,
               "Components": [
@@ -288,7 +289,7 @@
               "__guid": "05695317-ae5e-4d02-b784-c5bb64058e90",
               "Flags": 0,
               "Name": "ROut",
-              "Position": "7.336723,1.754857,64.86671",
+              "Position": "0.3460226,0.5509766,-0.1840363",
               "Tags": "node",
               "Enabled": true,
               "Components": [
@@ -446,7 +447,7 @@
               "__guid": "6e3a42c0-edf3-4dfb-a107-b03f00569e37",
               "Flags": 0,
               "Name": "LogSex",
-              "Position": "7.336723,-0.6592665,64.88824",
+              "Position": "0.3460226,-1.863146,-0.1625137",
               "Tags": "node",
               "Enabled": true,
               "Components": [
@@ -555,7 +556,7 @@
               "__guid": "f0ad80ca-50b8-4c39-93e9-ce1c1e4836f7",
               "Flags": 0,
               "Name": "LogBalls",
-              "Position": "7.336723,-0.651017,63.62338",
+              "Position": "0.3460226,-1.854897,-1.427372",
               "Tags": "node",
               "Enabled": true,
               "Components": [
@@ -670,7 +671,7 @@
               "__guid": "b5c186b4-3940-473c-a879-693849070b0a",
               "Flags": 0,
               "Name": "Flipper",
-              "Position": "7.336723,0.5758704,63.6257",
+              "Position": "0.3460226,-0.6280096,-1.425049",
               "Tags": "node",
               "Enabled": true,
               "Components": [
@@ -859,7 +860,7 @@
               "__guid": "6d4dcb7b-932f-4d26-9da9-1512f063cc86",
               "Flags": 0,
               "Name": "And",
-              "Position": "7.336723,1.719009,63.6257",
+              "Position": "0.3460226,0.5151292,-1.425049",
               "Tags": "node",
               "Enabled": true,
               "Components": [
@@ -1065,7 +1066,7 @@
               "__guid": "a873c68d-0e58-4809-84d5-0f2ceb9d4252",
               "Flags": 0,
               "Name": "Or",
-              "Position": "7.336723,3.007889,63.6257",
+              "Position": "0.3460226,1.804009,-1.425049",
               "Tags": "node",
               "Enabled": true,
               "Components": [
@@ -1271,7 +1272,7 @@
               "__guid": "894a511a-917d-49b3-bcfc-9cd61ca97f69",
               "Flags": 0,
               "Name": "Xor",
-              "Position": "7.336723,3.007889,64.81377",
+              "Position": "0.3460226,1.804009,-0.2369843",
               "Tags": "node",
               "Enabled": true,
               "Components": [
@@ -1477,7 +1478,7 @@
               "__guid": "c6163565-e15e-4f13-8324-1383eb49e213",
               "Flags": 0,
               "Name": "Not",
-              "Position": "7.336723,2.945903,66.02171",
+              "Position": "0.3460226,1.742023,0.9709625",
               "Tags": "node",
               "Enabled": true,
               "Components": [
@@ -1639,7 +1640,7 @@
               "__guid": "617bdfc2-491d-452e-8e94-88ba0b89fd4c",
               "Flags": 0,
               "Name": "\u003E",
-              "Position": "7.336723,1.667659,66.02171",
+              "Position": "0.3460226,0.4637787,0.9709625",
               "Tags": "node",
               "Enabled": true,
               "Components": [
@@ -1842,10 +1843,216 @@
               ]
             },
             {
+              "__guid": "b222a2e2-a5b8-436b-8f6b-63d341505297",
+              "Flags": 0,
+              "Name": "\u003C",
+              "Position": "0.3460226,0.4637791,2.186325",
+              "Tags": "node",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.BoxCollider",
+                  "__guid": "2faa149c-90b0-44d1-99f7-b2879cf686bf",
+                  "Center": "0,0,0",
+                  "IsTrigger": true,
+                  "Scale": "0.05,1,1",
+                  "Static": false
+                },
+                {
+                  "__type": "LessThanNode",
+                  "__guid": "a12b003c-603e-4e05-847e-f6ccdfb44efc",
+                  "Outputs": [
+                    {
+                      "_type": "component",
+                      "component_id": "7abb5c3d-62b7-414d-b087-b840514fd613",
+                      "go": "3920e823-6cb3-4afa-896d-bfd52d3665f4",
+                      "component_type": "NodeOutput"
+                    }
+                  ]
+                }
+              ],
+              "Children": [
+                {
+                  "__guid": "c3f8ecd3-e987-4f0e-a881-63a0aac20ab4",
+                  "Flags": 0,
+                  "Name": "Cube",
+                  "Position": "0,0,0",
+                  "Scale": "0.001,0.02,0.02",
+                  "Enabled": true,
+                  "Components": [
+                    {
+                      "__type": "Sandbox.ModelRenderer",
+                      "__guid": "e68f3374-23b4-4802-ae78-c033784d349b",
+                      "BodyGroups": 18446744073709551615,
+                      "Model": "models/dev/box.vmdl",
+                      "RenderType": "On",
+                      "Tint": "1,1,1,1"
+                    }
+                  ]
+                },
+                {
+                  "__guid": "913612c6-f9a7-4140-bc2e-238bf2768b25",
+                  "Flags": 0,
+                  "Name": "Text",
+                  "Position": "-0.02757883,0,0",
+                  "Scale": "0.02003517,0.02003517,0.02003517",
+                  "Enabled": true,
+                  "Components": [
+                    {
+                      "__type": "Sandbox.TextRenderer",
+                      "__guid": "fc80c481-e380-4310-b595-d989ea13fd1e",
+                      "Color": "0.45103,0.47149,0.5297,1",
+                      "FontFamily": "Poppins",
+                      "FontSize": 64,
+                      "FontWeight": 800,
+                      "Scale": 0.4,
+                      "Text": "\u003C",
+                      "TextAlignment": "Center"
+                    }
+                  ]
+                },
+                {
+                  "__guid": "81d16dac-4ed8-4a60-a842-a56d5bc8b003",
+                  "Flags": 0,
+                  "Name": "inputA",
+                  "Position": "0,0.2,0.5",
+                  "Tags": "input",
+                  "Enabled": true,
+                  "Components": [
+                    {
+                      "__type": "Sandbox.BoxCollider",
+                      "__guid": "23f4551d-ae15-448a-8574-12f12383dfc0",
+                      "Center": "0,0,0",
+                      "IsTrigger": true,
+                      "Scale": "0.1,0.1,0.1",
+                      "Static": false
+                    },
+                    {
+                      "__type": "NodeInput",
+                      "__guid": "582e6460-b4ab-43e0-8791-45f332c9023a",
+                      "AcceptedType": "Number",
+                      "index": 0
+                    }
+                  ],
+                  "Children": [
+                    {
+                      "__guid": "ae433922-f94c-482d-9ad1-0af5c2285c25",
+                      "Flags": 0,
+                      "Name": "Cube",
+                      "Position": "0,0,0",
+                      "Scale": "0.002,0.002,0.002",
+                      "Enabled": true,
+                      "Components": [
+                        {
+                          "__type": "Sandbox.ModelRenderer",
+                          "__guid": "b3830a40-f928-4123-99cb-bc22c238a005",
+                          "BodyGroups": 18446744073709551615,
+                          "Model": "models/dev/box.vmdl",
+                          "RenderType": "On",
+                          "Tint": "0,1,1,1"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "__guid": "de3c031c-0d17-4bdf-a665-506f023ed789",
+                  "Flags": 0,
+                  "Name": "inputB",
+                  "Position": "0,-0.2,0.5",
+                  "Tags": "input",
+                  "Enabled": true,
+                  "Components": [
+                    {
+                      "__type": "Sandbox.BoxCollider",
+                      "__guid": "67566ef3-a16e-4fd4-8277-a15946248ff1",
+                      "Center": "0,0,0",
+                      "IsTrigger": true,
+                      "Scale": "0.1,0.1,0.1",
+                      "Static": false
+                    },
+                    {
+                      "__type": "NodeInput",
+                      "__guid": "f3c6a82e-bfba-4125-805b-4b66f1e22463",
+                      "AcceptedType": "Number",
+                      "index": 1
+                    }
+                  ],
+                  "Children": [
+                    {
+                      "__guid": "a38c6ee7-e004-40bc-9947-62c41d02d3f5",
+                      "Flags": 0,
+                      "Name": "Cube",
+                      "Position": "0,0,0",
+                      "Scale": "0.002,0.002,0.002",
+                      "Enabled": true,
+                      "Components": [
+                        {
+                          "__type": "Sandbox.ModelRenderer",
+                          "__guid": "d8d06236-1bda-429d-95c9-6312d091a92d",
+                          "BodyGroups": 18446744073709551615,
+                          "Model": "models/dev/box.vmdl",
+                          "RenderType": "On",
+                          "Tint": "0,1,1,1"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "__guid": "3920e823-6cb3-4afa-896d-bfd52d3665f4",
+                  "Flags": 0,
+                  "Name": "output",
+                  "Position": "0,0,-0.5",
+                  "Tags": "output",
+                  "Enabled": true,
+                  "Components": [
+                    {
+                      "__type": "Sandbox.BoxCollider",
+                      "__guid": "ab8c42e9-ad14-46bb-a914-e680d365566d",
+                      "Center": "0,0,0",
+                      "IsTrigger": true,
+                      "Scale": "0.1,0.1,0.1",
+                      "Static": false
+                    },
+                    {
+                      "__type": "NodeOutput",
+                      "__guid": "7abb5c3d-62b7-414d-b087-b840514fd613",
+                      "ConnectedInputs": [],
+                      "NeutralColour": "1,1,1,1",
+                      "outputType": "Normal",
+                      "PathDetours": [],
+                      "SendColour": "0,1,0,1"
+                    }
+                  ],
+                  "Children": [
+                    {
+                      "__guid": "fe1abd2a-ce4a-45c8-9199-2f2f11738fbb",
+                      "Flags": 0,
+                      "Name": "Cube",
+                      "Position": "0,0,0",
+                      "Scale": "0.002,0.002,0.002",
+                      "Enabled": true,
+                      "Components": [
+                        {
+                          "__type": "Sandbox.ModelRenderer",
+                          "__guid": "3ead658a-80ca-4c02-b945-df74f9ede906",
+                          "BodyGroups": 18446744073709551615,
+                          "Model": "models/dev/box.vmdl",
+                          "RenderType": "On",
+                          "Tint": "1,0,0,1"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
               "__guid": "f67df500-c13e-480e-be32-e92a489a8dc2",
               "Flags": 0,
               "Name": "Const",
-              "Position": "7.336723,0.4301291,67.52204",
+              "Position": "0.3460226,-0.6247857,0.9720078",
               "Tags": "node",
               "Enabled": true,
               "Components": [
@@ -1856,6 +2063,24 @@
                   "IsTrigger": true,
                   "Scale": "0.05,1,1",
                   "Static": false
+                },
+                {
+                  "__type": "ConstantNode",
+                  "__guid": "8a3d3854-c1c0-42a2-8d0c-972cee3dd6fb",
+                  "NumberInput": {
+                    "_type": "component",
+                    "component_id": "6c864612-99f7-404d-ae56-9421a5dc8279",
+                    "go": "dfd5fa9a-8181-4ed9-8d56-ae2ec67e6db9",
+                    "component_type": "NumberInput"
+                  },
+                  "Outputs": [
+                    {
+                      "_type": "component",
+                      "component_id": "4b8a6256-8a52-4bf4-a007-8a4400e7e5ae",
+                      "go": "24700b65-5498-4984-890a-70690fa50e9b",
+                      "component_type": "NodeOutput"
+                    }
+                  ]
                 }
               ],
               "Children": [
@@ -1918,10 +2143,10 @@
                       "__type": "NodeOutput",
                       "__guid": "4b8a6256-8a52-4bf4-a007-8a4400e7e5ae",
                       "ConnectedInputs": [],
-                      "NeutralColour": "1,1,1,1",
-                      "outputType": "Normal",
+                      "NeutralColour": "0,1,1,1",
+                      "outputType": "Number",
                       "PathDetours": [],
-                      "SendColour": "0,1,1,1"
+                      "SendColour": "0,0,1,1"
                     }
                   ],
                   "Children": [
@@ -1940,6 +2165,234 @@
                           "Model": "models/dev/box.vmdl",
                           "RenderType": "On",
                           "Tint": "0,0,1,1"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "__guid": "dfd5fa9a-8181-4ed9-8d56-ae2ec67e6db9",
+                  "Flags": 0,
+                  "Name": "NumberInput",
+                  "Position": "-0.02799988,0,-0.08784485",
+                  "Tags": "numberinput",
+                  "Enabled": true,
+                  "Components": [
+                    {
+                      "__type": "NumberInput",
+                      "__guid": "6c864612-99f7-404d-ae56-9421a5dc8279",
+                      "TextRenderer": {
+                        "_type": "component",
+                        "component_id": "ff04c0e7-4934-4e9f-a06d-789e9c0afa15",
+                        "go": "47421d15-bd73-44b1-832b-d035393a2207",
+                        "component_type": "TextRenderer"
+                      },
+                      "Value": 0
+                    },
+                    {
+                      "__type": "Sandbox.BoxCollider",
+                      "__guid": "94c9ea7a-c68e-4f26-b877-bd8586a9a24c",
+                      "Center": "0,0,0",
+                      "IsTrigger": true,
+                      "Scale": "0.1,0.5,0.5",
+                      "Static": false
+                    }
+                  ],
+                  "Children": [
+                    {
+                      "__guid": "47421d15-bd73-44b1-832b-d035393a2207",
+                      "Flags": 0,
+                      "Name": "Text (1)",
+                      "Position": "0,0,0",
+                      "Scale": "0.02003517,0.02003517,0.02003517",
+                      "Enabled": true,
+                      "Components": [
+                        {
+                          "__type": "Sandbox.TextRenderer",
+                          "__guid": "ff04c0e7-4934-4e9f-a06d-789e9c0afa15",
+                          "Color": "0,0,0,1",
+                          "FontFamily": "Poppins",
+                          "FontSize": 64,
+                          "FontWeight": 800,
+                          "Scale": 0.27,
+                          "Text": "0",
+                          "TextAlignment": "Center"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "__guid": "1205ffc9-050c-44af-9de7-3d717fb896b3",
+              "Flags": 0,
+              "Name": "Const",
+              "Position": "0.3460226,-1.844795,0.9720078",
+              "Tags": "node",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.BoxCollider",
+                  "__guid": "14da56d5-cd86-46c1-bdbe-25b02d1eb063",
+                  "Center": "0,0,0",
+                  "IsTrigger": true,
+                  "Scale": "0.05,1,1",
+                  "Static": false
+                },
+                {
+                  "__type": "ConstantNode",
+                  "__guid": "3f0fcaeb-4568-40a0-a64b-3e8a3340bc09",
+                  "NumberInput": {
+                    "_type": "component",
+                    "component_id": "0675bc7e-14c9-4368-a340-974abf7bed34",
+                    "go": "7aa87b49-5cc8-4acd-934c-b1d731ebf35f",
+                    "component_type": "NumberInput"
+                  },
+                  "Outputs": [
+                    {
+                      "_type": "component",
+                      "component_id": "93fe5a89-bd00-47a4-9734-ad28b8dad99a",
+                      "go": "695e0746-ef42-497a-b4c1-b025038d214e",
+                      "component_type": "NodeOutput"
+                    }
+                  ]
+                }
+              ],
+              "Children": [
+                {
+                  "__guid": "c4b26d8e-198b-4f53-aca9-0c0422abe29b",
+                  "Flags": 0,
+                  "Name": "Cube",
+                  "Position": "0,0,0",
+                  "Scale": "0.001,0.02,0.02",
+                  "Enabled": true,
+                  "Components": [
+                    {
+                      "__type": "Sandbox.ModelRenderer",
+                      "__guid": "0a558f55-4b82-4146-89d6-f01b8e218c8d",
+                      "BodyGroups": 18446744073709551615,
+                      "Model": "models/dev/box.vmdl",
+                      "RenderType": "On",
+                      "Tint": "1,1,1,1"
+                    }
+                  ]
+                },
+                {
+                  "__guid": "a36ffeda-73ab-4f5e-94e1-60a0a2d48118",
+                  "Flags": 0,
+                  "Name": "Text",
+                  "Position": "-0.02757883,0,0.3535614",
+                  "Scale": "0.02003517,0.02003517,0.02003517",
+                  "Enabled": true,
+                  "Components": [
+                    {
+                      "__type": "Sandbox.TextRenderer",
+                      "__guid": "21d6e57e-b9cd-437d-abdd-b6fd6009d393",
+                      "Color": "0.45103,0.47149,0.5297,1",
+                      "FontFamily": "Poppins",
+                      "FontSize": 64,
+                      "FontWeight": 800,
+                      "Scale": 0.13,
+                      "Text": "Const",
+                      "TextAlignment": "Center"
+                    }
+                  ]
+                },
+                {
+                  "__guid": "695e0746-ef42-497a-b4c1-b025038d214e",
+                  "Flags": 0,
+                  "Name": "output",
+                  "Position": "0,0,-0.5",
+                  "Tags": "output",
+                  "Enabled": true,
+                  "Components": [
+                    {
+                      "__type": "Sandbox.BoxCollider",
+                      "__guid": "500b7c38-b782-4695-9dda-a51150b18b0d",
+                      "Center": "0,0,0",
+                      "IsTrigger": true,
+                      "Scale": "0.1,0.1,0.1",
+                      "Static": false
+                    },
+                    {
+                      "__type": "NodeOutput",
+                      "__guid": "93fe5a89-bd00-47a4-9734-ad28b8dad99a",
+                      "ConnectedInputs": [],
+                      "NeutralColour": "0,1,1,1",
+                      "outputType": "Number",
+                      "PathDetours": [],
+                      "SendColour": "0,0,1,1"
+                    }
+                  ],
+                  "Children": [
+                    {
+                      "__guid": "525995d6-3702-430c-a649-be2a329f7745",
+                      "Flags": 0,
+                      "Name": "Cube",
+                      "Position": "0,0,0",
+                      "Scale": "0.002,0.002,0.002",
+                      "Enabled": true,
+                      "Components": [
+                        {
+                          "__type": "Sandbox.ModelRenderer",
+                          "__guid": "ecc04cd0-8a49-43ac-be86-3105b87ab99b",
+                          "BodyGroups": 18446744073709551615,
+                          "Model": "models/dev/box.vmdl",
+                          "RenderType": "On",
+                          "Tint": "0,0,1,1"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "__guid": "7aa87b49-5cc8-4acd-934c-b1d731ebf35f",
+                  "Flags": 0,
+                  "Name": "NumberInput",
+                  "Position": "-0.02799988,0,-0.08784485",
+                  "Tags": "numberinput",
+                  "Enabled": true,
+                  "Components": [
+                    {
+                      "__type": "NumberInput",
+                      "__guid": "0675bc7e-14c9-4368-a340-974abf7bed34",
+                      "TextRenderer": {
+                        "_type": "component",
+                        "component_id": "b632b845-46e5-40b0-b359-6876e4da2da9",
+                        "go": "ddb30424-a218-4006-9274-5c125ed52eea",
+                        "component_type": "TextRenderer"
+                      },
+                      "Value": 0
+                    },
+                    {
+                      "__type": "Sandbox.BoxCollider",
+                      "__guid": "63791559-1e34-4e60-beb0-b1277addf0f2",
+                      "Center": "0,0,0",
+                      "IsTrigger": true,
+                      "Scale": "0.1,0.5,0.5",
+                      "Static": false
+                    }
+                  ],
+                  "Children": [
+                    {
+                      "__guid": "ddb30424-a218-4006-9274-5c125ed52eea",
+                      "Flags": 0,
+                      "Name": "Text (1)",
+                      "Position": "0,0,0",
+                      "Scale": "0.02003517,0.02003517,0.02003517",
+                      "Enabled": true,
+                      "Components": [
+                        {
+                          "__type": "Sandbox.TextRenderer",
+                          "__guid": "b632b845-46e5-40b0-b359-6876e4da2da9",
+                          "Color": "0,0,0,1",
+                          "FontFamily": "Poppins",
+                          "FontSize": 64,
+                          "FontWeight": 800,
+                          "Scale": 0.27,
+                          "Text": "0",
+                          "TextAlignment": "Center"
                         }
                       ]
                     }

@@ -1,8 +1,12 @@
+using System;
+
 public sealed class SpellMaker : Component
 {
 	[Property] public GameObject DraggedNode { get; set; }
 
 	[Property] public NodeOutput CurrentOutput { get; set; }
+
+	[Property] public NumberInput CurrentNumberInput { get; set; }
 
 	[Property] public InteractionState CurrentInteractionState { get; set; }
 
@@ -18,6 +22,11 @@ public sealed class SpellMaker : Component
 	protected override void OnUpdate()
 	{
 		Mouse.Visible = true;
+
+		if(Input.UsingController)
+		{
+			Mouse.Position -= new Vector2(Input.AnalogMove.y, Input.AnalogMove.x) * 5 * (Input.Down("View") ? 0.2f : 1);
+		}
 
 		var mousePosition = Mouse.Position;
 		var camera = Scene.Camera;
@@ -39,11 +48,15 @@ public sealed class SpellMaker : Component
 			case InteractionState.Connecting:
 				HandleConnectingState();
 				break;
+
+			case InteractionState.TypingNumber:
+				HandleTypingNumberState();
+				break;
 		}
 
 		_lastInteractionState = CurrentInteractionState;
 	}
-
+	
 	private void HandleFindingState()
 	{
 		if ( !_mouseRay.Hit ) return;
@@ -62,11 +75,21 @@ public sealed class SpellMaker : Component
 		}
 
 		if ( !Input.Pressed( "attack1" ) ) return;
+
+		if(_mouseRay.GameObject.Tags.Contains("numberinput"))
+		{
+			CurrentNumberInput = _mouseRay.GameObject.Components.Get<NumberInput>();
+			if(!CurrentNumberInput.IsValid()) return;
+			CurrentInteractionState = InteractionState.TypingNumber;
+			return;
+		}
+
 		if ( _mouseRay.GameObject.Tags.Contains( "input" ) ) return;
 
 		if ( _mouseRay.GameObject.Tags.Contains( "output" ) )
 		{
 			CurrentOutput = _mouseRay.GameObject.Components.Get<NodeOutput>();
+			if(!CurrentOutput.IsValid()) return;
 			CurrentInteractionState = InteractionState.Connecting;
 
 			Vector3 cameraForward = Scene.Camera.Transform.World.Forward;
@@ -153,10 +176,94 @@ public sealed class SpellMaker : Component
 		}
 	}
 
+	private void HandleTypingNumberState()
+	{
+		
+		if(Input.Pressed("Chat"))
+		{
+			float number;
+			if(float.TryParse(CurrentNumberInput.TextRenderer.Text, out number))
+			{
+				CurrentNumberInput.Value = number;
+				CurrentNumberInput.TextRenderer.Text = number.ToString();
+				CurrentNumberInput.TextRenderer.Color = CurrentNumberInput.TextRenderer.Color.WithAlpha(1);
+				CurrentInteractionState = InteractionState.Finding;
+				return;
+			}
+			else
+			{
+				Sound.Play("sounds/player_use_fail.sound");
+			}
+		}
+
+		float a = (MathF.Sin(Time.Now*10)+1)/2;
+		CurrentNumberInput.TextRenderer.Color =CurrentNumberInput.TextRenderer.Color.WithAlpha(a);
+
+		void IncreaseNumber(float amount)
+		{
+			float number;
+			if(float.TryParse(CurrentNumberInput.TextRenderer.Text, out number))
+			{
+				CurrentNumberInput.Value = MathF.Round((number+amount)*10) / 10;
+				CurrentNumberInput.TextRenderer.Text = CurrentNumberInput.Value.ToString();
+			}
+			else
+			{
+				Sound.Play("sounds/player_use_fail.sound");
+			}
+		}
+
+		if(Input.Pressed("SlotPrev"))
+		{
+			IncreaseNumber(-0.1f);
+			return;
+		}
+		if(Input.Pressed("SlotNext"))
+		{
+			IncreaseNumber(0.1f);
+			return;
+		}
+
+		if(Input.Pressed("Back"))
+		{
+			if(CurrentNumberInput.TextRenderer.Text.Length > 0)
+				CurrentNumberInput.TextRenderer.Text = CurrentNumberInput.TextRenderer.Text.Remove(CurrentNumberInput.TextRenderer.Text.Length-1);
+			Log.Info("balls");
+			return;
+		}
+
+		char added = ' ';
+		bool input = false;
+		for(int i = 0; i < 10; i++)
+		{
+			if(Input.Pressed($"Slot{i}"))
+			{
+				added = i.ToString()[0];
+				input = true;
+				break;
+			}
+		}
+		if(Input.Pressed("Point"))
+		{
+			added = '.';
+			input = true;
+		}
+		if(Input.Pressed("Minus"))
+		{
+			added = '-';
+			input = true;
+		}
+
+		if(!input) return;
+		Log.Info("added");
+		CurrentNumberInput.TextRenderer.Text += added;
+	}
+
 	public enum InteractionState
 	{
 		Finding,
 		Dragging,
-		Connecting
+		Connecting,
+		TypingNumber
 	}
 }
