@@ -2,10 +2,9 @@ using Sandbox;
 
 public sealed class WizardAnimator : Component
 {
-	[Property] public GameObject LookThing {get;set;}
+	[Property] public Vector3 LookPos {get;set;}
 	[Property] public float MoveX {get;set;}
 	[Property] public float MoveY {get;set;}
-	[Property] public bool Attacking {get;set;}
 	[Property] public bool SettingSpell {get;set;}
 	[Property] public bool Grounded {get;set;}
 	[Property] public List<GameObject> Lookers {get;set;}
@@ -13,7 +12,10 @@ public sealed class WizardAnimator : Component
 	[Property] public Angles LookRotOffsetAttack {get;set;} = new Angles(0,0,90);
 	[Property] public float AttackToSpeed {get;set;} = 0.566f;
 	[Property] public float MoveDirSmoothing {get;set;} = 100f;
-	SkinnedModelRenderer skinnedModelRenderer;
+	public SkinnedModelRenderer skinnedModelRenderer;
+	const float attackTime = 1.4f;
+
+	float lastAttack;
 	protected override void OnStart()
 	{
 		skinnedModelRenderer = Components.Get<SkinnedModelRenderer>();
@@ -22,25 +24,30 @@ public sealed class WizardAnimator : Component
 	Angles LookOffset;
 
 	Vector2 MoveDirSmoothed;
-	protected override void OnUpdate()
+	protected override void OnFixedUpdate()
 	{
 		MoveDirSmoothed = Vector2.Lerp(MoveDirSmoothed, new Vector2(MoveX, MoveY),Time.Delta*MoveDirSmoothing);
 		skinnedModelRenderer.Set("MoveX",MoveDirSmoothed.x);
 		skinnedModelRenderer.Set("MoveY",MoveDirSmoothed.y);
-		skinnedModelRenderer.Set("Attacking", Attacking);
 		skinnedModelRenderer.Set("SettingSpell", SettingSpell);
 		skinnedModelRenderer.Set("Grounded", Grounded);
 
-		LookOffset = Angles.Lerp(LookOffset, Attacking ? LookRotOffsetAttack : LookRotOffsetNorm, Time.Delta * (1/AttackToSpeed));
+		LookOffset = Angles.Lerp(LookOffset, Time.Now-lastAttack < attackTime ? LookRotOffsetAttack : LookRotOffsetNorm, Time.Delta * (1/AttackToSpeed));
 
 		foreach(GameObject g in Lookers)
 		{
-			Vector3 dir = LookThing.Transform.Position-g.Transform.Position;
+			Vector3 dir = LookPos-g.Transform.Position;
 
 
 			g.Transform.Rotation = Rotation.LookAt(dir);
 
 			g.Transform.Rotation *= LookOffset;
 		}
+	}
+
+	public void Attack()
+	{
+		skinnedModelRenderer.Set("Attacking",true);
+		lastAttack = Time.Now;
 	}
 }

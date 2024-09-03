@@ -361,6 +361,10 @@
             "_type": "gameobject",
             "go": "043e7154-0c5d-4b31-b01c-3f47615c9e56"
           },
+          "DefaultLookPos": {
+            "_type": "gameobject",
+            "go": "13dc5eb4-0b59-4b14-a6a1-e61c228d06dc"
+          },
           "InSpell": false,
           "SpellCam": {
             "_type": "gameobject",
@@ -393,7 +397,6 @@
             {
               "__type": "WizardAnimator",
               "__guid": "34dccfd8-b8f4-4666-8533-f4565ba8a402",
-              "Attacking": false,
               "AttackToSpeed": 0.283,
               "Grounded": false,
               "Lookers": [
@@ -406,12 +409,9 @@
                   "go": "87c983d6-ac96-409d-bb4b-b6aa97ad4e93"
                 }
               ],
+              "LookPos": "0,0,0",
               "LookRotOffsetAttack": "0,90,127",
               "LookRotOffsetNorm": "0,60,120",
-              "LookThing": {
-                "_type": "gameobject",
-                "go": "13dc5eb4-0b59-4b14-a6a1-e61c228d06dc"
-              },
               "MoveDirSmoothing": 5,
               "MoveX": 0,
               "MoveY": 0,
@@ -599,31 +599,10 @@
                                         {
                                           "__guid": "1e5beefc-4450-413c-a36b-41d98e74598c",
                                           "Flags": 0,
-                                          "Name": "Camera",
-                                          "Position": "-2.773137,7.710878,14.64644",
-                                          "Rotation": "-0.02920227,0.6361677,-0.0497117,0.7693934",
-                                          "Tags": "maincamera",
+                                          "Name": "CameraPos",
+                                          "Position": "-1.287009,7.692807,15.02096",
+                                          "Rotation": "-0.02701606,0.6689779,-0.0509329,0.7410434",
                                           "Enabled": true,
-                                          "Components": [
-                                            {
-                                              "__type": "Sandbox.CameraComponent",
-                                              "__guid": "42347760-99b1-4c4a-bde6-8ab8085e7301",
-                                              "__enabled": false,
-                                              "BackgroundColor": "0.33333,0.46275,0.52157,1",
-                                              "ClearFlags": "All",
-                                              "FieldOfView": 90,
-                                              "IsMainCamera": true,
-                                              "Orthographic": false,
-                                              "OrthographicHeight": 1204,
-                                              "Priority": 1,
-                                              "RenderExcludeTags": "",
-                                              "RenderTags": "",
-                                              "TargetEye": "None",
-                                              "Viewport": "0,0,1,1",
-                                              "ZFar": 10000,
-                                              "ZNear": 1
-                                            }
-                                          ],
                                           "Children": [
                                             {
                                               "__guid": "edaa4961-7983-49ff-99ca-a5645b9e662c",
@@ -645,8 +624,8 @@
                                                   "Flags": 0,
                                                   "Name": "A2Out",
                                                   "Position": "0.3460226,-0.6398134,-0.1625137",
+                                                  "Rotation": "-0.7071068,-0,0,0.7071068",
                                                   "Tags": "node",
-                                                  "Enabled": true,
                                                   "Components": [
                                                     {
                                                       "__type": "Sandbox.BoxCollider",
@@ -660,6 +639,8 @@
                                                       "__type": "TestOutputNode",
                                                       "__guid": "3244cd9d-978b-4cca-8344-b58e271dbaa3",
                                                       "Key": "Attack2",
+                                                      "Mana": 0,
+                                                      "MaxMana": 0,
                                                       "NodeOutput": {
                                                         "_type": "component",
                                                         "component_id": "b6776b25-d808-4f8a-89a5-47108d89b504",
@@ -803,8 +784,8 @@
                                                   "Flags": 0,
                                                   "Name": "ROut",
                                                   "Position": "0.3460226,0.5509766,-0.1840363",
+                                                  "Rotation": "-0.7071068,-0,0,0.7071068",
                                                   "Tags": "node",
-                                                  "Enabled": true,
                                                   "Components": [
                                                     {
                                                       "__type": "Sandbox.BoxCollider",
@@ -818,6 +799,8 @@
                                                       "__type": "TestOutputNode",
                                                       "__guid": "10f22d25-865a-4122-8104-6682aa3be904",
                                                       "Key": "Reload",
+                                                      "Mana": 0,
+                                                      "MaxMana": 0,
                                                       "NodeOutput": {
                                                         "_type": "component",
                                                         "component_id": "5b4c6940-b344-4f57-be84-38fb7162ad55",
@@ -961,8 +944,8 @@
                                                   "Flags": 0,
                                                   "Name": "LogSex",
                                                   "Position": "0.3460226,-1.863146,-0.1625137",
+                                                  "Rotation": "-0.7071068,-0,0,0.7071068",
                                                   "Tags": "node",
-                                                  "Enabled": true,
                                                   "Components": [
                                                     {
                                                       "__type": "Sandbox.BoxCollider",
@@ -976,6 +959,8 @@
                                                       "__type": "TestLogNode",
                                                       "__guid": "4c3b4b39-02c0-4500-a214-f45b987421fc",
                                                       "LogText": "Sex",
+                                                      "Mana": 0,
+                                                      "MaxMana": 0,
                                                       "Outputs": []
                                                     }
                                                   ],
@@ -1070,8 +1055,8 @@
                                                   "Flags": 0,
                                                   "Name": "LogBalls",
                                                   "Position": "0.3460226,-1.854897,-1.427372",
+                                                  "Rotation": "-0.7071068,-0,0,0.7071068",
                                                   "Tags": "node",
-                                                  "Enabled": true,
                                                   "Components": [
                                                     {
                                                       "__type": "Sandbox.BoxCollider",
@@ -1085,6 +1070,8 @@
                                                       "__type": "TestLogNode",
                                                       "__guid": "17f5633d-bf3e-4a45-8802-68d5ea38e46a",
                                                       "LogText": "Balls",
+                                                      "Mana": 0,
+                                                      "MaxMana": 0,
                                                       "Outputs": []
                                                     }
                                                   ],
@@ -1185,8 +1172,8 @@
                                                   "Flags": 0,
                                                   "Name": "Flipper",
                                                   "Position": "0.3460226,-0.6280096,-1.425049",
+                                                  "Rotation": "-0.7071068,-0,0,0.7071068",
                                                   "Tags": "node",
-                                                  "Enabled": true,
                                                   "Components": [
                                                     {
                                                       "__type": "Sandbox.BoxCollider",
@@ -1199,6 +1186,8 @@
                                                     {
                                                       "__type": "FlipperNode",
                                                       "__guid": "a4bae654-a87f-4460-b1ec-7b65b39def7f",
+                                                      "Mana": 0,
+                                                      "MaxMana": 0,
                                                       "OffColour": "1,0,0,1",
                                                       "On": false,
                                                       "OnColour": "0,1,0,1",
@@ -1374,8 +1363,8 @@
                                                   "Flags": 0,
                                                   "Name": "And",
                                                   "Position": "0.3460226,0.5151292,-1.425049",
+                                                  "Rotation": "-0.7071068,-0,0,0.7071068",
                                                   "Tags": "node",
-                                                  "Enabled": true,
                                                   "Components": [
                                                     {
                                                       "__type": "Sandbox.BoxCollider",
@@ -1388,6 +1377,8 @@
                                                     {
                                                       "__type": "AndNode",
                                                       "__guid": "e5452b66-c7a4-42ce-9616-fd375b7abd96",
+                                                      "Mana": 0,
+                                                      "MaxMana": 0,
                                                       "Outputs": [
                                                         {
                                                           "_type": "component",
@@ -1580,8 +1571,8 @@
                                                   "Flags": 0,
                                                   "Name": "Or",
                                                   "Position": "0.3460226,1.804009,-1.425049",
+                                                  "Rotation": "-0.7071068,-0,0,0.7071068",
                                                   "Tags": "node",
-                                                  "Enabled": true,
                                                   "Components": [
                                                     {
                                                       "__type": "Sandbox.BoxCollider",
@@ -1594,6 +1585,8 @@
                                                     {
                                                       "__type": "OrNode",
                                                       "__guid": "e688a400-5a55-4a51-a259-4a5969260bb7",
+                                                      "Mana": 0,
+                                                      "MaxMana": 0,
                                                       "Outputs": [
                                                         {
                                                           "_type": "component",
@@ -1786,8 +1779,8 @@
                                                   "Flags": 0,
                                                   "Name": "Xor",
                                                   "Position": "0.3460226,1.804009,-0.2369843",
+                                                  "Rotation": "-0.7071068,-0,0,0.7071068",
                                                   "Tags": "node",
-                                                  "Enabled": true,
                                                   "Components": [
                                                     {
                                                       "__type": "Sandbox.BoxCollider",
@@ -1800,6 +1793,8 @@
                                                     {
                                                       "__type": "XorNode",
                                                       "__guid": "dd4f693f-fa05-4ab1-b9aa-789df5b5ed40",
+                                                      "Mana": 0,
+                                                      "MaxMana": 0,
                                                       "Outputs": [
                                                         {
                                                           "_type": "component",
@@ -1992,8 +1987,8 @@
                                                   "Flags": 0,
                                                   "Name": "Not",
                                                   "Position": "0.3460226,1.742023,0.9709625",
+                                                  "Rotation": "-0.7071068,-0,0,0.7071068",
                                                   "Tags": "node",
-                                                  "Enabled": true,
                                                   "Components": [
                                                     {
                                                       "__type": "Sandbox.BoxCollider",
@@ -2006,6 +2001,8 @@
                                                     {
                                                       "__type": "NotNode",
                                                       "__guid": "e6d40541-5c56-422b-b5f8-fa55331fe778",
+                                                      "Mana": 0,
+                                                      "MaxMana": 0,
                                                       "Outputs": [
                                                         {
                                                           "_type": "component",
@@ -2154,8 +2151,8 @@
                                                   "Flags": 0,
                                                   "Name": "\u003E",
                                                   "Position": "0.3460226,0.4637787,0.9709625",
+                                                  "Rotation": "-0.7071068,-0,0,0.7071068",
                                                   "Tags": "node",
-                                                  "Enabled": true,
                                                   "Components": [
                                                     {
                                                       "__type": "Sandbox.BoxCollider",
@@ -2168,6 +2165,8 @@
                                                     {
                                                       "__type": "GreaterThanNode",
                                                       "__guid": "36e16549-6f79-40a5-bed0-2d8cdf41871b",
+                                                      "Mana": 0,
+                                                      "MaxMana": 0,
                                                       "Outputs": [
                                                         {
                                                           "_type": "component",
@@ -2356,218 +2355,12 @@
                                                   ]
                                                 },
                                                 {
-                                                  "__guid": "b222a2e2-a5b8-436b-8f6b-63d341505297",
-                                                  "Flags": 0,
-                                                  "Name": "\u003C",
-                                                  "Position": "0.3460226,-2.906332,0.9664536",
-                                                  "Tags": "node",
-                                                  "Enabled": true,
-                                                  "Components": [
-                                                    {
-                                                      "__type": "Sandbox.BoxCollider",
-                                                      "__guid": "2faa149c-90b0-44d1-99f7-b2879cf686bf",
-                                                      "Center": "0,0,0",
-                                                      "IsTrigger": true,
-                                                      "Scale": "0.05,1,1",
-                                                      "Static": false
-                                                    },
-                                                    {
-                                                      "__type": "LessThanNode",
-                                                      "__guid": "a12b003c-603e-4e05-847e-f6ccdfb44efc",
-                                                      "Outputs": [
-                                                        {
-                                                          "_type": "component",
-                                                          "component_id": "7abb5c3d-62b7-414d-b087-b840514fd613",
-                                                          "go": "3920e823-6cb3-4afa-896d-bfd52d3665f4",
-                                                          "component_type": "NodeOutput"
-                                                        }
-                                                      ]
-                                                    }
-                                                  ],
-                                                  "Children": [
-                                                    {
-                                                      "__guid": "c3f8ecd3-e987-4f0e-a881-63a0aac20ab4",
-                                                      "Flags": 0,
-                                                      "Name": "Cube",
-                                                      "Position": "0,0,0",
-                                                      "Scale": "0.001,0.02,0.02",
-                                                      "Enabled": true,
-                                                      "Components": [
-                                                        {
-                                                          "__type": "Sandbox.ModelRenderer",
-                                                          "__guid": "e68f3374-23b4-4802-ae78-c033784d349b",
-                                                          "BodyGroups": 18446744073709551615,
-                                                          "Model": "models/dev/box.vmdl",
-                                                          "RenderType": "On",
-                                                          "Tint": "1,1,1,1"
-                                                        }
-                                                      ]
-                                                    },
-                                                    {
-                                                      "__guid": "913612c6-f9a7-4140-bc2e-238bf2768b25",
-                                                      "Flags": 0,
-                                                      "Name": "Text",
-                                                      "Position": "-0.02757883,0,0",
-                                                      "Scale": "0.02003517,0.02003517,0.02003517",
-                                                      "Enabled": true,
-                                                      "Components": [
-                                                        {
-                                                          "__type": "Sandbox.TextRenderer",
-                                                          "__guid": "fc80c481-e380-4310-b595-d989ea13fd1e",
-                                                          "Color": "0.45103,0.47149,0.5297,1",
-                                                          "FontFamily": "Poppins",
-                                                          "FontSize": 64,
-                                                          "FontWeight": 800,
-                                                          "Scale": 0.4,
-                                                          "Text": "\u003C",
-                                                          "TextAlignment": "Center"
-                                                        }
-                                                      ]
-                                                    },
-                                                    {
-                                                      "__guid": "81d16dac-4ed8-4a60-a842-a56d5bc8b003",
-                                                      "Flags": 0,
-                                                      "Name": "inputA",
-                                                      "Position": "0,0.2,0.5",
-                                                      "Tags": "input",
-                                                      "Enabled": true,
-                                                      "Components": [
-                                                        {
-                                                          "__type": "Sandbox.BoxCollider",
-                                                          "__guid": "23f4551d-ae15-448a-8574-12f12383dfc0",
-                                                          "Center": "0,0,0",
-                                                          "IsTrigger": true,
-                                                          "Scale": "0.1,0.1,0.1",
-                                                          "Static": false
-                                                        },
-                                                        {
-                                                          "__type": "NodeInput",
-                                                          "__guid": "582e6460-b4ab-43e0-8791-45f332c9023a",
-                                                          "AcceptedType": "Number",
-                                                          "index": 0
-                                                        }
-                                                      ],
-                                                      "Children": [
-                                                        {
-                                                          "__guid": "ae433922-f94c-482d-9ad1-0af5c2285c25",
-                                                          "Flags": 0,
-                                                          "Name": "Cube",
-                                                          "Position": "0,0,0",
-                                                          "Scale": "0.002,0.002,0.002",
-                                                          "Enabled": true,
-                                                          "Components": [
-                                                            {
-                                                              "__type": "Sandbox.ModelRenderer",
-                                                              "__guid": "b3830a40-f928-4123-99cb-bc22c238a005",
-                                                              "BodyGroups": 18446744073709551615,
-                                                              "Model": "models/dev/box.vmdl",
-                                                              "RenderType": "On",
-                                                              "Tint": "0,1,1,1"
-                                                            }
-                                                          ]
-                                                        }
-                                                      ]
-                                                    },
-                                                    {
-                                                      "__guid": "de3c031c-0d17-4bdf-a665-506f023ed789",
-                                                      "Flags": 0,
-                                                      "Name": "inputB",
-                                                      "Position": "0,-0.2,0.5",
-                                                      "Tags": "input",
-                                                      "Enabled": true,
-                                                      "Components": [
-                                                        {
-                                                          "__type": "Sandbox.BoxCollider",
-                                                          "__guid": "67566ef3-a16e-4fd4-8277-a15946248ff1",
-                                                          "Center": "0,0,0",
-                                                          "IsTrigger": true,
-                                                          "Scale": "0.1,0.1,0.1",
-                                                          "Static": false
-                                                        },
-                                                        {
-                                                          "__type": "NodeInput",
-                                                          "__guid": "f3c6a82e-bfba-4125-805b-4b66f1e22463",
-                                                          "AcceptedType": "Number",
-                                                          "index": 1
-                                                        }
-                                                      ],
-                                                      "Children": [
-                                                        {
-                                                          "__guid": "a38c6ee7-e004-40bc-9947-62c41d02d3f5",
-                                                          "Flags": 0,
-                                                          "Name": "Cube",
-                                                          "Position": "0,0,0",
-                                                          "Scale": "0.002,0.002,0.002",
-                                                          "Enabled": true,
-                                                          "Components": [
-                                                            {
-                                                              "__type": "Sandbox.ModelRenderer",
-                                                              "__guid": "d8d06236-1bda-429d-95c9-6312d091a92d",
-                                                              "BodyGroups": 18446744073709551615,
-                                                              "Model": "models/dev/box.vmdl",
-                                                              "RenderType": "On",
-                                                              "Tint": "0,1,1,1"
-                                                            }
-                                                          ]
-                                                        }
-                                                      ]
-                                                    },
-                                                    {
-                                                      "__guid": "3920e823-6cb3-4afa-896d-bfd52d3665f4",
-                                                      "Flags": 0,
-                                                      "Name": "output",
-                                                      "Position": "0,0,-0.5",
-                                                      "Tags": "output",
-                                                      "Enabled": true,
-                                                      "Components": [
-                                                        {
-                                                          "__type": "Sandbox.BoxCollider",
-                                                          "__guid": "ab8c42e9-ad14-46bb-a914-e680d365566d",
-                                                          "Center": "0,0,0",
-                                                          "IsTrigger": true,
-                                                          "Scale": "0.1,0.1,0.1",
-                                                          "Static": false
-                                                        },
-                                                        {
-                                                          "__type": "NodeOutput",
-                                                          "__guid": "7abb5c3d-62b7-414d-b087-b840514fd613",
-                                                          "ConnectedInputs": [],
-                                                          "NeutralColour": "1,1,1,1",
-                                                          "outputType": "Normal",
-                                                          "PathDetours": [],
-                                                          "SendColour": "0,1,0,1"
-                                                        }
-                                                      ],
-                                                      "Children": [
-                                                        {
-                                                          "__guid": "fe1abd2a-ce4a-45c8-9199-2f2f11738fbb",
-                                                          "Flags": 0,
-                                                          "Name": "Cube",
-                                                          "Position": "0,0,0",
-                                                          "Scale": "0.002,0.002,0.002",
-                                                          "Enabled": true,
-                                                          "Components": [
-                                                            {
-                                                              "__type": "Sandbox.ModelRenderer",
-                                                              "__guid": "3ead658a-80ca-4c02-b945-df74f9ede906",
-                                                              "BodyGroups": 18446744073709551615,
-                                                              "Model": "models/dev/box.vmdl",
-                                                              "RenderType": "On",
-                                                              "Tint": "1,0,0,1"
-                                                            }
-                                                          ]
-                                                        }
-                                                      ]
-                                                    }
-                                                  ]
-                                                },
-                                                {
                                                   "__guid": "5045d780-5813-49aa-8734-334cc3b302e6",
                                                   "Flags": 0,
                                                   "Name": "=",
                                                   "Position": "0.3460226,-2.906332,-0.1789932",
+                                                  "Rotation": "-0.7071068,-0,0,0.7071068",
                                                   "Tags": "node",
-                                                  "Enabled": true,
                                                   "Components": [
                                                     {
                                                       "__type": "Sandbox.BoxCollider",
@@ -2580,6 +2373,8 @@
                                                     {
                                                       "__type": "EqualsNode",
                                                       "__guid": "54d53d77-2462-40f0-a745-a98d0b761acb",
+                                                      "Mana": 0,
+                                                      "MaxMana": 0,
                                                       "Outputs": [
                                                         {
                                                           "_type": "component",
@@ -2772,8 +2567,8 @@
                                                   "Flags": 0,
                                                   "Name": "!=",
                                                   "Position": "0.3460226,-2.906332,-1.324982",
+                                                  "Rotation": "-0.7071068,-0,0,0.7071068",
                                                   "Tags": "node",
-                                                  "Enabled": true,
                                                   "Components": [
                                                     {
                                                       "__type": "Sandbox.BoxCollider",
@@ -2786,6 +2581,8 @@
                                                     {
                                                       "__type": "NotEqualsNode",
                                                       "__guid": "f70564b1-88bc-4840-848f-8cd85ff6847e",
+                                                      "Mana": 0,
+                                                      "MaxMana": 0,
                                                       "Outputs": [
                                                         {
                                                           "_type": "component",
@@ -2978,8 +2775,8 @@
                                                   "Flags": 0,
                                                   "Name": "Const",
                                                   "Position": "0.3460226,-0.6247857,0.9720078",
+                                                  "Rotation": "-0.7071068,-0,0,0.7071068",
                                                   "Tags": "node",
-                                                  "Enabled": true,
                                                   "Components": [
                                                     {
                                                       "__type": "Sandbox.BoxCollider",
@@ -2992,6 +2789,8 @@
                                                     {
                                                       "__type": "ConstantNode",
                                                       "__guid": "8a3d3854-c1c0-42a2-8d0c-972cee3dd6fb",
+                                                      "Mana": 0,
+                                                      "MaxMana": 0,
                                                       "NumberInput": {
                                                         "_type": "component",
                                                         "component_id": "6c864612-99f7-404d-ae56-9421a5dc8279",
@@ -3150,10 +2949,429 @@
                                                   ]
                                                 },
                                                 {
+                                                  "__guid": "80fc74d5-dad9-407c-ab27-0a8b5c5e43e2",
+                                                  "Flags": 0,
+                                                  "Name": "FireEmitter",
+                                                  "Position": "0.3460239,3.036004,-0.3499001",
+                                                  "Rotation": "-0.7071068,0,0,0.7071068",
+                                                  "Tags": "node",
+                                                  "Enabled": true,
+                                                  "Components": [
+                                                    {
+                                                      "__type": "Sandbox.BoxCollider",
+                                                      "__guid": "f7550e39-365b-4a4b-8cea-45cfcaaa5618",
+                                                      "Center": "0,0,0",
+                                                      "IsTrigger": true,
+                                                      "Scale": "0.05,1,1",
+                                                      "Static": false
+                                                    },
+                                                    {
+                                                      "__type": "EmitterNode",
+                                                      "__guid": "dac49e33-0ede-48a3-b289-63112b3f7a44",
+                                                      "Mana": 0,
+                                                      "MaxMana": 30,
+                                                      "Outputs": [
+                                                        {
+                                                          "_type": "component",
+                                                          "component_id": "75d3f471-d44e-4ee8-9307-26526c3325f5",
+                                                          "go": "4183fe92-0df4-4a1c-8a76-6fbd55a8ecef",
+                                                          "component_type": "NodeOutput"
+                                                        }
+                                                      ]
+                                                    }
+                                                  ],
+                                                  "Children": [
+                                                    {
+                                                      "__guid": "ee674359-2a69-404c-990f-5845bf185da3",
+                                                      "Flags": 0,
+                                                      "Name": "input (1)",
+                                                      "Position": "0,-0.2,-0.5",
+                                                      "Tags": "input",
+                                                      "Enabled": true,
+                                                      "Components": [
+                                                        {
+                                                          "__type": "Sandbox.BoxCollider",
+                                                          "__guid": "64bb32b9-21cf-4b84-8257-e4f3ca478d20",
+                                                          "Center": "0,0,0",
+                                                          "IsTrigger": true,
+                                                          "Scale": "0.1,0.1,0.1",
+                                                          "Static": false
+                                                        },
+                                                        {
+                                                          "__type": "NodeInput",
+                                                          "__guid": "d1bfe146-e658-4065-ba10-671bb8bd4aa0",
+                                                          "AcceptedType": "Normal",
+                                                          "index": 0
+                                                        }
+                                                      ],
+                                                      "Children": [
+                                                        {
+                                                          "__guid": "bf265018-c221-4a08-b1c5-92fba364f0b8",
+                                                          "Flags": 0,
+                                                          "Name": "Cube",
+                                                          "Position": "0,0,0",
+                                                          "Scale": "0.002,0.002,0.002",
+                                                          "Enabled": true,
+                                                          "Components": [
+                                                            {
+                                                              "__type": "Sandbox.ModelRenderer",
+                                                              "__guid": "577cc20c-ceed-4727-9c38-0e5555759426",
+                                                              "BodyGroups": 18446744073709551615,
+                                                              "Model": "models/dev/box.vmdl",
+                                                              "RenderType": "On",
+                                                              "Tint": "0,1,0,1"
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "__guid": "64186afb-781b-4f9f-8eab-1a63f885f884",
+                                                      "Flags": 0,
+                                                      "Name": "Cube",
+                                                      "Position": "0,0,0",
+                                                      "Scale": "0.001,0.02,0.02",
+                                                      "Enabled": true,
+                                                      "Components": [
+                                                        {
+                                                          "__type": "Sandbox.ModelRenderer",
+                                                          "__guid": "1d8d4c81-35b5-41a1-83c4-fa75d6c42272",
+                                                          "BodyGroups": 18446744073709551615,
+                                                          "Model": "models/dev/box.vmdl",
+                                                          "RenderType": "On",
+                                                          "Tint": "1,1,1,1"
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "__guid": "b380789a-0472-48d6-a6c9-904dded4131b",
+                                                      "Flags": 0,
+                                                      "Name": "Text",
+                                                      "Position": "-0.02757883,0,0",
+                                                      "Scale": "0.02003517,0.02003517,0.02003517",
+                                                      "Enabled": true,
+                                                      "Components": [
+                                                        {
+                                                          "__type": "Sandbox.TextRenderer",
+                                                          "__guid": "4b7d4b04-69fe-47c5-96ec-28a79fc0f235",
+                                                          "Color": "0.45103,0.47201,0.5297,1",
+                                                          "FontFamily": "Poppins",
+                                                          "FontSize": 64,
+                                                          "FontWeight": 800,
+                                                          "Scale": 0.26,
+                                                          "Text": "Fire",
+                                                          "TextAlignment": "Center"
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "__guid": "590afc4a-237f-43f8-8e54-a81b189f0d1d",
+                                                      "Flags": 0,
+                                                      "Name": "ManaInput",
+                                                      "Position": "-0.00002019852,0.00001012825,-0.5",
+                                                      "Tags": "input",
+                                                      "Enabled": true,
+                                                      "Components": [
+                                                        {
+                                                          "__type": "Sandbox.BoxCollider",
+                                                          "__guid": "2c23caed-eb6d-442f-bc07-7a1f78f00f67",
+                                                          "Center": "0,0,0",
+                                                          "IsTrigger": true,
+                                                          "Scale": "0.1,0.1,0.1",
+                                                          "Static": false
+                                                        },
+                                                        {
+                                                          "__type": "NodeInput",
+                                                          "__guid": "bde5befc-0125-4b90-b7e5-752759f6e30e",
+                                                          "AcceptedType": "Mana",
+                                                          "index": 0
+                                                        }
+                                                      ],
+                                                      "Children": [
+                                                        {
+                                                          "__guid": "e1d6a6c7-5b88-40bf-8515-d8c31dbae628",
+                                                          "Flags": 0,
+                                                          "Name": "Cube",
+                                                          "Position": "0,0,0",
+                                                          "Scale": "0.002,0.002,0.002",
+                                                          "Enabled": true,
+                                                          "Components": [
+                                                            {
+                                                              "__type": "Sandbox.ModelRenderer",
+                                                              "__guid": "c83c5565-7959-43ca-b960-c38f6a46eee2",
+                                                              "BodyGroups": 18446744073709551615,
+                                                              "Model": "models/dev/box.vmdl",
+                                                              "RenderType": "On",
+                                                              "Tint": "0.35294,0,0.45882,1"
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "__guid": "4183fe92-0df4-4a1c-8a76-6fbd55a8ecef",
+                                                      "Flags": 0,
+                                                      "Name": "output",
+                                                      "Position": "0,0.2,-0.5",
+                                                      "Tags": "output",
+                                                      "Enabled": true,
+                                                      "Components": [
+                                                        {
+                                                          "__type": "Sandbox.BoxCollider",
+                                                          "__guid": "7ea073e8-8121-4846-949a-20f30c2dd483",
+                                                          "Center": "0,0,0",
+                                                          "IsTrigger": true,
+                                                          "Scale": "0.1,0.1,0.1",
+                                                          "Static": false
+                                                        },
+                                                        {
+                                                          "__type": "NodeOutput",
+                                                          "__guid": "75d3f471-d44e-4ee8-9307-26526c3325f5",
+                                                          "ConnectedInputs": [],
+                                                          "NeutralColour": "0,1,1,1",
+                                                          "outputType": "Number",
+                                                          "PathDetours": [],
+                                                          "SendColour": "0,0,1,1"
+                                                        }
+                                                      ],
+                                                      "Children": [
+                                                        {
+                                                          "__guid": "6f055228-4280-46ef-a91f-4feeb3946c14",
+                                                          "Flags": 0,
+                                                          "Name": "Cube",
+                                                          "Position": "0,0,0",
+                                                          "Scale": "0.002,0.002,0.002",
+                                                          "Enabled": true,
+                                                          "Components": [
+                                                            {
+                                                              "__type": "Sandbox.ModelRenderer",
+                                                              "__guid": "eb18f9f6-3479-4634-a649-fe28b667575c",
+                                                              "BodyGroups": 18446744073709551615,
+                                                              "Model": "models/dev/box.vmdl",
+                                                              "RenderType": "On",
+                                                              "Tint": "0,0,1,1"
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "__guid": "b222a2e2-a5b8-436b-8f6b-63d341505297",
+                                                  "Flags": 0,
+                                                  "Name": "\u003C",
+                                                  "Position": "0.3460226,-2.906332,0.9664536",
+                                                  "Rotation": "-0.7071068,-0,0,0.7071068",
+                                                  "Tags": "node",
+                                                  "Enabled": true,
+                                                  "Components": [
+                                                    {
+                                                      "__type": "Sandbox.BoxCollider",
+                                                      "__guid": "2faa149c-90b0-44d1-99f7-b2879cf686bf",
+                                                      "Center": "0,0,0",
+                                                      "IsTrigger": true,
+                                                      "Scale": "0.05,1,1",
+                                                      "Static": false
+                                                    },
+                                                    {
+                                                      "__type": "LessThanNode",
+                                                      "__guid": "a12b003c-603e-4e05-847e-f6ccdfb44efc",
+                                                      "Mana": 0,
+                                                      "MaxMana": 0,
+                                                      "Outputs": [
+                                                        {
+                                                          "_type": "component",
+                                                          "component_id": "7abb5c3d-62b7-414d-b087-b840514fd613",
+                                                          "go": "3920e823-6cb3-4afa-896d-bfd52d3665f4",
+                                                          "component_type": "NodeOutput"
+                                                        }
+                                                      ]
+                                                    }
+                                                  ],
+                                                  "Children": [
+                                                    {
+                                                      "__guid": "c3f8ecd3-e987-4f0e-a881-63a0aac20ab4",
+                                                      "Flags": 0,
+                                                      "Name": "Cube",
+                                                      "Position": "0,0,0",
+                                                      "Scale": "0.001,0.02,0.02",
+                                                      "Enabled": true,
+                                                      "Components": [
+                                                        {
+                                                          "__type": "Sandbox.ModelRenderer",
+                                                          "__guid": "e68f3374-23b4-4802-ae78-c033784d349b",
+                                                          "BodyGroups": 18446744073709551615,
+                                                          "Model": "models/dev/box.vmdl",
+                                                          "RenderType": "On",
+                                                          "Tint": "1,1,1,1"
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "__guid": "913612c6-f9a7-4140-bc2e-238bf2768b25",
+                                                      "Flags": 0,
+                                                      "Name": "Text",
+                                                      "Position": "-0.02757883,0,0",
+                                                      "Scale": "0.02003517,0.02003517,0.02003517",
+                                                      "Enabled": true,
+                                                      "Components": [
+                                                        {
+                                                          "__type": "Sandbox.TextRenderer",
+                                                          "__guid": "fc80c481-e380-4310-b595-d989ea13fd1e",
+                                                          "Color": "0.45103,0.47149,0.5297,1",
+                                                          "FontFamily": "Poppins",
+                                                          "FontSize": 64,
+                                                          "FontWeight": 800,
+                                                          "Scale": 0.4,
+                                                          "Text": "\u003C",
+                                                          "TextAlignment": "Center"
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "__guid": "81d16dac-4ed8-4a60-a842-a56d5bc8b003",
+                                                      "Flags": 0,
+                                                      "Name": "inputA",
+                                                      "Position": "0,0.2,0.5",
+                                                      "Tags": "input",
+                                                      "Enabled": true,
+                                                      "Components": [
+                                                        {
+                                                          "__type": "Sandbox.BoxCollider",
+                                                          "__guid": "23f4551d-ae15-448a-8574-12f12383dfc0",
+                                                          "Center": "0,0,0",
+                                                          "IsTrigger": true,
+                                                          "Scale": "0.1,0.1,0.1",
+                                                          "Static": false
+                                                        },
+                                                        {
+                                                          "__type": "NodeInput",
+                                                          "__guid": "582e6460-b4ab-43e0-8791-45f332c9023a",
+                                                          "AcceptedType": "Number",
+                                                          "index": 0
+                                                        }
+                                                      ],
+                                                      "Children": [
+                                                        {
+                                                          "__guid": "ae433922-f94c-482d-9ad1-0af5c2285c25",
+                                                          "Flags": 0,
+                                                          "Name": "Cube",
+                                                          "Position": "0,0,0",
+                                                          "Scale": "0.002,0.002,0.002",
+                                                          "Enabled": true,
+                                                          "Components": [
+                                                            {
+                                                              "__type": "Sandbox.ModelRenderer",
+                                                              "__guid": "b3830a40-f928-4123-99cb-bc22c238a005",
+                                                              "BodyGroups": 18446744073709551615,
+                                                              "Model": "models/dev/box.vmdl",
+                                                              "RenderType": "On",
+                                                              "Tint": "0,1,1,1"
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "__guid": "de3c031c-0d17-4bdf-a665-506f023ed789",
+                                                      "Flags": 0,
+                                                      "Name": "inputB",
+                                                      "Position": "0,-0.2,0.5",
+                                                      "Tags": "input",
+                                                      "Enabled": true,
+                                                      "Components": [
+                                                        {
+                                                          "__type": "Sandbox.BoxCollider",
+                                                          "__guid": "67566ef3-a16e-4fd4-8277-a15946248ff1",
+                                                          "Center": "0,0,0",
+                                                          "IsTrigger": true,
+                                                          "Scale": "0.1,0.1,0.1",
+                                                          "Static": false
+                                                        },
+                                                        {
+                                                          "__type": "NodeInput",
+                                                          "__guid": "f3c6a82e-bfba-4125-805b-4b66f1e22463",
+                                                          "AcceptedType": "Number",
+                                                          "index": 1
+                                                        }
+                                                      ],
+                                                      "Children": [
+                                                        {
+                                                          "__guid": "a38c6ee7-e004-40bc-9947-62c41d02d3f5",
+                                                          "Flags": 0,
+                                                          "Name": "Cube",
+                                                          "Position": "0,0,0",
+                                                          "Scale": "0.002,0.002,0.002",
+                                                          "Enabled": true,
+                                                          "Components": [
+                                                            {
+                                                              "__type": "Sandbox.ModelRenderer",
+                                                              "__guid": "d8d06236-1bda-429d-95c9-6312d091a92d",
+                                                              "BodyGroups": 18446744073709551615,
+                                                              "Model": "models/dev/box.vmdl",
+                                                              "RenderType": "On",
+                                                              "Tint": "0,1,1,1"
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "__guid": "3920e823-6cb3-4afa-896d-bfd52d3665f4",
+                                                      "Flags": 0,
+                                                      "Name": "output",
+                                                      "Position": "0,0,-0.5",
+                                                      "Tags": "output",
+                                                      "Enabled": true,
+                                                      "Components": [
+                                                        {
+                                                          "__type": "Sandbox.BoxCollider",
+                                                          "__guid": "ab8c42e9-ad14-46bb-a914-e680d365566d",
+                                                          "Center": "0,0,0",
+                                                          "IsTrigger": true,
+                                                          "Scale": "0.1,0.1,0.1",
+                                                          "Static": false
+                                                        },
+                                                        {
+                                                          "__type": "NodeOutput",
+                                                          "__guid": "7abb5c3d-62b7-414d-b087-b840514fd613",
+                                                          "ConnectedInputs": [],
+                                                          "NeutralColour": "1,1,1,1",
+                                                          "outputType": "Normal",
+                                                          "PathDetours": [],
+                                                          "SendColour": "0,1,0,1"
+                                                        }
+                                                      ],
+                                                      "Children": [
+                                                        {
+                                                          "__guid": "fe1abd2a-ce4a-45c8-9199-2f2f11738fbb",
+                                                          "Flags": 0,
+                                                          "Name": "Cube",
+                                                          "Position": "0,0,0",
+                                                          "Scale": "0.002,0.002,0.002",
+                                                          "Enabled": true,
+                                                          "Components": [
+                                                            {
+                                                              "__type": "Sandbox.ModelRenderer",
+                                                              "__guid": "3ead658a-80ca-4c02-b945-df74f9ede906",
+                                                              "BodyGroups": 18446744073709551615,
+                                                              "Model": "models/dev/box.vmdl",
+                                                              "RenderType": "On",
+                                                              "Tint": "1,0,0,1"
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                },
+                                                {
                                                   "__guid": "1205ffc9-050c-44af-9de7-3d717fb896b3",
                                                   "Flags": 0,
                                                   "Name": "Const",
                                                   "Position": "0.3460226,-1.844795,0.9720078",
+                                                  "Rotation": "-0.7071068,-0,0,0.7071068",
                                                   "Tags": "node",
                                                   "Enabled": true,
                                                   "Components": [
@@ -3168,6 +3386,8 @@
                                                     {
                                                       "__type": "ConstantNode",
                                                       "__guid": "3f0fcaeb-4568-40a0-a64b-3e8a3340bc09",
+                                                      "Mana": 0,
+                                                      "MaxMana": 0,
                                                       "NumberInput": {
                                                         "_type": "component",
                                                         "component_id": "0675bc7e-14c9-4368-a340-974abf7bed34",
@@ -3324,6 +3544,128 @@
                                                       ]
                                                     }
                                                   ]
+                                                },
+                                                {
+                                                  "__guid": "b8cafdf1-53b1-4839-a895-89f5b796409f",
+                                                  "Flags": 0,
+                                                  "Name": "Generator",
+                                                  "Position": "0.34601,-1.844771,0.1169693",
+                                                  "Rotation": "0.7071068,-0.0000000000000008881784,-0.00000002980232,0.7071068",
+                                                  "Tags": "node",
+                                                  "Enabled": true,
+                                                  "Components": [
+                                                    {
+                                                      "__type": "Sandbox.BoxCollider",
+                                                      "__guid": "bbef885b-9220-4f3f-9a74-b6cfcca57f0e",
+                                                      "Center": "0,0,0",
+                                                      "IsTrigger": true,
+                                                      "Scale": "0.05,1,1",
+                                                      "Static": false
+                                                    },
+                                                    {
+                                                      "__type": "GeneratorNode",
+                                                      "__guid": "f012ebf7-51dc-4c60-954c-b0e8347c1413",
+                                                      "Mana": 0,
+                                                      "MaxMana": 0,
+                                                      "Outputs": [
+                                                        {
+                                                          "_type": "component",
+                                                          "component_id": "90d8cf65-c97a-4a92-8cdb-98110c05a7cd",
+                                                          "go": "8b278146-4cb0-4980-9b04-f2e830483ba0",
+                                                          "component_type": "NodeOutput"
+                                                        }
+                                                      ],
+                                                      "Rate": 9
+                                                    }
+                                                  ],
+                                                  "Children": [
+                                                    {
+                                                      "__guid": "93db2ddd-c0ce-4cab-83e4-82c16216bfbb",
+                                                      "Flags": 0,
+                                                      "Name": "Cube",
+                                                      "Position": "0,0,0",
+                                                      "Scale": "0.001,0.02,0.02",
+                                                      "Enabled": true,
+                                                      "Components": [
+                                                        {
+                                                          "__type": "Sandbox.ModelRenderer",
+                                                          "__guid": "8acb56de-589a-468a-a9ad-54a80e48fcec",
+                                                          "BodyGroups": 18446744073709551615,
+                                                          "Model": "models/dev/box.vmdl",
+                                                          "RenderType": "On",
+                                                          "Tint": "1,1,1,1"
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "__guid": "c789926e-b572-4286-9a8c-8ce441f5c2f7",
+                                                      "Flags": 0,
+                                                      "Name": "Text",
+                                                      "Position": "-0.02757883,0,0",
+                                                      "Scale": "0.02003517,0.02003517,0.02003517",
+                                                      "Enabled": true,
+                                                      "Components": [
+                                                        {
+                                                          "__type": "Sandbox.TextRenderer",
+                                                          "__guid": "af2c23b3-4127-42f0-991e-b544458c978d",
+                                                          "Color": "0.45103,0.47149,0.5297,1",
+                                                          "FontFamily": "Poppins",
+                                                          "FontSize": 64,
+                                                          "FontWeight": 800,
+                                                          "Scale": 0.28,
+                                                          "Text": "Gen\n",
+                                                          "TextAlignment": "Center"
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "__guid": "8b278146-4cb0-4980-9b04-f2e830483ba0",
+                                                      "Flags": 0,
+                                                      "Name": "output",
+                                                      "Position": "0,0,-0.5",
+                                                      "Tags": "output",
+                                                      "Enabled": true,
+                                                      "Components": [
+                                                        {
+                                                          "__type": "Sandbox.BoxCollider",
+                                                          "__guid": "08289a6c-46dc-4de3-af3f-15dd43f51035",
+                                                          "Center": "0,0,0",
+                                                          "IsTrigger": true,
+                                                          "Scale": "0.1,0.1,0.1",
+                                                          "Static": false
+                                                        },
+                                                        {
+                                                          "__type": "NodeOutput",
+                                                          "__guid": "90d8cf65-c97a-4a92-8cdb-98110c05a7cd",
+                                                          "ConnectedInputs": [],
+                                                          "NeutralColour": "0,1,1,1",
+                                                          "outputType": "Mana",
+                                                          "PathDetours": [],
+                                                          "SendColour": "0,0,1,1"
+                                                        }
+                                                      ],
+                                                      "Children": [
+                                                        {
+                                                          "__guid": "f17e3857-37a8-4df6-bd4f-e0177c34524d",
+                                                          "Flags": 0,
+                                                          "Name": "Cube",
+                                                          "Position": "0,0,0",
+                                                          "Scale": "0.002,0.002,0.002",
+                                                          "Enabled": true,
+                                                          "Components": [
+                                                            {
+                                                              "__type": "Sandbox.ModelRenderer",
+                                                              "__guid": "37bf2753-f46c-46ee-9720-cedd4c9bd416",
+                                                              "BodyGroups": 18446744073709551615,
+                                                              "Model": "models/dev/box.vmdl",
+                                                              "RenderType": "On",
+                                                              "Tint": "0.61569,0,1,1"
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
                                                 }
                                               ]
                                             }
@@ -3445,14 +3787,15 @@
             {
               "__guid": "13dc5eb4-0b59-4b14-a6a1-e61c228d06dc",
               "Flags": 0,
-              "Name": "Object",
-              "Position": "74.14911,-23.957,21.909",
+              "Name": "DefaultPos",
+              "Position": "167.7538,0,21.909",
               "Scale": "0.02,0.02,0.02",
               "Enabled": true,
               "Components": [
                 {
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "979edf00-c6d3-444c-83ba-ca8f6683d607",
+                  "__enabled": false,
                   "BodyGroups": 18446744073709551615,
                   "RenderType": "On",
                   "Tint": "1,1,1,1"

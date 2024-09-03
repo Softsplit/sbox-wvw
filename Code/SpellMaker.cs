@@ -19,7 +19,7 @@ public sealed class SpellMaker : Component
 
 	private List<Vector3> _temporaryDetours = new();
 
-	protected override void OnUpdate()
+	protected override void OnPreRender()
 	{
 
 		if(Input.UsingController)
@@ -172,7 +172,7 @@ public sealed class SpellMaker : Component
 				}
 			}
 
-			_temporaryDetours.Add( projectedPosition );
+			_temporaryDetours.Add( CurrentOutput.Transform.World.PointToLocal(projectedPosition) );
 		}
 	}
 

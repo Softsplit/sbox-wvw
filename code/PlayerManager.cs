@@ -5,6 +5,7 @@ public sealed class PlayerManager : Component
 	[Property] public GameObject Camera {get;set;}
 	[Property] public GameObject ThirdPersonCam {get;set;}
 	[Property] public GameObject SpellCam {get;set;}
+	[Property] public GameObject DefaultLookPos {get;set;}
 	[Property] public float TransitionSpeed {get;set;} = 10f;
 	[Property] public bool InSpell {get;set;}
 	bool Transitioning;
@@ -45,8 +46,15 @@ public sealed class PlayerManager : Component
 			TargetRot = ThirdPersonCam.Transform.Rotation;
 			if(lastInSpell)
 				Transitioning = true;
-			
-				
+			var ray = Scene.Trace.Ray(Scene.Camera.Transform.Position,Scene.Camera.Transform.Position+Scene.Camera.Transform.World.Forward*1024).Run();
+			if(ray.Hit)
+			{
+				WizardAnimator.LookPos = ray.HitPosition;
+				DefaultLookPos.Transform.Position = ray.HitPosition;
+			}
+			else WizardAnimator.LookPos = DefaultLookPos.Transform.Position;
+
+			Gizmo.Draw.SolidSphere(WizardAnimator.LookPos,1);
 		}
 
 		if(!Transitioning)
@@ -63,6 +71,9 @@ public sealed class PlayerManager : Component
 		}
 		
 		lastInSpell = InSpell;
+
+		
 	}
+	
 	bool lastInSpell;
 }
