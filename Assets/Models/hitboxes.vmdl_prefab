@@ -1,0 +1,137 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc29:version{3cec427c-1b0e-4d48-a90a-0436f33a6041} -->
+{
+	rootNode = 
+	{
+		_class = "RootNode"
+		children = 
+		[
+			{
+				_class = "HitboxSetList"
+				children = 
+				[
+					{
+						_class = "HitboxSet"
+						name = "default"
+						children = 
+						[
+							{
+								_class = "HitboxCapsule"
+								parent_bone = "Head"
+								surface_property = "flesh"
+								translation_only = false
+								tags = "3"
+								radius = 3.84
+								point0 = [ 0.0, 5.376, 0.48 ]
+								point1 = [ -0.384, 0.896, 3.04 ]
+							},
+							{
+								_class = "HitboxCapsule"
+								parent_bone = "LeftArm"
+								surface_property = "flesh"
+								translation_only = false
+								tags = "1"
+								radius = 2.56
+								point0 = [ 0.0, 1.6, 0.0 ]
+								point1 = [ 0.0, 8.96, 0.0 ]
+							},
+							{
+								_class = "HitboxCapsule"
+								parent_bone = "LeftForeArm"
+								surface_property = "flesh"
+								translation_only = false
+								tags = "0.5"
+								radius = 1.92
+								point0 = [ 0.0, 0.0, 0.0 ]
+								point1 = [ 0.0, 12.8, 0.0 ]
+							},
+							{
+								_class = "HitboxCapsule"
+								parent_bone = "LeftUpLeg"
+								surface_property = "flesh"
+								translation_only = false
+								tags = "1"
+								radius = 3.2
+								point0 = [ 0.0, 0.0, 0.0 ]
+								point1 = [ 0.0, 14.72, 0.0 ]
+							},
+							{
+								_class = "HitboxCapsule"
+								parent_bone = "LeftLeg"
+								surface_property = "flesh"
+								translation_only = false
+								tags = "1"
+								radius = 2.24
+								point0 = [ 0.0, 0.0, 0.0 ]
+								point1 = [ 0.0, 16.959999, 0.0 ]
+							},
+							{
+								_class = "HitboxCapsule"
+								parent_bone = "RightArm"
+								surface_property = "flesh"
+								translation_only = false
+								tags = "1"
+								radius = 2.56
+								point0 = [ 0.0, 1.6, 0.0 ]
+								point1 = [ 0.0, 8.96, 0.0 ]
+							},
+							{
+								_class = "HitboxCapsule"
+								parent_bone = "RightForeArm"
+								surface_property = "flesh"
+								translation_only = false
+								tags = "0.5"
+								radius = 1.92
+								point0 = [ 0.0, 0.0, 0.0 ]
+								point1 = [ 0.0, 12.8, 0.0 ]
+							},
+							{
+								_class = "HitboxCapsule"
+								parent_bone = "RightUpLeg"
+								surface_property = "flesh"
+								translation_only = false
+								tags = "1"
+								radius = 3.2
+								point0 = [ 0.0, 0.0, 0.0 ]
+								point1 = [ 0.0, 14.72, 0.0 ]
+							},
+							{
+								_class = "HitboxCapsule"
+								parent_bone = "RightLeg"
+								surface_property = "flesh"
+								translation_only = false
+								tags = "balls"
+								radius = 2.24
+								point0 = [ 0.0, 0.0, 0.0 ]
+								point1 = [ 0.0, 16.959999, 0.0 ]
+							},
+							{
+								_class = "HitboxCapsule"
+								parent_bone = "Spine2"
+								surface_property = "flesh"
+								translation_only = false
+								tags = "1"
+								radius = 6.246084
+								point0 = [ -2.0, 1.0, 0.0 ]
+								point1 = [ 2.0, 1.0, 0.0 ]
+							},
+							{
+								_class = "HitboxCapsule"
+								parent_bone = "Hips"
+								surface_property = "flesh"
+								translation_only = false
+								tags = "1"
+								radius = 5.0
+								point0 = [ -2.0, 3.0, -1.0 ]
+								point1 = [ 2.0, 3.0, -1.0 ]
+							},
+						]
+					},
+				]
+			},
+		]
+		model_archetype = ""
+		primary_associated_entity = ""
+		anim_graph_name = ""
+		base_model_name = ""
+	}
+}

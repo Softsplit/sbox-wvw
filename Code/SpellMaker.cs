@@ -147,6 +147,7 @@ public sealed class SpellMaker : Component
 		if ( Input.Down( "attack2" ) )
 		{
 			CurrentInteractionState = InteractionState.Finding;
+			_temporaryDetours = new List<Vector3>();
 			return;
 		}
 
@@ -228,7 +229,6 @@ public sealed class SpellMaker : Component
 		{
 			if(CurrentNumberInput.TextRenderer.Text.Length > 0)
 				CurrentNumberInput.TextRenderer.Text = CurrentNumberInput.TextRenderer.Text.Remove(CurrentNumberInput.TextRenderer.Text.Length-1);
-			Log.Info("balls");
 			return;
 		}
 
