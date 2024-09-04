@@ -2,9 +2,7 @@
   "RootObject": {
     "__guid": "b222a2e2-a5b8-436b-8f6b-63d341505297",
     "Flags": 0,
-    "Name": "LessThan",
-    "Position": "0,-2.906332,0",
-    "Rotation": "-0.7071068,-0,0,0.7071068",
+    "Name": "lessthan",
     "Tags": "node",
     "Enabled": true,
     "Components": [
@@ -19,6 +17,7 @@
       {
         "__type": "LessThanNode",
         "__guid": "a12b003c-603e-4e05-847e-f6ccdfb44efc",
+        "Cost": 10,
         "Mana": 0,
         "MaxMana": 0,
         "Outputs": [
@@ -36,7 +35,6 @@
         "__guid": "c3f8ecd3-e987-4f0e-a881-63a0aac20ab4",
         "Flags": 0,
         "Name": "Cube",
-        "Position": "0,0,0",
         "Scale": "0.001,0.02,0.02",
         "Enabled": true,
         "Components": [
@@ -206,7 +204,8 @@
           }
         ]
       }
-    ]
+    ],
+    "__variables": []
   },
   "ShowInMenu": false,
   "MenuPath": null,

@@ -2,9 +2,7 @@
   "RootObject": {
     "__guid": "6d4dcb7b-932f-4d26-9da9-1512f063cc86",
     "Flags": 0,
-    "Name": "And",
-    "Position": "0,0.5151292,0",
-    "Rotation": "-0.7071068,-0,0,0.7071068",
+    "Name": "and",
     "Tags": "node",
     "Enabled": true,
     "Components": [
@@ -19,6 +17,7 @@
       {
         "__type": "AndNode",
         "__guid": "e5452b66-c7a4-42ce-9616-fd375b7abd96",
+        "Cost": 10,
         "Mana": 0,
         "MaxMana": 0,
         "Outputs": [
@@ -36,7 +35,6 @@
         "__guid": "0e158e57-dd52-4923-95b3-d8a0ad66cf74",
         "Flags": 0,
         "Name": "Cube",
-        "Position": "0,0,0",
         "Scale": "0.001,0.02,0.02",
         "Enabled": true,
         "Components": [
@@ -206,7 +204,8 @@
           }
         ]
       }
-    ]
+    ],
+    "__variables": []
   },
   "ShowInMenu": false,
   "MenuPath": null,

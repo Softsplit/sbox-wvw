@@ -2,9 +2,7 @@
   "RootObject": {
     "__guid": "b5c186b4-3940-473c-a879-693849070b0a",
     "Flags": 0,
-    "Name": "Flipper",
-    "Position": "0,-0.6280096,0",
-    "Rotation": "-0.7071068,-0,0,0.7071068",
+    "Name": "flipper",
     "Tags": "node",
     "Enabled": true,
     "Components": [
@@ -19,6 +17,7 @@
       {
         "__type": "FlipperNode",
         "__guid": "a4bae654-a87f-4460-b1ec-7b65b39def7f",
+        "Cost": 10,
         "Mana": 0,
         "MaxMana": 0,
         "OffColour": "1,0,0,1",
@@ -63,7 +62,6 @@
         "__guid": "75739d35-7918-4f9a-9dcc-4a76b4284f06",
         "Flags": 0,
         "Name": "Cube",
-        "Position": "0,0,0",
         "Scale": "0.001,0.02,0.02",
         "Enabled": true,
         "Components": [
@@ -189,7 +187,8 @@
           }
         ]
       }
-    ]
+    ],
+    "__variables": []
   },
   "ShowInMenu": false,
   "MenuPath": null,

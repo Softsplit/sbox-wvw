@@ -17,6 +17,7 @@
       {
         "__type": "DelayNode",
         "__guid": "031311cc-8ab0-45f9-9969-c038168c3b5a",
+        "Cost": 10,
         "Mana": 0,
         "MaxMana": 0,
         "NumberInput": {

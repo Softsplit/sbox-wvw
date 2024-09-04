@@ -2,9 +2,7 @@
   "RootObject": {
     "__guid": "269c2b25-9613-43d5-8a64-dde2fcf7bf51",
     "Flags": 0,
-    "Name": "NotEqual",
-    "Position": "0,-2.906332,0",
-    "Rotation": "-0.7071068,-0,0,0.7071068",
+    "Name": "notequal",
     "Tags": "node",
     "Enabled": true,
     "Components": [
@@ -19,6 +17,7 @@
       {
         "__type": "NotEqualsNode",
         "__guid": "f70564b1-88bc-4840-848f-8cd85ff6847e",
+        "Cost": 10,
         "Mana": 0,
         "MaxMana": 0,
         "Outputs": [
@@ -36,7 +35,6 @@
         "__guid": "f75f8e7e-0a92-4281-8ab1-2680ebfe75ad",
         "Flags": 0,
         "Name": "Cube",
-        "Position": "0,0,0",
         "Scale": "0.001,0.02,0.02",
         "Enabled": true,
         "Components": [
@@ -206,7 +204,8 @@
           }
         ]
       }
-    ]
+    ],
+    "__variables": []
   },
   "ShowInMenu": false,
   "MenuPath": null,

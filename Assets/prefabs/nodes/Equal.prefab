@@ -2,9 +2,7 @@
   "RootObject": {
     "__guid": "5045d780-5813-49aa-8734-334cc3b302e6",
     "Flags": 0,
-    "Name": "Equal",
-    "Position": "0,-2.906332,0",
-    "Rotation": "-0.7071068,-0,0,0.7071068",
+    "Name": "equal",
     "Tags": "node",
     "Enabled": true,
     "Components": [
@@ -19,6 +17,7 @@
       {
         "__type": "EqualsNode",
         "__guid": "54d53d77-2462-40f0-a745-a98d0b761acb",
+        "Cost": 10,
         "Mana": 0,
         "MaxMana": 0,
         "Outputs": [
@@ -36,7 +35,6 @@
         "__guid": "cf290de7-6489-4d7a-924e-edcda77df38e",
         "Flags": 0,
         "Name": "Cube",
-        "Position": "0,0,0",
         "Scale": "0.001,0.02,0.02",
         "Enabled": true,
         "Components": [
@@ -206,7 +204,8 @@
           }
         ]
       }
-    ]
+    ],
+    "__variables": []
   },
   "ShowInMenu": false,
   "MenuPath": null,

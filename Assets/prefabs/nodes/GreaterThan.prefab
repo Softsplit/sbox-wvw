@@ -2,9 +2,7 @@
   "RootObject": {
     "__guid": "617bdfc2-491d-452e-8e94-88ba0b89fd4c",
     "Flags": 0,
-    "Name": "GreaterThan",
-    "Position": "0,0.4637787,0",
-    "Rotation": "-0.7071068,-0,0,0.7071068",
+    "Name": "greaterthan",
     "Tags": "node",
     "Enabled": true,
     "Components": [
@@ -19,6 +17,7 @@
       {
         "__type": "GreaterThanNode",
         "__guid": "36e16549-6f79-40a5-bed0-2d8cdf41871b",
+        "Cost": 10,
         "Mana": 0,
         "MaxMana": 0,
         "Outputs": [
@@ -36,7 +35,6 @@
         "__guid": "9d95eae3-89bd-499a-b438-acf5d4714ca2",
         "Flags": 0,
         "Name": "Cube",
-        "Position": "0,0,0",
         "Scale": "0.001,0.02,0.02",
         "Enabled": true,
         "Components": [
@@ -206,7 +204,8 @@
           }
         ]
       }
-    ]
+    ],
+    "__variables": []
   },
   "ShowInMenu": false,
   "MenuPath": null,

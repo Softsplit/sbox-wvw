@@ -2,9 +2,7 @@
   "RootObject": {
     "__guid": "22087767-0bb9-4059-a5ef-64a5c0e13e3c",
     "Flags": 0,
-    "Name": "Attack2Out",
-    "Position": "0,-0.6398134,0",
-    "Rotation": "-0.7071068,-0,0,0.7071068",
+    "Name": "attack2out",
     "Tags": "node",
     "Enabled": true,
     "Components": [
@@ -19,6 +17,7 @@
       {
         "__type": "TestOutputNode",
         "__guid": "3244cd9d-978b-4cca-8344-b58e271dbaa3",
+        "Cost": 10,
         "Key": "Attack2",
         "Mana": 0,
         "MaxMana": 0,
@@ -43,7 +42,6 @@
         "__guid": "3aeb819f-f1a5-4a5f-95a0-b56088ef6a86",
         "Flags": 0,
         "Name": "Cube",
-        "Position": "0,0,0",
         "Scale": "0.001,0.02,0.02",
         "Enabled": true,
         "Components": [
@@ -158,7 +156,8 @@
           }
         ]
       }
-    ]
+    ],
+    "__variables": []
   },
   "ShowInMenu": false,
   "MenuPath": null,

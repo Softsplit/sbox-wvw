@@ -1,6 +1,5 @@
 using System;
-using System.Globalization;
-using System.IO;
+using System.Text.Json;
 using System.Text.RegularExpressions;
 
 public sealed class SpellMaker : Component
@@ -24,19 +23,34 @@ public sealed class SpellMaker : Component
 	private List<Vector3> _temporaryDetours = new();
 
 	public const string PrefabDir = "prefabs/nodes";
-	public static (List<string> paths, List<string> names) GetPrefabs()
+	public static (List<string> paths, List<string> names, List<float> prices) GetPrefabs()
 	{
 
 		List<string> paths = FileSystem.Mounted.FindFile(PrefabDir, "*.prefab").ToList(); 
 		List<string> names = new List<string>();
+		List<float> prices = new List<float>();
 
 		foreach(string p in paths)
 		{
 			string name = p.Replace(".prefab","");
 			names.Add(ToFriendlyCase(name));
+			PrefabFile prefabFile = ResourceLibrary.Get<PrefabFile>($"{PrefabDir}/{p}");
+			JsonDocument doc = JsonDocument.Parse(prefabFile.RootObject.ToJsonString());
+			JsonElement root = doc.RootElement;
+			foreach (JsonElement component in root.GetProperty("Components").EnumerateArray())
+			{
+				if (component.TryGetProperty("__type", out JsonElement typeElement) && typeElement.GetString().Contains("Node"))
+				{
+					if (component.TryGetProperty("Cost", out JsonElement priceElement))
+					{
+						prices.Add((float)priceElement.GetDecimal());
+					}
+					break;
+				}
+			}
 		}
 
-		return(paths,names);
+		return(paths,names,prices);
 	}
 
 	public static string ToFriendlyCase(string PascalString)

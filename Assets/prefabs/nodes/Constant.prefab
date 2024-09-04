@@ -2,9 +2,7 @@
   "RootObject": {
     "__guid": "1205ffc9-050c-44af-9de7-3d717fb896b3",
     "Flags": 0,
-    "Name": "Constant",
-    "Position": "-0.00001461804,-1.844769,-1.339858",
-    "Rotation": "-0.7071068,-0,0,0.7071068",
+    "Name": "constant",
     "Tags": "node",
     "Enabled": true,
     "Components": [
@@ -19,6 +17,7 @@
       {
         "__type": "ConstantNode",
         "__guid": "3f0fcaeb-4568-40a0-a64b-3e8a3340bc09",
+        "Cost": 10,
         "Mana": 0,
         "MaxMana": 0,
         "NumberInput": {
@@ -42,7 +41,6 @@
         "__guid": "c4b26d8e-198b-4f53-aca9-0c0422abe29b",
         "Flags": 0,
         "Name": "Cube",
-        "Position": "0,0,0",
         "Scale": "0.001,0.02,0.02",
         "Enabled": true,
         "Components": [
@@ -176,7 +174,8 @@
           }
         ]
       }
-    ]
+    ],
+    "__variables": []
   },
   "ShowInMenu": false,
   "MenuPath": null,

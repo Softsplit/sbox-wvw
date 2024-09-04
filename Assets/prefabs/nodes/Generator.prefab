@@ -2,9 +2,7 @@
   "RootObject": {
     "__guid": "b8cafdf1-53b1-4839-a895-89f5b796409f",
     "Flags": 0,
-    "Name": "Generator",
-    "Position": "0,-1.844795,0",
-    "Rotation": "0.7071068,-0.0000000000000008881784,-0.00000002980232,0.7071068",
+    "Name": "generator",
     "Tags": "node",
     "Enabled": true,
     "Components": [
@@ -19,6 +17,7 @@
       {
         "__type": "GeneratorNode",
         "__guid": "f012ebf7-51dc-4c60-954c-b0e8347c1413",
+        "Cost": 10,
         "Mana": 0,
         "MaxMana": 0,
         "Outputs": [
@@ -37,7 +36,6 @@
         "__guid": "93db2ddd-c0ce-4cab-83e4-82c16216bfbb",
         "Flags": 0,
         "Name": "Cube",
-        "Position": "0,0,0",
         "Scale": "0.001,0.02,0.02",
         "Enabled": true,
         "Components": [
@@ -170,7 +168,8 @@
           }
         ]
       }
-    ]
+    ],
+    "__variables": []
   },
   "ShowInMenu": false,
   "MenuPath": null,

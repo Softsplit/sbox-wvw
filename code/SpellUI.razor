@@ -11,6 +11,9 @@
 				<div class="SpellName">
 					@names[i]
 				</div>
+				<div class="SpellPrice">
+					@prices[i]
+				</div>
 				<div class="SpellImageBox">
 					@if(FileSystem.Data.FileExists(paths[i].Replace(".prefab",".png")))
 					{
@@ -29,9 +32,10 @@
 	[Property] public SpellMaker SpellMaker { get; set; }
 	List<string> paths;
 	List<string> names;
+	List<float> prices;
 	protected override void OnStart()
 	{
-		(paths, names) = SpellMaker.GetPrefabs();
+		(paths, names, prices) = SpellMaker.GetPrefabs();
 	}
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt

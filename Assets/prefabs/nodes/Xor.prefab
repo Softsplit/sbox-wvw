@@ -2,9 +2,7 @@
   "RootObject": {
     "__guid": "894a511a-917d-49b3-bcfc-9cd61ca97f69",
     "Flags": 0,
-    "Name": "Xor",
-    "Position": "0,1.804009,0",
-    "Rotation": "-0.7071068,-0,0,0.7071068",
+    "Name": "xor",
     "Tags": "node",
     "Enabled": true,
     "Components": [
@@ -19,6 +17,7 @@
       {
         "__type": "XorNode",
         "__guid": "dd4f693f-fa05-4ab1-b9aa-789df5b5ed40",
+        "Cost": 10,
         "Mana": 0,
         "MaxMana": 0,
         "Outputs": [
@@ -36,7 +35,6 @@
         "__guid": "18573e7c-763f-4fa8-a4a2-74566cb6c3d4",
         "Flags": 0,
         "Name": "Cube",
-        "Position": "0,0,0",
         "Scale": "0.001,0.02,0.02",
         "Enabled": true,
         "Components": [
@@ -206,7 +204,8 @@
           }
         ]
       }
-    ]
+    ],
+    "__variables": []
   },
   "ShowInMenu": false,
   "MenuPath": null,

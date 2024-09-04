@@ -669,6 +669,7 @@
                                                     {
                                                       "__type": "TestOutputNode",
                                                       "__guid": "10f22d25-865a-4122-8104-6682aa3be904",
+                                                      "Cost": 10,
                                                       "Key": "Reload",
                                                       "Mana": 0,
                                                       "MaxMana": 0,
@@ -829,6 +830,7 @@
                                                     {
                                                       "__type": "TestLogNode",
                                                       "__guid": "4c3b4b39-02c0-4500-a214-f45b987421fc",
+                                                      "Cost": 10,
                                                       "LogText": "Sex",
                                                       "Mana": 0,
                                                       "MaxMana": 0,
@@ -940,6 +942,7 @@
                                                     {
                                                       "__type": "TestLogNode",
                                                       "__guid": "17f5633d-bf3e-4a45-8802-68d5ea38e46a",
+                                                      "Cost": 10,
                                                       "LogText": "Balls",
                                                       "Mana": 0,
                                                       "MaxMana": 0,

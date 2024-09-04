@@ -2,9 +2,7 @@
   "RootObject": {
     "__guid": "a873c68d-0e58-4809-84d5-0f2ceb9d4252",
     "Flags": 0,
-    "Name": "Or",
-    "Position": "0,1.804009,0",
-    "Rotation": "-0.7071068,-0,0,0.7071068",
+    "Name": "or",
     "Tags": "node",
     "Enabled": true,
     "Components": [
@@ -19,6 +17,7 @@
       {
         "__type": "OrNode",
         "__guid": "e688a400-5a55-4a51-a259-4a5969260bb7",
+        "Cost": 10,
         "Mana": 0,
         "MaxMana": 0,
         "Outputs": [
@@ -36,7 +35,6 @@
         "__guid": "e7d7cd36-35ac-490b-b403-4b14dd5c08a1",
         "Flags": 0,
         "Name": "Cube",
-        "Position": "0,0,0",
         "Scale": "0.001,0.02,0.02",
         "Enabled": true,
         "Components": [
@@ -206,7 +204,8 @@
           }
         ]
       }
-    ]
+    ],
+    "__variables": []
   },
   "ShowInMenu": false,
   "MenuPath": null,

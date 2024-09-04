@@ -5,6 +5,7 @@ public abstract class Node : Component
     [Property] public List<NodeOutput> Outputs {get;set;}
     [Property] public float Mana {get;set;}
     [Property] public float MaxMana {get;set;}
+    [Property] public float Cost {get;set;} = 10f;
     public void AddMana(Node Sender, float mana)
     {
         

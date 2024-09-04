@@ -2,9 +2,7 @@
   "RootObject": {
     "__guid": "80fc74d5-dad9-407c-ab27-0a8b5c5e43e2",
     "Flags": 0,
-    "Name": "FireEmitter",
-    "Position": "0,3.036004,0",
-    "Rotation": "-0.7071068,0,0,0.7071068",
+    "Name": "fireemitter",
     "Tags": "node",
     "Enabled": true,
     "Components": [
@@ -19,6 +17,7 @@
       {
         "__type": "EmitterNode",
         "__guid": "dac49e33-0ede-48a3-b289-63112b3f7a44",
+        "Cost": 10,
         "Mana": 0,
         "MaxMana": 30,
         "Outputs": [
@@ -103,7 +102,6 @@
         "__guid": "64186afb-781b-4f9f-8eab-1a63f885f884",
         "Flags": 0,
         "Name": "Cube",
-        "Position": "0,0,0",
         "Scale": "0.001,0.02,0.02",
         "Enabled": true,
         "Components": [
@@ -229,7 +227,8 @@
           }
         ]
       }
-    ]
+    ],
+    "__variables": []
   },
   "ShowInMenu": false,
   "MenuPath": null,
