@@ -6,6 +6,7 @@
 	<div class="SpellBox">
 		@for(int i = 0; i < paths.Count; i++)
 		{
+			int capture = i;
 			<div class="Spell">
 				<div class="SpellName">
 					@names[i]
@@ -15,7 +16,7 @@
 					{
 						<img src=@(paths[i].Replace(".prefab",".png")) class="SpellImage" />
 					}
-					<div class="SpellImage">NO IMAGE</div>
+					<div class="SpellImage" onclick=@(() => SpellMaker.CreateSpell(paths[capture]))>NO IMAGE</div>
 				</div>
 			</div>
 		}

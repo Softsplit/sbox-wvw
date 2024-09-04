@@ -13,12 +13,14 @@ public sealed class PlayerManager : Component
 	bool Transitioning;
 	public PlayerController playerController;
 	WizardAnimator WizardAnimator;
-	[Property] SpellMaker SpellMaker {get;set;}
+	SpellMaker SpellMaker;
+	SpellUI SpellUI;
 	protected override void OnStart()
 	{
 		playerController = Components.Get<PlayerController>(true);
 		WizardAnimator = Components.GetInChildrenOrSelf<WizardAnimator>(true);
 		SpellMaker = Components.GetInDescendants<SpellMaker>(true);
+		SpellUI = Components.Get<SpellUI>(true);
 	}
 	protected override void OnPreRender()
 	{
@@ -26,6 +28,7 @@ public sealed class PlayerManager : Component
 		Rotation TargetRot = Rotation.Identity;
 		playerController.Enabled = !InSpell;
 		SpellMaker.Enabled = InSpell && !Transitioning;
+		SpellUI.Enabled = SpellMaker.Enabled;
 		WizardAnimator.SettingSpell = InSpell;
 		Mouse.Visible = InSpell;
 		if(Input.Pressed("Score") && playerController.IsOnGround)

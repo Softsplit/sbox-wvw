@@ -1,0 +1,217 @@
+{
+  "RootObject": {
+    "__guid": "269c2b25-9613-43d5-8a64-dde2fcf7bf51",
+    "Flags": 0,
+    "Name": "NotEqual",
+    "Position": "0,-2.906332,0",
+    "Rotation": "-0.7071068,-0,0,0.7071068",
+    "Tags": "node",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "Sandbox.BoxCollider",
+        "__guid": "82e08500-fe10-4d56-a367-4be4f46a160f",
+        "Center": "0,0,0",
+        "IsTrigger": true,
+        "Scale": "0.05,1,1",
+        "Static": false
+      },
+      {
+        "__type": "NotEqualsNode",
+        "__guid": "f70564b1-88bc-4840-848f-8cd85ff6847e",
+        "Mana": 0,
+        "MaxMana": 0,
+        "Outputs": [
+          {
+            "_type": "component",
+            "component_id": "ff17cb83-e781-4462-87c2-96239a6be8b8",
+            "go": "55360d53-7af6-4a06-92ec-224b116ab0be",
+            "component_type": "NodeOutput"
+          }
+        ]
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "f75f8e7e-0a92-4281-8ab1-2680ebfe75ad",
+        "Flags": 0,
+        "Name": "Cube",
+        "Position": "0,0,0",
+        "Scale": "0.001,0.02,0.02",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "44075540-9000-4750-8a94-0a094a761e59",
+            "BodyGroups": 18446744073709551615,
+            "Model": "models/dev/box.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      },
+      {
+        "__guid": "3728e03b-990e-4ebf-b5ed-339d9cecf4e2",
+        "Flags": 0,
+        "Name": "Text",
+        "Position": "-0.02757883,0,0",
+        "Scale": "0.02003517,0.02003517,0.02003517",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.TextRenderer",
+            "__guid": "3e45ee80-1b3f-4d24-939c-f3f07195ae1d",
+            "Color": "0.45103,0.47149,0.5297,1",
+            "FontFamily": "Poppins",
+            "FontSize": 64,
+            "FontWeight": 800,
+            "Scale": 0.4,
+            "Text": "!=",
+            "TextAlignment": "Center"
+          }
+        ]
+      },
+      {
+        "__guid": "7697c1e3-28a8-4607-a8be-9d8544df6ac7",
+        "Flags": 0,
+        "Name": "inputA",
+        "Position": "0,0.2,0.5",
+        "Tags": "input",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.BoxCollider",
+            "__guid": "09e18540-b2f9-4921-8781-26e8fc5cdf07",
+            "Center": "0,0,0",
+            "IsTrigger": true,
+            "Scale": "0.1,0.1,0.1",
+            "Static": false
+          },
+          {
+            "__type": "NodeInput",
+            "__guid": "7947393b-c843-4d31-9220-86d207becd6c",
+            "AcceptedType": "Number",
+            "index": 0
+          }
+        ],
+        "Children": [
+          {
+            "__guid": "9d2deefa-8b8f-4fe3-a4ff-728cfdf37486",
+            "Flags": 0,
+            "Name": "Cube",
+            "Position": "0,0,0",
+            "Scale": "0.002,0.002,0.002",
+            "Enabled": true,
+            "Components": [
+              {
+                "__type": "Sandbox.ModelRenderer",
+                "__guid": "9103f391-5a53-4dbc-b423-09fe969f67e1",
+                "BodyGroups": 18446744073709551615,
+                "Model": "models/dev/box.vmdl",
+                "RenderType": "On",
+                "Tint": "0,1,1,1"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "__guid": "e03be46c-2357-49b0-8924-fbc4af9ca1ae",
+        "Flags": 0,
+        "Name": "inputB",
+        "Position": "0,-0.2,0.5",
+        "Tags": "input",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.BoxCollider",
+            "__guid": "1068ddf5-40df-40b1-8d00-506308f0c0c4",
+            "Center": "0,0,0",
+            "IsTrigger": true,
+            "Scale": "0.1,0.1,0.1",
+            "Static": false
+          },
+          {
+            "__type": "NodeInput",
+            "__guid": "5eab14d2-3399-4e35-b2a4-550c82f3e53f",
+            "AcceptedType": "Number",
+            "index": 1
+          }
+        ],
+        "Children": [
+          {
+            "__guid": "d7602b30-f065-4fb5-bf03-d41035a38a3c",
+            "Flags": 0,
+            "Name": "Cube",
+            "Position": "0,0,0",
+            "Scale": "0.002,0.002,0.002",
+            "Enabled": true,
+            "Components": [
+              {
+                "__type": "Sandbox.ModelRenderer",
+                "__guid": "e8062001-1d72-43a5-a0db-d175d89eeaa4",
+                "BodyGroups": 18446744073709551615,
+                "Model": "models/dev/box.vmdl",
+                "RenderType": "On",
+                "Tint": "0,1,1,1"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "__guid": "55360d53-7af6-4a06-92ec-224b116ab0be",
+        "Flags": 0,
+        "Name": "output",
+        "Position": "0,0,-0.5",
+        "Tags": "output",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.BoxCollider",
+            "__guid": "ccb090b1-eea2-4f76-a189-19d185d92381",
+            "Center": "0,0,0",
+            "IsTrigger": true,
+            "Scale": "0.1,0.1,0.1",
+            "Static": false
+          },
+          {
+            "__type": "NodeOutput",
+            "__guid": "ff17cb83-e781-4462-87c2-96239a6be8b8",
+            "ConnectedInputs": [],
+            "NeutralColour": "1,1,1,1",
+            "outputType": "Normal",
+            "PathDetours": [],
+            "SendColour": "0,1,0,1"
+          }
+        ],
+        "Children": [
+          {
+            "__guid": "ea1752b0-0c9e-476a-9491-63126f5b6b43",
+            "Flags": 0,
+            "Name": "Cube",
+            "Position": "0,0,0",
+            "Scale": "0.002,0.002,0.002",
+            "Enabled": true,
+            "Components": [
+              {
+                "__type": "Sandbox.ModelRenderer",
+                "__guid": "23149721-f998-48c6-af2e-5471947d9797",
+                "BodyGroups": 18446744073709551615,
+                "Model": "models/dev/box.vmdl",
+                "RenderType": "On",
+                "Tint": "1,0,0,1"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}

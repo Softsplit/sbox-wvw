@@ -12,6 +12,7 @@ public sealed class SpellMaker : Component
 	[Property] public NumberInput CurrentNumberInput { get; set; }
 
 	[Property] public InteractionState CurrentInteractionState { get; set; }
+	[Property] public GameObject SpawnRef { get; set; }
 
 	private Vector3 _mouseDragOrigin;
 	private Vector3 _nodeDragOrigin;
@@ -43,9 +44,14 @@ public sealed class SpellMaker : Component
         return Regex.Replace(PascalString, "(?!^)([A-Z])", " $1");
     }
 
-	public void CreateSpell(string dir)
+	public void CreateSpell(string file)
 	{
-
+		GameObject spawned = new GameObject();
+		spawned.SetPrefabSource($"{PrefabDir}/{file}");
+		spawned.UpdateFromPrefab();
+		spawned.SetParent(GameObject);
+		spawned.Transform.LocalPosition = SpawnRef.Transform.LocalPosition;
+		spawned.Transform.LocalRotation = SpawnRef.Transform.LocalRotation;
 	}
 
 	protected override void OnPreRender()
