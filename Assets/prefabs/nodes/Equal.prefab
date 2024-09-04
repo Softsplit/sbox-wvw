@@ -205,7 +205,28 @@
         ]
       }
     ],
-    "__variables": []
+    "__variables": [
+      {
+        "Id": "ConnectedInputs",
+        "Title": "ConnectedInputs",
+        "Targets": [
+          {
+            "Id": "e0bda127-0414-4e3c-b8df-d880e721f074",
+            "Property": "ConnectedInputs"
+          }
+        ]
+      },
+      {
+        "Id": "PathDetours",
+        "Title": "PathDetours",
+        "Targets": [
+          {
+            "Id": "e0bda127-0414-4e3c-b8df-d880e721f074",
+            "Property": "PathDetours"
+          }
+        ]
+      }
+    ]
   },
   "ShowInMenu": false,
   "MenuPath": null,

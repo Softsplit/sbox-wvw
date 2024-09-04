@@ -25,8 +25,13 @@ public sealed class SpellMaker : Component
 
 	public string GetSaveData()
 	{
+		foreach(GameObject c in GameObject.Children)
+		{
+			c.BreakFromPrefab();
+		}
 		JsonObject jsonObject = GameObject.Serialize();
 		jsonObject.Remove("Component");
+		SceneUtility.MakeIdGuidsUnique(jsonObject);
 		return jsonObject.ToJsonString();
 	}
 
@@ -68,9 +73,8 @@ public sealed class SpellMaker : Component
 
 	public void CreateSpell(string file)
 	{
-		GameObject spawned = new GameObject();
-		spawned.SetPrefabSource($"{PrefabDir}/{file}");
-		spawned.UpdateFromPrefab();
+		if ( !ResourceLibrary.TryGet($"{PrefabDir}/{file}", out PrefabFile prefab)) return;
+		var spawned = SceneUtility.GetPrefabScene( prefab ).Clone();
 		spawned.SetParent(GameObject);
 		spawned.Transform.LocalPosition = SpawnRef.Transform.LocalPosition;
 		spawned.Transform.LocalRotation = SpawnRef.Transform.LocalRotation;
@@ -126,7 +130,6 @@ public sealed class SpellMaker : Component
 				if ( nodeOutput.ConnectedInputs.Count > 0 )
 				{
 					nodeOutput.ConnectedInputs.RemoveAt( nodeOutput.ConnectedInputs.Count - 1 );
-					nodeOutput.PathDetours.RemoveAt( nodeOutput.PathDetours.Count - 1 );
 				}
 			}
 		}
@@ -204,7 +207,6 @@ public sealed class SpellMaker : Component
 		if ( Input.Down( "attack2" ) )
 		{
 			CurrentInteractionState = InteractionState.Finding;
-			_temporaryDetours = new List<Vector3>();
 			return;
 		}
 
@@ -213,7 +215,7 @@ public sealed class SpellMaker : Component
 		Vector3 cameraForward = Scene.Camera.Transform.World.Forward;
 		Vector3 projectedPosition = ray.Position + ray.Forward * (_dragDistance / Vector3.Dot( ray.Forward, cameraForward ));
 
-		CurrentOutput.DrawLineTo( projectedPosition, _temporaryDetours );
+		CurrentOutput.DrawLineTo( projectedPosition);
 
 		if ( Input.Pressed( "attack1" ) )
 		{
@@ -223,14 +225,10 @@ public sealed class SpellMaker : Component
 				if(CurrentOutput.outputType == nodeInput.AcceptedType)
 				{
 					CurrentOutput.ConnectedInputs.Add( nodeInput );
-					CurrentOutput.PathDetours.Add( _temporaryDetours );
-					_temporaryDetours = new List<Vector3>();
 					CurrentInteractionState = InteractionState.Finding;
 					return;
 				}
 			}
-
-			_temporaryDetours.Add( CurrentOutput.Transform.World.PointToLocal(projectedPosition) );
 		}
 	}
 

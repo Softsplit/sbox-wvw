@@ -185,6 +185,36 @@
             "Property": "Value"
           }
         ]
+      },
+      {
+        "Id": "ValueText",
+        "Title": "ValueText",
+        "Targets": [
+          {
+            "Id": "b632b845-46e5-40b0-b359-6876e4da2da9",
+            "Property": "Text"
+          }
+        ]
+      },
+      {
+        "Id": "ConnectedInputs",
+        "Title": "ConnectedInputs",
+        "Targets": [
+          {
+            "Id": "93fe5a89-bd00-47a4-9734-ad28b8dad99a",
+            "Property": "ConnectedInputs"
+          }
+        ]
+      },
+      {
+        "Id": "PathDetours",
+        "Title": "PathDetours",
+        "Targets": [
+          {
+            "Id": "93fe5a89-bd00-47a4-9734-ad28b8dad99a",
+            "Property": "PathDetours"
+          }
+        ]
       }
     ]
   },
