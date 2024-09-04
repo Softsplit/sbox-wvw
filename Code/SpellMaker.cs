@@ -1,4 +1,7 @@
 using System;
+using System.Globalization;
+using System.IO;
+using System.Text.RegularExpressions;
 
 public sealed class SpellMaker : Component
 {
@@ -19,15 +22,42 @@ public sealed class SpellMaker : Component
 
 	private List<Vector3> _temporaryDetours = new();
 
-	protected override void OnPreRender()
+	public const string PrefabDir = "prefabs/nodes";
+	public static (List<string> paths, List<string> names) GetPrefabs()
 	{
 
+		List<string> paths = FileSystem.Mounted.FindFile(PrefabDir, "*.prefab").ToList(); 
+		List<string> names = new List<string>();
+
+		foreach(string p in paths)
+		{
+			string name = p.Replace(".prefab","");
+			names.Add(ToFriendlyCase(name));
+		}
+
+		return(paths,names);
+	}
+
+	public static string ToFriendlyCase(string PascalString)
+    {
+        return Regex.Replace(PascalString, "(?!^)([A-Z])", " $1");
+    }
+
+	public void CreateSpell(string dir)
+	{
+
+	}
+
+	protected override void OnPreRender()
+	{
 		if(Input.UsingController)
 		{
-			Mouse.Position -= new Vector2(Input.AnalogMove.y, Input.AnalogMove.x) * 5 * (Input.Down("View") ? 0.2f : 1);
+			Mouse.Position -= new Vector2(Input.AnalogMove.y, Input.AnalogMove.x) * (Input.Down("View") ? 1f : 2.5f) * (Screen.Size.Length/1500f);
+
 		}
 
 		var mousePosition = Mouse.Position;
+
 		var camera = Scene.Camera;
 
 		_mouseRay = Scene.Trace.Ray( camera.ScreenPixelToRay( mousePosition ), 50 )

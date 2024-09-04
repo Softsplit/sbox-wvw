@@ -29,7 +29,7 @@ public sealed class FireBall : Projectile
 			return;
 		}
 
-		Rigidbody.Velocity = (Transform.World.Forward * MathX.Lerp(SpeedRange.x,SpeedRange.y,Strength));
+		Rigidbody.Velocity = Transform.World.Forward * MathX.Lerp(SpeedRange.x,SpeedRange.y,Strength);
 
 		float w = Width.Evaluate((Time.Now-startTime)/Life);
 

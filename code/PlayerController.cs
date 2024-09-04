@@ -431,7 +431,7 @@ public sealed class PlayerController : Component
         // if (ControllerInput.Length > 1) ControllerInput = ControllerInput.Normal;
         // ControllerInput *= 25;
         // LookAngle += new Vector2((Input.MouseDelta.y - ControllerInput.y), -(Input.MouseDelta.x + ControllerInput.x)) * Preferences.Sensitivity * 0.022f;
-        LookAngle += new Vector2((Input.MouseDelta.y), -(Input.MouseDelta.x)) * Preferences.Sensitivity * 0.022f;
+        LookAngle += new Vector2((Input.AnalogLook.pitch), (Input.AnalogLook.yaw)) * Preferences.Sensitivity * Time.Delta * 10;
         LookAngle = LookAngle.WithX(LookAngle.x.Clamp(-89f, 89f));
 		
         var angles = LookAngleAngles;

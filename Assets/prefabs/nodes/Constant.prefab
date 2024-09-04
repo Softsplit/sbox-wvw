@@ -1,0 +1,187 @@
+{
+  "RootObject": {
+    "__guid": "1205ffc9-050c-44af-9de7-3d717fb896b3",
+    "Flags": 0,
+    "Name": "Constant",
+    "Position": "-0.00001461804,-1.844769,-1.339858",
+    "Rotation": "-0.7071068,-0,0,0.7071068",
+    "Tags": "node",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "Sandbox.BoxCollider",
+        "__guid": "14da56d5-cd86-46c1-bdbe-25b02d1eb063",
+        "Center": "0,0,0",
+        "IsTrigger": true,
+        "Scale": "0.05,1,1",
+        "Static": false
+      },
+      {
+        "__type": "ConstantNode",
+        "__guid": "3f0fcaeb-4568-40a0-a64b-3e8a3340bc09",
+        "Mana": 0,
+        "MaxMana": 0,
+        "NumberInput": {
+          "_type": "component",
+          "component_id": "0675bc7e-14c9-4368-a340-974abf7bed34",
+          "go": "7aa87b49-5cc8-4acd-934c-b1d731ebf35f",
+          "component_type": "NumberInput"
+        },
+        "Outputs": [
+          {
+            "_type": "component",
+            "component_id": "93fe5a89-bd00-47a4-9734-ad28b8dad99a",
+            "go": "695e0746-ef42-497a-b4c1-b025038d214e",
+            "component_type": "NodeOutput"
+          }
+        ]
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "c4b26d8e-198b-4f53-aca9-0c0422abe29b",
+        "Flags": 0,
+        "Name": "Cube",
+        "Position": "0,0,0",
+        "Scale": "0.001,0.02,0.02",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "0a558f55-4b82-4146-89d6-f01b8e218c8d",
+            "BodyGroups": 18446744073709551615,
+            "Model": "models/dev/box.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      },
+      {
+        "__guid": "a36ffeda-73ab-4f5e-94e1-60a0a2d48118",
+        "Flags": 0,
+        "Name": "Text",
+        "Position": "-0.02757883,0,0.3535614",
+        "Scale": "0.02003517,0.02003517,0.02003517",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.TextRenderer",
+            "__guid": "21d6e57e-b9cd-437d-abdd-b6fd6009d393",
+            "Color": "0.45103,0.47149,0.5297,1",
+            "FontFamily": "Poppins",
+            "FontSize": 64,
+            "FontWeight": 800,
+            "Scale": 0.13,
+            "Text": "Const",
+            "TextAlignment": "Center"
+          }
+        ]
+      },
+      {
+        "__guid": "695e0746-ef42-497a-b4c1-b025038d214e",
+        "Flags": 0,
+        "Name": "output",
+        "Position": "0,0,-0.5",
+        "Tags": "output",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.BoxCollider",
+            "__guid": "500b7c38-b782-4695-9dda-a51150b18b0d",
+            "Center": "0,0,0",
+            "IsTrigger": true,
+            "Scale": "0.1,0.1,0.1",
+            "Static": false
+          },
+          {
+            "__type": "NodeOutput",
+            "__guid": "93fe5a89-bd00-47a4-9734-ad28b8dad99a",
+            "ConnectedInputs": [],
+            "NeutralColour": "0,1,1,1",
+            "outputType": "Number",
+            "PathDetours": [],
+            "SendColour": "0,0,1,1"
+          }
+        ],
+        "Children": [
+          {
+            "__guid": "525995d6-3702-430c-a649-be2a329f7745",
+            "Flags": 0,
+            "Name": "Cube",
+            "Position": "0,0,0",
+            "Scale": "0.002,0.002,0.002",
+            "Enabled": true,
+            "Components": [
+              {
+                "__type": "Sandbox.ModelRenderer",
+                "__guid": "ecc04cd0-8a49-43ac-be86-3105b87ab99b",
+                "BodyGroups": 18446744073709551615,
+                "Model": "models/dev/box.vmdl",
+                "RenderType": "On",
+                "Tint": "0,0,1,1"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "__guid": "7aa87b49-5cc8-4acd-934c-b1d731ebf35f",
+        "Flags": 0,
+        "Name": "NumberInput",
+        "Position": "-0.02799988,0,-0.08784485",
+        "Tags": "numberinput",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "NumberInput",
+            "__guid": "0675bc7e-14c9-4368-a340-974abf7bed34",
+            "TextRenderer": {
+              "_type": "component",
+              "component_id": "b632b845-46e5-40b0-b359-6876e4da2da9",
+              "go": "ddb30424-a218-4006-9274-5c125ed52eea",
+              "component_type": "TextRenderer"
+            },
+            "Value": 0
+          },
+          {
+            "__type": "Sandbox.BoxCollider",
+            "__guid": "63791559-1e34-4e60-beb0-b1277addf0f2",
+            "Center": "0,0,0",
+            "IsTrigger": true,
+            "Scale": "0.1,0.5,0.5",
+            "Static": false
+          }
+        ],
+        "Children": [
+          {
+            "__guid": "ddb30424-a218-4006-9274-5c125ed52eea",
+            "Flags": 0,
+            "Name": "Text (1)",
+            "Position": "0,0,0",
+            "Scale": "0.02003517,0.02003517,0.02003517",
+            "Enabled": true,
+            "Components": [
+              {
+                "__type": "Sandbox.TextRenderer",
+                "__guid": "b632b845-46e5-40b0-b359-6876e4da2da9",
+                "Color": "0,0,0,1",
+                "FontFamily": "Poppins",
+                "FontSize": 64,
+                "FontWeight": 800,
+                "Scale": 0.27,
+                "Text": "0",
+                "TextAlignment": "Center"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}

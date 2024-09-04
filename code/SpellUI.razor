@@ -1,0 +1,39 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root style=@(Mouse.Position.x/Screen.Width > 0.7f ? "pointer-events: all;" : "pointer-events: none;")>
+	<div class="SpellBox">
+		@for(int i = 0; i < paths.Count; i++)
+		{
+			<div class="Spell">
+				<div class="SpellName">
+					@names[i]
+				</div>
+				<div class="SpellImageBox">
+					@if(FileSystem.Data.FileExists(paths[i].Replace(".prefab",".png")))
+					{
+						<img src=@(paths[i].Replace(".prefab",".png")) class="SpellImage" />
+					}
+					<div class="SpellImage">NO IMAGE</div>
+				</div>
+			</div>
+		}
+	</div>
+</root>
+
+@code
+{
+
+	[Property] public SpellMaker SpellMaker { get; set; }
+	List<string> paths;
+	List<string> names;
+	protected override void OnStart()
+	{
+		(paths, names) = SpellMaker.GetPrefabs();
+	}
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine( Mouse.Position.x );
+}

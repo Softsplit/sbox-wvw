@@ -24,7 +24,7 @@ public sealed class EmitterNode : Node
 	}
 	protected override void OnFixedUpdate()
 	{
-		NumberOutput(Mana/MaxMana);
+		NumberOutput(Mana);
 	}
 
 	public override void Tick( int index )
