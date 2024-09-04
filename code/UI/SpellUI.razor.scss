@@ -6,10 +6,21 @@ SpellUI
 	right: 0;
 	bottom: 0;
 	justify-content: flex-end;
-	align-items: center;
+	align-items: flex-end;
 	font-weight: bold;
 	border-radius: 20px;
-
+	.PriceBar
+	{
+		width: 70%;
+		height: 10%;
+		bottom: 0;
+		justify-content: flex-start;
+		.Bar
+		{
+			height: 100%;
+			background-color: white;
+		}
+	}
 	.SpellBox
 	{
 		width: 30%;

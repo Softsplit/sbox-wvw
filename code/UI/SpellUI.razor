@@ -4,6 +4,9 @@
 @inherits PanelComponent
 
 <root style=@(Mouse.Position.x/Screen.Width > 0.7f || FileExplorer ? "pointer-events: all;" : "pointer-events: none;")>
+	<div class="PriceBar">
+		<div class="Bar" style=@($"width: {(SpellMaker.price/SpellMaker.CostCapacity)*100}%; background-color: {PriceBarGradient.Evaluate((SpellMaker.price/SpellMaker.CostCapacity)).Hex}") />
+	</div>
 	<div class="SpellBox">
 		<div class="Switch" onclick="@Switch">@(FileExplorer ? "Glyffs" : "File")</div>
 		@if(FileExplorer)
@@ -37,10 +40,11 @@
 
 @code
 {
-
+	
 	[Property] public SpellMaker SpellMaker { get; set; }
 	[Property] public string CurrentFile { get; set; }
 	[Property] public string FileContents { get; set; }
+	[Property] public Gradient PriceBarGradient { get; set; }
 	List<string> paths;
 	List<string> names;
 	List<float> prices;
@@ -93,6 +97,7 @@
 
 	public void Switch()
 	{
+		SpellMaker.GetPrice();
 		if(!FileExplorer)
 		{
 			FileExplorer = true;
@@ -102,5 +107,5 @@
 		FileExplorer=false;
 	}
 
-	protected override int BuildHash() => System.HashCode.Combine( Update, FileExplorer );
+	protected override int BuildHash() => System.HashCode.Combine( Update, FileExplorer, SpellMaker.price );
 }

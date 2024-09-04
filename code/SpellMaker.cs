@@ -71,7 +71,7 @@ public sealed class SpellMaker : Component
     {
         return Regex.Replace(PascalString, "(?!^)([A-Z])", " $1");
     }
-
+	public float price {get; set;}
 	public float GetPrice()
 	{
 		float sum = 0;
@@ -81,6 +81,7 @@ public sealed class SpellMaker : Component
 			if(node == null) continue;
 			sum += node.Cost;
 		}
+		price = sum;
 		return sum;
 	}
 
@@ -156,6 +157,7 @@ public sealed class SpellMaker : Component
 			else if (_mouseRay.GameObject.Tags.Contains( "node" ))
 			{
 				_mouseRay.GameObject.DestroyImmediate();
+				GetPrice();
 				return;
 			}
 		}

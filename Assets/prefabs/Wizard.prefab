@@ -99,6 +99,38 @@
         "__type": "SpellUI",
         "__guid": "bcd28561-48fe-4a9f-baba-68df4e592e4d",
         "__enabled": false,
+        "PriceBarGradient": {
+          "color": [
+            {
+              "c": "0,1,0,1"
+            },
+            {
+              "t": 0.5,
+              "c": "1,0.64706,0,1"
+            },
+            {
+              "t": 1,
+              "c": "1,0,0,1"
+            },
+            {
+              "t": 1,
+              "c": "1,0,0,1"
+            }
+          ],
+          "alpha": [
+            {
+              "a": 1
+            },
+            {
+              "t": 0.5,
+              "a": 1
+            },
+            {
+              "t": 1,
+              "a": 1
+            }
+          ]
+        },
         "SpellMaker": {
           "_type": "component",
           "component_id": "ce15c6c0-f514-4591-a1ae-e4a60ca727eb",
@@ -380,6 +412,7 @@
                                                 "__type": "SpellMaker",
                                                 "__guid": "ce15c6c0-f514-4591-a1ae-e4a60ca727eb",
                                                 "__enabled": false,
+                                                "CostCapacity": 100,
                                                 "CurrentInteractionState": "Finding",
                                                 "SpawnRef": {
                                                   "_type": "gameobject",
@@ -489,7 +522,6 @@
                                                         "ConnectedInputs": [],
                                                         "NeutralColour": "1,1,1,1",
                                                         "outputType": "Normal",
-                                                        "PathDetours": [],
                                                         "SendColour": "0,1,0,1"
                                                       },
                                                       {
