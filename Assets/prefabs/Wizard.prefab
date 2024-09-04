@@ -70,10 +70,6 @@
       {
         "__type": "PlayerManager",
         "__guid": "00e9a8fb-3099-4211-aea5-ab7636d7f40c",
-        "Camera": {
-          "_type": "gameobject",
-          "go": "043e7154-0c5d-4b31-b01c-3f47615c9e56"
-        },
         "DefaultLookPos": {
           "_type": "gameobject",
           "go": "13dc5eb4-0b59-4b14-a6a1-e61c228d06dc"
@@ -97,7 +93,7 @@
           "go": "84e9a4bc-eaa4-4c91-8232-f3a535a74acc"
         },
         "Transitioning": false,
-        "TransitionSpeed": 10
+        "TransitionSpeed": 20
       },
       {
         "__type": "SpellUI",
@@ -369,15 +365,15 @@
                                         "__guid": "1e5beefc-4450-413c-a36b-41d98e74598c",
                                         "Flags": 0,
                                         "Name": "CameraPos",
-                                        "Position": "-0.7808614,7.126365,10.00399",
-                                        "Rotation": "-0.02701606,0.6689779,-0.0509329,0.7410434",
+                                        "Position": "0.7808611,7.126368,-10.004",
+                                        "Rotation": "0.668978,-0.02701594,0.7410434,-0.05093301",
                                         "Enabled": true,
                                         "Children": [
                                           {
                                             "__guid": "edaa4961-7983-49ff-99ca-a5645b9e662c",
                                             "Flags": 0,
                                             "Name": "NodeDealer",
-                                            "Position": "7.5018,0.000002622604,0.05076008",
+                                            "Position": "9.372932,0.0002965927,0.05092359",
                                             "Enabled": true,
                                             "Components": [
                                               {

@@ -19,7 +19,7 @@ public sealed class GeneratorNode : Node
 	{
 		if(SpellMaker.Enabled) return;
 		if(Input.Down("attack1") && generate)
-			ManaOutput(null,Rate*Time.Delta);
+			ManaOutput(null,(Rate*Time.Delta)/Outputs[0].ConnectedInputs.Count);
 		generate = true;
 	}
 }

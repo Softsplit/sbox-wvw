@@ -18,6 +18,12 @@ SpellUI
 		backdrop-filter: blur(10px);
 		flex-wrap: wrap;
 		overflow-y: scroll;
+		.Switch
+		{
+			width: 100%;
+			height: 10%;
+			background-color: white;
+		}
 		.Spell
 		{
 			width: 50%;

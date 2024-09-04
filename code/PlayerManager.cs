@@ -3,7 +3,7 @@ using System.Threading.Channels;
 using Sandbox;
 using Softsplit;
 
-public sealed class PlayerManager : Component
+	public sealed class PlayerManager : Component
 {
 	[Property] public GameObject Camera {get;set;}
 	[Property] public GameObject ThirdPersonCam {get;set;}
@@ -54,7 +54,7 @@ public sealed class PlayerManager : Component
 		modelPhysics = WizardAnimator.Components.Get<ModelPhysics>(true);
 		SpellMaker = Components.GetInDescendants<SpellMaker>(true);
 		SpellUI = Components.Get<SpellUI>(true);
-		if(Time.Now > 5) Transitioning = true;
+		Transitioning = true;
 	}
 	protected override void OnPreRender()
 	{
@@ -115,7 +115,7 @@ public sealed class PlayerManager : Component
 			Camera.Transform.Position = Vector3.Lerp(Camera.Transform.Position,TargetPos,Time.Delta * TransitionSpeed);
 			Camera.Transform.Rotation = Rotation.Lerp(Camera.Transform.Rotation,TargetRot,Time.Delta * TransitionSpeed);
 			if(Vector3.DistanceBetween(Camera.Transform.Position,TargetPos) < 1f)
-				Transitioning = false;
+				if(InSpell) Transitioning = false;
 		}
 		
 		lastInSpell = InSpell;

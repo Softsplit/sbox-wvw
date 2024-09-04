@@ -96,7 +96,6 @@ public sealed class ModdedNetworkHelper : Component, Component.INetworkListener
 	protected override void OnFixedUpdate()
 	{
 		if ( !Networking.IsHost ) return;
-		Log.Info("herro");
 		base.OnFixedUpdate();
 		List<Respawn> RemoveRespawns = new List<Respawn>();
 		foreach(Respawn respawn in Respawns)

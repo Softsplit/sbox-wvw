@@ -175,7 +175,18 @@
         ]
       }
     ],
-    "__variables": []
+    "__variables": [
+      {
+        "Id": "Value",
+        "Title": "Value",
+        "Targets": [
+          {
+            "Id": "0675bc7e-14c9-4368-a340-974abf7bed34",
+            "Property": "Value"
+          }
+        ]
+      }
+    ]
   },
   "ShowInMenu": false,
   "MenuPath": null,

@@ -1,0 +1,86 @@
+@using Sandbox;
+@using Sandbox.UI;
+@using System.Text.Json.Nodes;
+@inherits PanelComponent
+
+<root style=@(Mouse.Position.x/Screen.Width > 0.7f ? "pointer-events: all;" : "pointer-events: none;")>
+	<div class="SpellBox">
+		<div class="Switch" onclick="@Switch" />
+		@if(FileExplorer)
+		{
+			<FileTree FileContents="@FileContents" Directory="Spells" Value:bind="@CurrentFile" />
+		}
+		else
+		{
+			@for(int i = 0; i < paths.Count; i++)
+			{
+				int capture = i;
+				<div class="Spell">
+					<div class="SpellName">
+						@names[i]
+					</div>
+					<div class="SpellPrice">
+						@prices[i]
+					</div>
+					<div class="SpellImageBox">
+						@if(FileSystem.Data.FileExists(paths[i].Replace(".prefab",".png")))
+						{
+							<img src=@(paths[i].Replace(".prefab",".png")) class="SpellImage" />
+						}
+						<div class="SpellImage" onclick=@(() => SpellMaker.CreateSpell(paths[capture]))>NO IMAGE</div>
+					</div>
+				</div>
+			}
+		}
+	</div>
+</root>
+
+@code
+{
+
+	[Property] public SpellMaker SpellMaker { get; set; }
+	[Property] public string CurrentFile { get; set; }
+	[Property] public string FileContents { get; set; }
+	List<string> paths;
+	List<string> names;
+	List<float> prices;
+	protected override void OnStart()
+	{
+		(paths, names, prices) = SpellMaker.GetPrefabs();
+	}
+	Vector2 Update;
+	bool FileExplorer;
+	string prevFile {get;set;}
+	protected override void OnFixedUpdate()
+	{
+		if(!FileExplorer)
+		{
+			Update = Mouse.Position;
+		}
+		else
+		{
+			if(CurrentFile != prevFile)
+			{
+				JsonObject jsonObject = Json.Deserialize<JsonObject>(FileSystem.Data.ReadAllText(CurrentFile));
+				if(jsonObject != null)
+				{
+					SpellMaker.GameObject.Deserialize(jsonObject);
+				}
+			}
+			prevFile = CurrentFile;
+		}
+	}
+
+	public void Switch()
+	{
+		if(!FileExplorer)
+		{
+			FileExplorer = true;
+			FileContents = SpellMaker.GetSaveData();
+		}
+		else
+		FileExplorer=false;
+	}
+
+	protected override int BuildHash() => System.HashCode.Combine( Update, FileExplorer );
+}

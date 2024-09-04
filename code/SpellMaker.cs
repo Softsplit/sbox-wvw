@@ -1,5 +1,6 @@
 using System;
 using System.Text.Json;
+using System.Text.Json.Nodes;
 using System.Text.RegularExpressions;
 
 public sealed class SpellMaker : Component
@@ -21,6 +22,13 @@ public sealed class SpellMaker : Component
 	private InteractionState _lastInteractionState;
 
 	private List<Vector3> _temporaryDetours = new();
+
+	public string GetSaveData()
+	{
+		JsonObject jsonObject = GameObject.Serialize();
+		jsonObject.Remove("Component");
+		return jsonObject.ToJsonString();
+	}
 
 	public const string PrefabDir = "prefabs/nodes";
 	public static (List<string> paths, List<string> names, List<float> prices) GetPrefabs()
