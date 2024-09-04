@@ -17,7 +17,7 @@
       {
         "__type": "EqualsNode",
         "__guid": "54d53d77-2462-40f0-a745-a98d0b761acb",
-        "Cost": 10,
+        "Cost": 3,
         "Mana": 0,
         "MaxMana": 0,
         "Outputs": [
@@ -179,7 +179,6 @@
             "ConnectedInputs": [],
             "NeutralColour": "1,1,1,1",
             "outputType": "Normal",
-            "PathDetours": [],
             "SendColour": "0,1,0,1"
           }
         ],

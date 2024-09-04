@@ -17,7 +17,7 @@
       {
         "__type": "TestOutputNode",
         "__guid": "3244cd9d-978b-4cca-8344-b58e271dbaa3",
-        "Cost": 10,
+        "Cost": 3,
         "Key": "Attack2",
         "Mana": 0,
         "MaxMana": 0,
@@ -98,7 +98,6 @@
             "ConnectedInputs": [],
             "NeutralColour": "1,1,1,1",
             "outputType": "Normal",
-            "PathDetours": [],
             "SendColour": "0,1,0,1"
           },
           {

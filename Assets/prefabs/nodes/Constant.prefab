@@ -17,7 +17,7 @@
       {
         "__type": "ConstantNode",
         "__guid": "3f0fcaeb-4568-40a0-a64b-3e8a3340bc09",
-        "Cost": 10,
+        "Cost": 4,
         "Mana": 0,
         "MaxMana": 0,
         "NumberInput": {
@@ -97,7 +97,6 @@
             "ConnectedInputs": [],
             "NeutralColour": "0,1,1,1",
             "outputType": "Number",
-            "PathDetours": [],
             "SendColour": "0,0,1,1"
           }
         ],

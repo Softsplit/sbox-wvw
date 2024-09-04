@@ -17,7 +17,7 @@
       {
         "__type": "AndNode",
         "__guid": "e5452b66-c7a4-42ce-9616-fd375b7abd96",
-        "Cost": 10,
+        "Cost": 2,
         "Mana": 0,
         "MaxMana": 0,
         "Outputs": [
@@ -179,7 +179,6 @@
             "ConnectedInputs": [],
             "NeutralColour": "1,1,1,1",
             "outputType": "Normal",
-            "PathDetours": [],
             "SendColour": "0,1,0,1"
           }
         ],

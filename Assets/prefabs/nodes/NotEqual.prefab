@@ -17,7 +17,7 @@
       {
         "__type": "NotEqualsNode",
         "__guid": "f70564b1-88bc-4840-848f-8cd85ff6847e",
-        "Cost": 10,
+        "Cost": 3,
         "Mana": 0,
         "MaxMana": 0,
         "Outputs": [
@@ -179,7 +179,6 @@
             "ConnectedInputs": [],
             "NeutralColour": "1,1,1,1",
             "outputType": "Normal",
-            "PathDetours": [],
             "SendColour": "0,1,0,1"
           }
         ],

@@ -5,7 +5,7 @@
 
 <root style=@(Mouse.Position.x/Screen.Width > 0.7f || FileExplorer ? "pointer-events: all;" : "pointer-events: none;")>
 	<div class="SpellBox">
-		<div class="Switch" onclick="@Switch" />
+		<div class="Switch" onclick="@Switch">@(FileExplorer ? "Glyffs" : "File")</div>
 		@if(FileExplorer)
 		{
 			<FileTree FileContents="@FileContents" Directory="Spells" Value:bind="@CurrentFile" />
@@ -102,5 +102,5 @@
 		FileExplorer=false;
 	}
 
-	protected override int BuildHash() => System.HashCode.Combine( Mouse.Position, FileExplorer );
+	protected override int BuildHash() => System.HashCode.Combine( Update, FileExplorer );
 }

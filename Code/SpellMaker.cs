@@ -10,6 +10,7 @@ public sealed class SpellMaker : Component
 	[Property] public NodeOutput CurrentOutput { get; set; }
 
 	[Property] public NumberInput CurrentNumberInput { get; set; }
+	[Property] public float CostCapacity { get; set; } = 100f;
 
 	[Property] public InteractionState CurrentInteractionState { get; set; }
 	[Property] public GameObject SpawnRef { get; set; }
@@ -71,10 +72,30 @@ public sealed class SpellMaker : Component
         return Regex.Replace(PascalString, "(?!^)([A-Z])", " $1");
     }
 
+	public float GetPrice()
+	{
+		float sum = 0;
+		foreach(GameObject c in GameObject.Children)
+		{
+			Node node = c.Components.Get<Node>();
+			if(node == null) continue;
+			sum += node.Cost;
+		}
+		return sum;
+	}
+
 	public void CreateSpell(string file)
 	{
+		
 		if ( !ResourceLibrary.TryGet($"{PrefabDir}/{file}", out PrefabFile prefab)) return;
 		var spawned = SceneUtility.GetPrefabScene( prefab ).Clone();
+		Node node = spawned.Components.Get<Node>();
+		if(GetPrice()+node.Cost > CostCapacity)
+		{
+			Sound.Play("sounds/player_use_fail.sound");
+			spawned.DestroyImmediate();
+			return;
+		}
 		spawned.SetParent(GameObject);
 		spawned.Transform.LocalPosition = SpawnRef.Transform.LocalPosition;
 		spawned.Transform.LocalRotation = SpawnRef.Transform.LocalRotation;
@@ -131,6 +152,11 @@ public sealed class SpellMaker : Component
 				{
 					nodeOutput.ConnectedInputs.RemoveAt( nodeOutput.ConnectedInputs.Count - 1 );
 				}
+			}
+			else if (_mouseRay.GameObject.Tags.Contains( "node" ))
+			{
+				_mouseRay.GameObject.DestroyImmediate();
+				return;
 			}
 		}
 

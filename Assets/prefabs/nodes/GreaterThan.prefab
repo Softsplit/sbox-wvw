@@ -17,7 +17,7 @@
       {
         "__type": "GreaterThanNode",
         "__guid": "36e16549-6f79-40a5-bed0-2d8cdf41871b",
-        "Cost": 10,
+        "Cost": 3,
         "Mana": 0,
         "MaxMana": 0,
         "Outputs": [
@@ -179,7 +179,6 @@
             "ConnectedInputs": [],
             "NeutralColour": "1,1,1,1",
             "outputType": "Normal",
-            "PathDetours": [],
             "SendColour": "0,1,0,1"
           }
         ],

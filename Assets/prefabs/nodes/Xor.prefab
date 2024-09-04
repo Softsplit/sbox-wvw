@@ -17,7 +17,7 @@
       {
         "__type": "XorNode",
         "__guid": "dd4f693f-fa05-4ab1-b9aa-789df5b5ed40",
-        "Cost": 10,
+        "Cost": 2,
         "Mana": 0,
         "MaxMana": 0,
         "Outputs": [
@@ -179,7 +179,6 @@
             "ConnectedInputs": [],
             "NeutralColour": "1,1,1,1",
             "outputType": "Normal",
-            "PathDetours": [],
             "SendColour": "0,1,0,1"
           }
         ],

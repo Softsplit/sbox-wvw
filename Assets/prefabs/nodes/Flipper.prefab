@@ -17,7 +17,7 @@
       {
         "__type": "FlipperNode",
         "__guid": "a4bae654-a87f-4460-b1ec-7b65b39def7f",
-        "Cost": 10,
+        "Cost": 4,
         "Mana": 0,
         "MaxMana": 0,
         "OffColour": "1,0,0,1",
@@ -162,7 +162,6 @@
             "ConnectedInputs": [],
             "NeutralColour": "1,1,1,1",
             "outputType": "Normal",
-            "PathDetours": [],
             "SendColour": "0,1,0,1"
           }
         ],

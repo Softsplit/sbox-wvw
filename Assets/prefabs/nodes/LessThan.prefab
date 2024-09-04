@@ -17,7 +17,7 @@
       {
         "__type": "LessThanNode",
         "__guid": "a12b003c-603e-4e05-847e-f6ccdfb44efc",
-        "Cost": 10,
+        "Cost": 103,
         "Mana": 0,
         "MaxMana": 0,
         "Outputs": [
@@ -179,7 +179,6 @@
             "ConnectedInputs": [],
             "NeutralColour": "1,1,1,1",
             "outputType": "Normal",
-            "PathDetours": [],
             "SendColour": "0,1,0,1"
           }
         ],
@@ -205,7 +204,28 @@
         ]
       }
     ],
-    "__variables": []
+    "__variables": [
+      {
+        "Id": "ConnectedInputs",
+        "Title": "ConnectedInputs",
+        "Targets": [
+          {
+            "Id": "7abb5c3d-62b7-414d-b087-b840514fd613",
+            "Property": "ConnectedInputs"
+          }
+        ]
+      },
+      {
+        "Id": "Path Detours",
+        "Title": "Path Detours",
+        "Targets": [
+          {
+            "Id": "7abb5c3d-62b7-414d-b087-b840514fd613",
+            "Property": "PathDetours"
+          }
+        ]
+      }
+    ]
   },
   "ShowInMenu": false,
   "MenuPath": null,

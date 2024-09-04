@@ -17,7 +17,7 @@
       {
         "__type": "DelayNode",
         "__guid": "031311cc-8ab0-45f9-9969-c038168c3b5a",
-        "Cost": 10,
+        "Cost": 4,
         "Mana": 0,
         "MaxMana": 0,
         "NumberInput": {
@@ -97,7 +97,6 @@
             "ConnectedInputs": [],
             "NeutralColour": "1,1,1,1",
             "outputType": "Normal",
-            "PathDetours": [],
             "SendColour": "0,1,0,1"
           }
         ],
