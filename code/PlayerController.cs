@@ -335,6 +335,8 @@ public sealed class PlayerController : Component
     }
 
     protected override void OnFixedUpdate() {
+        if(IsProxy)
+            return;
         if (CollisionBox == null) return;
         
         if (CollisionBox.Scale != LastSize) {
@@ -416,6 +418,8 @@ public sealed class PlayerController : Component
     }
     
 	protected override void OnUpdate() {
+        if(IsProxy)
+            return;
         SetAnims();
         if (Body == null || BodyRenderer == null) return;
         

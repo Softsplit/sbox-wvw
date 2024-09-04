@@ -17,6 +17,11 @@ public sealed class PlayerManager : Component
 	SpellUI SpellUI;
 	protected override void OnStart()
 	{
+		if(IsProxy)
+		{
+			Camera.Enabled = false;
+			return;
+		}
 		playerController = Components.Get<PlayerController>(true);
 		WizardAnimator = Components.GetInChildrenOrSelf<WizardAnimator>(true);
 		SpellMaker = Components.GetInDescendants<SpellMaker>(true);
@@ -24,6 +29,8 @@ public sealed class PlayerManager : Component
 	}
 	protected override void OnPreRender()
 	{
+		if(IsProxy)
+			return;
 		Vector3 TargetPos = Vector3.Zero;
 		Rotation TargetRot = Rotation.Identity;
 		playerController.Enabled = !InSpell;

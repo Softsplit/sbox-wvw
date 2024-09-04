@@ -53,6 +53,11 @@ public sealed class EmitterNode : Node
 
 				projectileComponent.InitialVelocity = PlayerManager.playerController.Velocity;
 			}
+			
+			
+			proj.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
+			proj.Network.DropOwnership();
+			proj.NetworkSpawn();
 			break;
 		}
 

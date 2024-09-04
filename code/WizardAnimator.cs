@@ -2,11 +2,11 @@ using Sandbox;
 
 public sealed class WizardAnimator : Component
 {
-	[Property] public Vector3 LookPos {get;set;}
-	[Property] public float MoveX {get;set;}
-	[Property] public float MoveY {get;set;}
-	[Property] public bool SettingSpell {get;set;}
-	[Property] public bool Grounded {get;set;}
+	[Sync, Property] public Vector3 LookPos {get;set;}
+	[Sync, Property] public float MoveX {get;set;}
+	[Sync, Property] public float MoveY {get;set;}
+	[Sync, Property] public bool SettingSpell {get;set;}
+	[Sync, Property] public bool Grounded {get;set;}
 	[Property] public List<GameObject> Lookers {get;set;}
 	[Property] public Angles LookRotOffsetNorm {get;set;} = new Angles(0,0,90);
 	[Property] public Angles LookRotOffsetAttack {get;set;} = new Angles(0,0,90);
@@ -45,8 +45,10 @@ public sealed class WizardAnimator : Component
 		}
 	}
 
+	[Broadcast]
 	public void Attack()
 	{
+		Log.Info("poo poo");
 		skinnedModelRenderer.Set("Attacking",true);
 		lastAttack = Time.Now;
 	}

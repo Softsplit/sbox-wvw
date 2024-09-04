@@ -1,11 +1,11 @@
 {
   "Title": "WizardVWizard",
   "Type": "game",
-  "Org": "local",
+  "Org": "tft",
   "Ident": "wizardvwizard",
   "Schema": 1,
   "IncludeSourceFiles": false,
-  "Resources": null,
+  "Resources": "/prefabs/nodes/*",
   "PackageReferences": [],
   "EditorReferences": null,
   "IsWhitelistDisabled": false,
