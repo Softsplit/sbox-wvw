@@ -32,7 +32,35 @@
           "__guid": "8855db5c-cc53-4c09-9a64-45829df26a2b",
           "Flags": 0,
           "Name": "Spawn",
+          "Position": "0,0,41.98444",
           "Enabled": true
+        }
+      ]
+    },
+    {
+      "__guid": "52cbd1ba-5169-4c2c-ade1-4d642c13c1cc",
+      "Flags": 0,
+      "Name": "Camera",
+      "Position": "247.0283,-23.95707,61.01962",
+      "Tags": "maincamera",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.CameraComponent",
+          "__guid": "7487363e-9571-4880-a30c-8d6c7234cc81",
+          "BackgroundColor": "0.33333,0.46275,0.52157,1",
+          "ClearFlags": "All",
+          "FieldOfView": 90,
+          "IsMainCamera": true,
+          "Orthographic": false,
+          "OrthographicHeight": 1204,
+          "Priority": 1,
+          "RenderExcludeTags": "",
+          "RenderTags": "",
+          "TargetEye": "None",
+          "Viewport": "0,0,1,1",
+          "ZFar": 10000,
+          "ZNear": 2
         }
       ]
     },
@@ -90,262 +118,317 @@
       ]
     },
     {
-      "__guid": "6ad70641-3c6c-4402-9c85-9a4969af4764",
+      "__guid": "23da72f8-924e-4c42-b10c-1649280f080b",
       "Flags": 0,
-      "Name": "Plane",
-      "Scale": "5,5,5",
+      "Name": "World",
       "Enabled": true,
-      "Components": [
+      "Children": [
         {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "0b6a18bf-fdb8-4661-970e-ef635bfa9baa",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/dev/plane.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
+          "__guid": "6ad70641-3c6c-4402-9c85-9a4969af4764",
+          "Flags": 0,
+          "Name": "Plane",
+          "Scale": "5,5,5",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "0b6a18bf-fdb8-4661-970e-ef635bfa9baa",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "0715cb55-1733-4f5e-8560-c288b8695631",
+              "Center": "0,0,-5",
+              "IsTrigger": false,
+              "Scale": "100,100,10",
+              "Static": true
+            }
+          ]
         },
         {
-          "__type": "Sandbox.BoxCollider",
-          "__guid": "0715cb55-1733-4f5e-8560-c288b8695631",
-          "Center": "0,0,-5",
-          "IsTrigger": false,
-          "Scale": "100,100,10",
-          "Static": false
-        }
-      ]
-    },
-    {
-      "__guid": "4df968f4-c9dc-41cf-b9eb-dfab96591f63",
-      "Flags": 0,
-      "Name": "Plane (4)",
-      "Position": "500,0,0",
-      "Scale": "5,5,5",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "f8953ae8-559e-4d7f-95c6-2b17f639ff43",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/dev/plane.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
+          "__guid": "4df968f4-c9dc-41cf-b9eb-dfab96591f63",
+          "Flags": 0,
+          "Name": "Plane (4)",
+          "Position": "500,0,0",
+          "Scale": "5,5,5",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "f8953ae8-559e-4d7f-95c6-2b17f639ff43",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "e4295666-dddd-4342-a56d-00cb6d058444",
+              "Center": "0,0,-5",
+              "IsTrigger": false,
+              "Scale": "100,100,10",
+              "Static": true
+            }
+          ]
         },
         {
-          "__type": "Sandbox.BoxCollider",
-          "__guid": "e4295666-dddd-4342-a56d-00cb6d058444",
-          "Center": "0,0,-5",
-          "IsTrigger": false,
-          "Scale": "100,100,10",
-          "Static": false
-        }
-      ]
-    },
-    {
-      "__guid": "afbf1887-7a42-4980-ab7b-b6acfd50d93d",
-      "Flags": 0,
-      "Name": "Plane (7)",
-      "Position": "-500,0,0",
-      "Scale": "5,5,5",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "a9898d65-9382-4b7f-935d-de28f4a5d2a3",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/dev/plane.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
+          "__guid": "afbf1887-7a42-4980-ab7b-b6acfd50d93d",
+          "Flags": 0,
+          "Name": "Plane (7)",
+          "Position": "-500,0,0",
+          "Scale": "5,5,5",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "a9898d65-9382-4b7f-935d-de28f4a5d2a3",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "597eea5d-2a12-4db2-98da-12dc0798190c",
+              "Center": "0,0,-5",
+              "IsTrigger": false,
+              "Scale": "100,100,10",
+              "Static": true
+            }
+          ]
         },
         {
-          "__type": "Sandbox.BoxCollider",
-          "__guid": "597eea5d-2a12-4db2-98da-12dc0798190c",
-          "Center": "0,0,-5",
-          "IsTrigger": false,
-          "Scale": "100,100,10",
-          "Static": false
-        }
-      ]
-    },
-    {
-      "__guid": "fd749626-9ace-45fe-8e2d-0b04cd121129",
-      "Flags": 0,
-      "Name": "Plane (1)",
-      "Position": "0,500,0",
-      "Scale": "5,5,5",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "0d2a6521-ff89-45ef-952b-5e271b7c27bd",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/dev/plane.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
+          "__guid": "fd749626-9ace-45fe-8e2d-0b04cd121129",
+          "Flags": 0,
+          "Name": "Plane (1)",
+          "Position": "0,500,0",
+          "Scale": "5,5,5",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "0d2a6521-ff89-45ef-952b-5e271b7c27bd",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "ad180a29-883d-4bee-9e4d-e7f563da79c7",
+              "Center": "0,0,-5",
+              "IsTrigger": false,
+              "Scale": "100,100,10",
+              "Static": true
+            }
+          ]
         },
         {
-          "__type": "Sandbox.BoxCollider",
-          "__guid": "ad180a29-883d-4bee-9e4d-e7f563da79c7",
-          "Center": "0,0,-5",
-          "IsTrigger": false,
-          "Scale": "100,100,10",
-          "Static": false
-        }
-      ]
-    },
-    {
-      "__guid": "9f784e5e-6ae5-4c6e-af19-82463bbd018e",
-      "Flags": 0,
-      "Name": "Plane (5)",
-      "Position": "500,500,0",
-      "Scale": "5,5,5",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "2851a87b-9e10-40ad-bfac-e791cb0d3a64",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/dev/plane.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
+          "__guid": "9f784e5e-6ae5-4c6e-af19-82463bbd018e",
+          "Flags": 0,
+          "Name": "Plane (5)",
+          "Position": "500,500,0",
+          "Scale": "5,5,5",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "2851a87b-9e10-40ad-bfac-e791cb0d3a64",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "89e432d6-01e4-4e4a-be70-cce89579cdb5",
+              "Center": "0,0,-5",
+              "IsTrigger": false,
+              "Scale": "100,100,10",
+              "Static": true
+            }
+          ]
         },
         {
-          "__type": "Sandbox.BoxCollider",
-          "__guid": "89e432d6-01e4-4e4a-be70-cce89579cdb5",
-          "Center": "0,0,-5",
-          "IsTrigger": false,
-          "Scale": "100,100,10",
-          "Static": false
-        }
-      ]
-    },
-    {
-      "__guid": "5d365f2e-ccf9-4cf8-8f96-2884a3733545",
-      "Flags": 0,
-      "Name": "Plane (8)",
-      "Position": "-500,500,0",
-      "Scale": "5,5,5",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "cd54bce6-0a07-4e70-beef-8ad1c71c690b",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/dev/plane.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
+          "__guid": "5d365f2e-ccf9-4cf8-8f96-2884a3733545",
+          "Flags": 0,
+          "Name": "Plane (8)",
+          "Position": "-500,500,0",
+          "Scale": "5,5,5",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "cd54bce6-0a07-4e70-beef-8ad1c71c690b",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "6392d326-28f9-463d-941a-09985b37cbd7",
+              "Center": "0,0,-5",
+              "IsTrigger": false,
+              "Scale": "100,100,10",
+              "Static": true
+            }
+          ]
         },
         {
-          "__type": "Sandbox.BoxCollider",
-          "__guid": "6392d326-28f9-463d-941a-09985b37cbd7",
-          "Center": "0,0,-5",
-          "IsTrigger": false,
-          "Scale": "100,100,10",
-          "Static": false
-        }
-      ]
-    },
-    {
-      "__guid": "e1d83d73-86c3-4c35-82e0-160442fb13b5",
-      "Flags": 0,
-      "Name": "Plane (2)",
-      "Position": "0,-500,0",
-      "Scale": "5,5,5",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "a8d6502b-7b43-4b5c-87fb-08aed8aa9075",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/dev/plane.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
+          "__guid": "e1d83d73-86c3-4c35-82e0-160442fb13b5",
+          "Flags": 0,
+          "Name": "Plane (2)",
+          "Position": "0,-500,0",
+          "Scale": "5,5,5",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "a8d6502b-7b43-4b5c-87fb-08aed8aa9075",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "c5a95118-6959-4fac-8d56-5dddde183604",
+              "Center": "0,0,-5",
+              "IsTrigger": false,
+              "Scale": "100,100,10",
+              "Static": true
+            }
+          ]
         },
         {
-          "__type": "Sandbox.BoxCollider",
-          "__guid": "c5a95118-6959-4fac-8d56-5dddde183604",
-          "Center": "0,0,-5",
-          "IsTrigger": false,
-          "Scale": "100,100,10",
-          "Static": false
-        }
-      ]
-    },
-    {
-      "__guid": "0caab2b3-f8a5-4b50-aab7-7d6194013cca",
-      "Flags": 0,
-      "Name": "Plane (3)",
-      "Position": "500,-500,0",
-      "Scale": "5,5,5",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "6d789027-0e33-4999-8afd-941452ae8ce0",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/dev/plane.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
+          "__guid": "0caab2b3-f8a5-4b50-aab7-7d6194013cca",
+          "Flags": 0,
+          "Name": "Plane (3)",
+          "Position": "500,-500,0",
+          "Scale": "5,5,5",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "6d789027-0e33-4999-8afd-941452ae8ce0",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "19057d1f-0ace-4dc9-939d-e578892f45a3",
+              "Center": "0,0,-5",
+              "IsTrigger": false,
+              "Scale": "100,100,10",
+              "Static": true
+            }
+          ]
         },
         {
-          "__type": "Sandbox.BoxCollider",
-          "__guid": "19057d1f-0ace-4dc9-939d-e578892f45a3",
-          "Center": "0,0,-5",
-          "IsTrigger": false,
-          "Scale": "100,100,10",
-          "Static": false
-        }
-      ]
-    },
-    {
-      "__guid": "fb54aed5-4de9-4a43-af0c-a24cba9e3d03",
-      "Flags": 0,
-      "Name": "Plane (6)",
-      "Position": "-500,-500,0",
-      "Scale": "5,5,5",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "91584f8f-dbda-4f7c-859d-50863f51714e",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/dev/plane.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
+          "__guid": "fb54aed5-4de9-4a43-af0c-a24cba9e3d03",
+          "Flags": 0,
+          "Name": "Plane (6)",
+          "Position": "-500,-500,0",
+          "Scale": "5,5,5",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "91584f8f-dbda-4f7c-859d-50863f51714e",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "0cd80df5-6f76-4665-91c4-0e212085901f",
+              "Center": "0,0,-5",
+              "IsTrigger": false,
+              "Scale": "100,100,10",
+              "Static": true
+            }
+          ]
         },
         {
-          "__type": "Sandbox.BoxCollider",
-          "__guid": "0cd80df5-6f76-4665-91c4-0e212085901f",
-          "Center": "0,0,-5",
-          "IsTrigger": false,
-          "Scale": "100,100,10",
-          "Static": false
-        }
-      ]
-    },
-    {
-      "__guid": "52cbd1ba-5169-4c2c-ade1-4d642c13c1cc",
-      "Flags": 0,
-      "Name": "Camera",
-      "Position": "247.0283,-23.95707,61.01962",
-      "Tags": "maincamera",
-      "Enabled": true,
-      "Components": [
+          "__guid": "6b6ae4ba-37b0-4120-a032-67f1a1074f7a",
+          "Flags": 0,
+          "Name": "Cube (1)",
+          "Position": "750,0,0",
+          "Scale": "1,30,30",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "1a3d9037-d4a3-487f-b562-288d04f22d3c",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": true
+            }
+          ]
+        },
         {
-          "__type": "Sandbox.CameraComponent",
-          "__guid": "7487363e-9571-4880-a30c-8d6c7234cc81",
-          "BackgroundColor": "0.33333,0.46275,0.52157,1",
-          "ClearFlags": "All",
-          "FieldOfView": 90,
-          "IsMainCamera": true,
-          "Orthographic": false,
-          "OrthographicHeight": 1204,
-          "Priority": 1,
-          "RenderExcludeTags": "",
-          "RenderTags": "",
-          "TargetEye": "None",
-          "Viewport": "0,0,1,1",
-          "ZFar": 10000,
-          "ZNear": 2
+          "__guid": "dbe6b5a8-a9a4-4dc5-8f52-3319bccd7585",
+          "Flags": 0,
+          "Name": "Cube (3)",
+          "Position": "0.0001341105,-749.9999,0",
+          "Rotation": "0,0,-0.7071067,0.7071068",
+          "Scale": "1,30,30",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "f7f95ce1-367f-45c3-a08f-a3a7673075ce",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": true
+            }
+          ]
+        },
+        {
+          "__guid": "3c428bb8-980c-4b3b-bca7-165d0a38dd31",
+          "Flags": 0,
+          "Name": "Cube",
+          "Position": "-750,0,0",
+          "Scale": "1,30,30",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "d5472540-1c2b-4e56-a769-544a63c2ff7c",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": true
+            }
+          ]
+        },
+        {
+          "__guid": "aa654141-ebe0-4395-aded-2efe840cbe9b",
+          "Flags": 0,
+          "Name": "Cube (2)",
+          "Position": "-0.0001341105,749.9999,0",
+          "Rotation": "0,0,-0.7071067,0.7071068",
+          "Scale": "1,30,30",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "d9a06620-ee20-4296-b728-336562bb6a04",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": true
+            }
+          ]
         }
       ]
     }
