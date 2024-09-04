@@ -22,10 +22,10 @@
       {
         "__type": "FireBall",
         "__guid": "66d5642e-919c-414f-9983-6c51ff021ef7",
-        "DamageRange": "40,65",
+        "DamageRange": "10,65",
         "InitialVelocity": "0,0,0",
         "Life": 10,
-        "SpeedRange": "1500,3000",
+        "SpeedRange": "1000,3000",
         "Strength": 0,
         "Visual": {
           "_type": "gameobject",
@@ -59,6 +59,27 @@
             "Model": "models/dev/sphere.vmdl",
             "RenderType": "On",
             "Tint": "1,0,0,1"
+          }
+        ],
+        "Children": [
+          {
+            "__guid": "4174b831-d354-465b-a5fe-3892c9c7fbc9",
+            "Flags": 0,
+            "Name": "Point Light",
+            "Tags": "light_point,light",
+            "Enabled": true,
+            "Components": [
+              {
+                "__type": "Sandbox.PointLight",
+                "__guid": "63470b01-7a55-4b95-b740-cf47a98ef87f",
+                "Attenuation": 1,
+                "FogMode": "Enabled",
+                "FogStrength": 1,
+                "LightColor": "0.98824,0.54118,0.0902,1",
+                "Radius": 400,
+                "Shadows": true
+              }
+            ]
           }
         ]
       }

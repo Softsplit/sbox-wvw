@@ -94,7 +94,7 @@ using Softsplit;
 			if(lastInSpell)
 				Transitioning = true;
 			Ray rawRay = new Ray(Scene.Camera.Transform.Position,Scene.Camera.Transform.World.Forward);
-			var ray = Scene.Trace.Ray(Scene.Camera.Transform.Position,Scene.Camera.Transform.Position+Scene.Camera.Transform.World.Forward*1024).IgnoreGameObjectHierarchy(GameObject).Run();
+			var ray = Scene.Trace.Ray(Scene.Camera.Transform.Position,Scene.Camera.Transform.Position+Scene.Camera.Transform.World.Forward*1000000).IgnoreGameObjectHierarchy(GameObject).Run();
 			if(ray.Hit)
 			{
 				WizardAnimator.LookPos = ray.Distance > MinLookDis ? ray.HitPosition : rawRay.Project(MinLookDis);

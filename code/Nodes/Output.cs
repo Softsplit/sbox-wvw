@@ -25,7 +25,8 @@ public sealed class NodeOutput : Component
 	{
 		for(int i = 0; i < ConnectedInputs.Count; i++)
         {
-            DrawLineTo(ConnectedInputs[i].Transform.Position);
+            if(ConnectedInputs[i].IsValid())
+                DrawLineTo(ConnectedInputs[i].Transform.Position);
         }
 	}
 	

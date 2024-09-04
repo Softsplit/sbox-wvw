@@ -60,6 +60,28 @@
             "RenderType": "On",
             "Tint": "1,0,0,1"
           }
+        ],
+        "Children": [
+          {
+            "__guid": "116f04fa-cdce-4630-9e06-0fe729ebbaee",
+            "Flags": 0,
+            "Name": "Point Light",
+            "Scale": "0.1428571,0.1428571,0.1428571",
+            "Tags": "light_point,light",
+            "Enabled": true,
+            "Components": [
+              {
+                "__type": "Sandbox.PointLight",
+                "__guid": "bbe76848-93ce-45eb-a008-3808eb95a171",
+                "Attenuation": 1,
+                "FogMode": "Enabled",
+                "FogStrength": 1,
+                "LightColor": "0.98824,0.54118,0.0902,1",
+                "Radius": 400,
+                "Shadows": true
+              }
+            ]
+          }
         ]
       }
     ],

@@ -34,7 +34,7 @@
               "_type": "gameobject",
               "prefab": "prefabs/projectiles/level1fireball.prefab"
             },
-            "MaxLevel": 10
+            "MaxLevel": 5
           },
           {
             "Projectile": {
