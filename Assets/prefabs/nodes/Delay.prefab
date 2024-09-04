@@ -2,9 +2,7 @@
   "RootObject": {
     "__guid": "1205ffc9-050c-44af-9de7-3d717fb896b3",
     "Flags": 0,
-    "Name": "Constant",
-    "Position": "-0.00001461804,-1.844769,-1.339858",
-    "Rotation": "-0.7071068,-0,0,0.7071068",
+    "Name": "delay",
     "Tags": "node",
     "Enabled": true,
     "Components": [
@@ -17,8 +15,8 @@
         "Static": false
       },
       {
-        "__type": "ConstantNode",
-        "__guid": "3f0fcaeb-4568-40a0-a64b-3e8a3340bc09",
+        "__type": "DelayNode",
+        "__guid": "031311cc-8ab0-45f9-9969-c038168c3b5a",
         "Mana": 0,
         "MaxMana": 0,
         "NumberInput": {
@@ -30,7 +28,7 @@
         "Outputs": [
           {
             "_type": "component",
-            "component_id": "93fe5a89-bd00-47a4-9734-ad28b8dad99a",
+            "component_id": "e0bda127-0414-4e3c-b8df-d880e721f074",
             "go": "695e0746-ef42-497a-b4c1-b025038d214e",
             "component_type": "NodeOutput"
           }
@@ -42,7 +40,6 @@
         "__guid": "c4b26d8e-198b-4f53-aca9-0c0422abe29b",
         "Flags": 0,
         "Name": "Cube",
-        "Position": "0,0,0",
         "Scale": "0.001,0.02,0.02",
         "Enabled": true,
         "Components": [
@@ -59,7 +56,7 @@
       {
         "__guid": "a36ffeda-73ab-4f5e-94e1-60a0a2d48118",
         "Flags": 0,
-        "Name": "Text",
+        "Name": "Delay",
         "Position": "-0.02757883,0,0.3535614",
         "Scale": "0.02003517,0.02003517,0.02003517",
         "Enabled": true,
@@ -72,7 +69,7 @@
             "FontSize": 64,
             "FontWeight": 800,
             "Scale": 0.13,
-            "Text": "Const",
+            "Text": "Delay\n",
             "TextAlignment": "Center"
           }
         ]
@@ -95,12 +92,12 @@
           },
           {
             "__type": "NodeOutput",
-            "__guid": "93fe5a89-bd00-47a4-9734-ad28b8dad99a",
+            "__guid": "e0bda127-0414-4e3c-b8df-d880e721f074",
             "ConnectedInputs": [],
-            "NeutralColour": "0,1,1,1",
-            "outputType": "Number",
+            "NeutralColour": "1,1,1,1",
+            "outputType": "Normal",
             "PathDetours": [],
-            "SendColour": "0,0,1,1"
+            "SendColour": "0,1,0,1"
           }
         ],
         "Children": [
@@ -118,7 +115,7 @@
                 "BodyGroups": 18446744073709551615,
                 "Model": "models/dev/box.vmdl",
                 "RenderType": "On",
-                "Tint": "0,0,1,1"
+                "Tint": "1,0,0,1"
               }
             ]
           }
@@ -175,8 +172,54 @@
             ]
           }
         ]
+      },
+      {
+        "__guid": "514f8214-d88a-4d2d-83c7-231178e969bb",
+        "Flags": 0,
+        "Name": "input",
+        "Position": "-0.00008082297,0,0.5",
+        "Rotation": "-1,0.00000002980232,0.00000008940697,0.00000002980232",
+        "Tags": "input",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.BoxCollider",
+            "__guid": "0c0c2c64-e033-47e1-a212-7baf4474bd46",
+            "Center": "0,0,0",
+            "IsTrigger": true,
+            "Scale": "0.1,0.1,0.1",
+            "Static": false
+          },
+          {
+            "__type": "NodeInput",
+            "__guid": "68e4bed7-918b-49db-ab3c-3eceb0be3f4e",
+            "AcceptedType": "Normal",
+            "index": 0
+          }
+        ],
+        "Children": [
+          {
+            "__guid": "9f0e731f-2e3b-4f32-b460-19724c8726f9",
+            "Flags": 0,
+            "Name": "Cube",
+            "Position": "0,0,0",
+            "Scale": "0.002,0.002,0.002",
+            "Enabled": true,
+            "Components": [
+              {
+                "__type": "Sandbox.ModelRenderer",
+                "__guid": "f5865bdf-4ff9-4b0e-9af4-61191def93d7",
+                "BodyGroups": 18446744073709551615,
+                "Model": "models/dev/box.vmdl",
+                "RenderType": "On",
+                "Tint": "0,1,0,1"
+              }
+            ]
+          }
+        ]
       }
-    ]
+    ],
+    "__variables": []
   },
   "ShowInMenu": false,
   "MenuPath": null,
