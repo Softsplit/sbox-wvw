@@ -634,6 +634,7 @@
                                                   "Position": "0.3460226,-0.6398134,-0.1625137",
                                                   "Rotation": "-0.7071068,-0,0,0.7071068",
                                                   "Tags": "node",
+                                                  "Enabled": true,
                                                   "Components": [
                                                     {
                                                       "__type": "Sandbox.BoxCollider",
@@ -1373,6 +1374,7 @@
                                                   "Position": "0.3460226,0.5151292,-1.425049",
                                                   "Rotation": "-0.7071068,-0,0,0.7071068",
                                                   "Tags": "node",
+                                                  "Enabled": true,
                                                   "Components": [
                                                     {
                                                       "__type": "Sandbox.BoxCollider",
@@ -2993,6 +2995,13 @@
                                                             "prefab": "prefabs/projectiles/level1fireball.prefab"
                                                           },
                                                           "MaxLevel": 10
+                                                        },
+                                                        {
+                                                          "Projectile": {
+                                                            "_type": "gameobject",
+                                                            "prefab": "prefabs/projectiles/level2fireball.prefab"
+                                                          },
+                                                          "MaxLevel": 25
                                                         }
                                                       ]
                                                     }
@@ -3681,6 +3690,57 @@
                                                           ]
                                                         }
                                                       ]
+                                                    },
+                                                    {
+                                                      "__guid": "828b45aa-b96b-46d8-8a81-0681f805184e",
+                                                      "Flags": 0,
+                                                      "Name": "input (2)",
+                                                      "Position": "-0.00008082297,0.5,0",
+                                                      "Rotation": "-1,0.00000002980232,0.00000008940697,0.00000002980232",
+                                                      "Tags": "input",
+                                                      "Enabled": true,
+                                                      "Components": [
+                                                        {
+                                                          "__type": "Sandbox.BoxCollider",
+                                                          "__guid": "a59d2dbe-49c1-4167-812d-b4243f599209",
+                                                          "Center": "0,0,0",
+                                                          "IsTrigger": true,
+                                                          "Scale": "0.1,0.1,0.1",
+                                                          "Static": false
+                                                        },
+                                                        {
+                                                          "__type": "NodeInput",
+                                                          "__guid": "17266321-00aa-4abd-8fe9-1b000a25bae8",
+                                                          "AcceptedType": "Normal",
+                                                          "index": 0,
+                                                          "node": {
+                                                            "_type": "component",
+                                                            "component_id": "f012ebf7-51dc-4c60-954c-b0e8347c1413",
+                                                            "go": "b8cafdf1-53b1-4839-a895-89f5b796409f",
+                                                            "component_type": "GeneratorNode"
+                                                          }
+                                                        }
+                                                      ],
+                                                      "Children": [
+                                                        {
+                                                          "__guid": "96e6738a-d201-494e-8932-3ec010f9dc73",
+                                                          "Flags": 0,
+                                                          "Name": "Cube",
+                                                          "Position": "0,0,0",
+                                                          "Scale": "0.002,0.002,0.002",
+                                                          "Enabled": true,
+                                                          "Components": [
+                                                            {
+                                                              "__type": "Sandbox.ModelRenderer",
+                                                              "__guid": "572e9077-b2a5-4f41-a026-8f51c28ae30e",
+                                                              "BodyGroups": 18446744073709551615,
+                                                              "Model": "models/dev/box.vmdl",
+                                                              "RenderType": "On",
+                                                              "Tint": "0,1,0,1"
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
                                                     }
                                                   ]
                                                 }
@@ -3849,15 +3909,6 @@
           ]
         }
       ]
-    },
-    {
-      "__guid": "19e6eb50-1c96-4992-9da4-02c6ffebf6bc",
-      "Flags": 0,
-      "Name": "Level1FireBall",
-      "Position": "68.94447,0.000004109411,44.4643",
-      "Enabled": true,
-      "__Prefab": "prefabs/projectiles/level1fireball.prefab",
-      "__PrefabVariables": {}
     },
     {
       "__guid": "cf45a132-3419-44f4-badd-f3f25a15e69e",

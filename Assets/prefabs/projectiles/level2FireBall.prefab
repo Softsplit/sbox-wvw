@@ -2,7 +2,7 @@
   "RootObject": {
     "__guid": "19e6eb50-1c96-4992-9da4-02c6ffebf6bc",
     "Flags": 0,
-    "Name": "level1fireball",
+    "Name": "level2fireball",
     "Enabled": true,
     "Components": [
       {
@@ -21,18 +21,18 @@
       },
       {
         "__type": "FireBall",
-        "__guid": "bf55cd03-c9de-4a44-bfb3-8478f2f7fa80",
-        "DamageRange": "1,30",
+        "__guid": "66d5642e-919c-414f-9983-6c51ff021ef7",
+        "DamageRange": "30,65",
         "InitialVelocity": "0,0,0",
-        "Life": 3,
-        "SpeedRange": "150,300",
+        "Life": 10,
+        "SpeedRange": "1500,3000",
         "Strength": 0,
         "Visual": {
           "_type": "gameobject",
           "go": "2eabd8f7-ac7c-498e-83df-a7a18e39d11d"
         },
         "Width": {
-          "rangey": "0.1,0.7",
+          "rangey": "0.1,0.25",
           "frames": [
             {},
             {

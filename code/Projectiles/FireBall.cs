@@ -1,6 +1,6 @@
 using Sandbox;
 
-public sealed class Level1FireBall : Projectile
+public sealed class FireBall : Projectile
 {
 	[Property] public Vector2 DamageRange {get;set;}
 	[Property] public Vector2 SpeedRange {get;set;}
@@ -29,7 +29,7 @@ public sealed class Level1FireBall : Projectile
 			return;
 		}
 
-		Rigidbody.Velocity = InitialVelocity+(Transform.World.Forward * MathX.Lerp(SpeedRange.x,SpeedRange.y,Strength));
+		Rigidbody.Velocity = (Transform.World.Forward * MathX.Lerp(SpeedRange.x,SpeedRange.y,Strength));
 
 		float w = Width.Evaluate((Time.Now-startTime)/Life);
 
