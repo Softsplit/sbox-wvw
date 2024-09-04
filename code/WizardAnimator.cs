@@ -21,6 +21,13 @@ public sealed class WizardAnimator : Component
 		skinnedModelRenderer = Components.Get<SkinnedModelRenderer>();
 		LookOffset = LookRotOffsetNorm;
 	}
+	public void UnProcedualLookers()
+	{
+		foreach(GameObject looker in Lookers)
+		{
+			looker.Flags = GameObjectFlags.Bone;
+		}
+	}
 	Angles LookOffset;
 
 	Vector2 MoveDirSmoothed;
@@ -48,7 +55,6 @@ public sealed class WizardAnimator : Component
 	[Broadcast]
 	public void Attack()
 	{
-		Log.Info("poo poo");
 		skinnedModelRenderer.Set("Attacking",true);
 		lastAttack = Time.Now;
 	}

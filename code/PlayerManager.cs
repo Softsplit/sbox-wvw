@@ -1,4 +1,7 @@
+using System;
+using System.Threading.Channels;
 using Sandbox;
+using Softsplit;
 
 public sealed class PlayerManager : Component
 {
@@ -8,29 +11,61 @@ public sealed class PlayerManager : Component
 	[Property] public GameObject DefaultLookPos {get;set;}
 	[Property] public GameObject LeftHand {get;set;}
 	[Property] public GameObject RightHand {get;set;}
+	ModelPhysics modelPhysics;
 	[Property] public float TransitionSpeed {get;set;} = 10f;
 	[Property] public bool InSpell {get;set;}
-	bool Transitioning;
+	[Property] public bool Transitioning {get;set;}
+	[Property] public float MinLookDis {get;set;}
 	public PlayerController playerController;
 	WizardAnimator WizardAnimator;
 	SpellMaker SpellMaker;
 	SpellUI SpellUI;
+	ModdedNetworkHelper NetworkHelper;
+	HealthComponent HealthComponent;
+
+	[Button("Balls")] public void KillButton() => Kill(Vector3.Zero);
+
+	[Broadcast]
+	public async void Kill(Vector3 vel)
+	{
+		WizardAnimator.UnProcedualLookers();
+		WizardAnimator.Enabled = false;
+		modelPhysics.Enabled = true;
+		foreach(PhysicsBody physicsBody in modelPhysics.PhysicsGroup.Bodies)
+        {
+            physicsBody.ApplyForce(vel);
+        }
+		modelPhysics.GameObject.SetParent(null);
+		modelPhysics.Renderer.UseAnimGraph = false;
+		GameObject.Destroy();
+		modelPhysics.GameObject.DestroyAsync(10);
+		if ( !Networking.IsHost ) return;
+		NetworkHelper.AddRespawn(Network.OwnerId);
+		
+	}
+
 	protected override void OnStart()
 	{
-		if(IsProxy)
-		{
-			Camera.Enabled = false;
-			return;
-		}
+		HealthComponent = Components.Get<HealthComponent>();
+		NetworkHelper = Scene.Components.GetInChildren<ModdedNetworkHelper>();
+		Camera = Scene.Camera.GameObject;
 		playerController = Components.Get<PlayerController>(true);
 		WizardAnimator = Components.GetInChildrenOrSelf<WizardAnimator>(true);
+		modelPhysics = WizardAnimator.Components.Get<ModelPhysics>(true);
 		SpellMaker = Components.GetInDescendants<SpellMaker>(true);
 		SpellUI = Components.Get<SpellUI>(true);
+		if(Time.Now > 5) Transitioning = true;
 	}
 	protected override void OnPreRender()
 	{
 		if(IsProxy)
 			return;
+
+		if(HealthComponent.Health <= 0)
+		{
+			Kill(playerController.Velocity);
+			return;
+		}
 		Vector3 TargetPos = Vector3.Zero;
 		Rotation TargetRot = Rotation.Identity;
 		playerController.Enabled = !InSpell;
@@ -58,10 +93,11 @@ public sealed class PlayerManager : Component
 			TargetRot = ThirdPersonCam.Transform.Rotation;
 			if(lastInSpell)
 				Transitioning = true;
-			var ray = Scene.Trace.Ray(Scene.Camera.Transform.Position,Scene.Camera.Transform.Position+Scene.Camera.Transform.World.Forward*1024).Run();
+			Ray rawRay = new Ray(Scene.Camera.Transform.Position,Scene.Camera.Transform.World.Forward);
+			var ray = Scene.Trace.Ray(Scene.Camera.Transform.Position,Scene.Camera.Transform.Position+Scene.Camera.Transform.World.Forward*1024).IgnoreGameObjectHierarchy(GameObject).Run();
 			if(ray.Hit)
 			{
-				WizardAnimator.LookPos = ray.HitPosition;
+				WizardAnimator.LookPos = ray.Distance > MinLookDis ? ray.HitPosition : rawRay.Project(MinLookDis);
 				DefaultLookPos.Transform.Position = ray.HitPosition;
 			}
 			else WizardAnimator.LookPos = DefaultLookPos.Transform.Position;

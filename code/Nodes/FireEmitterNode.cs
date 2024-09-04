@@ -31,7 +31,6 @@ public sealed class EmitterNode : Node
 	{
 		if(Mana < 1.5f || SpellMaker.Enabled) return;
 		WizardAnimator.Attack();
-		Log.Info(MathF.Round(Mana*10f)/10f);
 		ProjectileInfo lastProjectile = null;
 		foreach(ProjectileInfo projectile in Projectiles)
 		{

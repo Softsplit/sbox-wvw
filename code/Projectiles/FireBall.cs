@@ -42,8 +42,8 @@ public sealed class FireBall : Projectile
 			
 			hitSomething = true;
 			
-			//HealthComponent healthComponent = ray.GameObject.Components.Get<HealthComponent>();
-			if(false)//healthComponent != null)
+			HealthComponent healthComponent = ray.GameObject.Components.Get<HealthComponent>();
+			if(healthComponent != null)
 			{
 				float damageMult = 1;
 				if(ray.Hitbox != null)
@@ -57,7 +57,7 @@ public sealed class FireBall : Projectile
 				}
 				float damage = MathX.Lerp(DamageRange.x,DamageRange.y,Strength) * damageMult;
 				
-				//healthComponent.DoDamage(damage, owner);
+				healthComponent.DoDamage(damage, Network.OwnerId);
 			}
 			if(ray.Surface.Sounds.ImpactHard != null) Sound.Play(ray.Surface.Sounds.ImpactHard,ray.HitPosition);
 			GameObject.Destroy();

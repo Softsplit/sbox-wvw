@@ -83,6 +83,7 @@
           "_type": "gameobject",
           "go": "0f9bf7c7-91f1-4a55-a0fe-5f78e3c2325c"
         },
+        "MinLookDis": 106,
         "RightHand": {
           "_type": "gameobject",
           "go": "f5cc6e6d-0569-421d-973d-62d1093a0d85"
@@ -95,6 +96,7 @@
           "_type": "gameobject",
           "go": "84e9a4bc-eaa4-4c91-8232-f3a535a74acc"
         },
+        "Transitioning": false,
         "TransitionSpeed": 10
       },
       {
@@ -120,6 +122,13 @@
       {
         "__type": "PlayerInventory",
         "__guid": "71417f2a-21d9-4e12-aee4-5f333cf0aeac"
+      },
+      {
+        "__type": "HealthComponent",
+        "__guid": "b170db57-b535-4455-8057-72f1633600d2",
+        "Health": 100,
+        "LastAttacker": "00000000-0000-0000-0000-000000000000",
+        "MaxHealth": 100
       }
     ],
     "Children": [
@@ -161,6 +170,21 @@
             "MoveX": 0,
             "MoveY": 0,
             "SettingSpell": false
+          },
+          {
+            "__type": "Sandbox.ModelPhysics",
+            "__guid": "1cd2a52c-23a1-470e-8260-2554de7bec13",
+            "__enabled": false,
+            "Locking": {},
+            "Model": "models/wizard.vmdl",
+            "MotionEnabled": true,
+            "Renderer": {
+              "_type": "component",
+              "component_id": "a6e0a762-564c-4f00-ade4-111a2cf5835d",
+              "go": "0bdcdf2f-b025-409a-a1b6-87f7c1a8c005",
+              "component_type": "SkinnedModelRenderer"
+            },
+            "RigidbodyFlags": 0
           }
         ],
         "Children": [
@@ -880,7 +904,7 @@
             "__guid": "84e9a4bc-eaa4-4c91-8232-f3a535a74acc",
             "Flags": 0,
             "Name": "CamTarget",
-            "Position": "-52.97171,-23.95707,21.90886",
+            "Position": "-53,-23.95707,21.90886",
             "Enabled": true
           },
           {
@@ -900,33 +924,6 @@
                 "Tint": "1,1,1,1"
               }
             ]
-          }
-        ]
-      },
-      {
-        "__guid": "043e7154-0c5d-4b31-b01c-3f47615c9e56",
-        "Flags": 0,
-        "Name": "Camera",
-        "Position": "-52.97171,-23.95707,61.01962",
-        "Tags": "maincamera",
-        "Enabled": true,
-        "Components": [
-          {
-            "__type": "Sandbox.CameraComponent",
-            "__guid": "3def3cb1-f129-4619-b9a4-4f0b45814254",
-            "BackgroundColor": "0.33333,0.46275,0.52157,1",
-            "ClearFlags": "All",
-            "FieldOfView": 90,
-            "IsMainCamera": true,
-            "Orthographic": false,
-            "OrthographicHeight": 1204,
-            "Priority": 1,
-            "RenderExcludeTags": "",
-            "RenderTags": "",
-            "TargetEye": "None",
-            "Viewport": "0,0,1,1",
-            "ZFar": 10000,
-            "ZNear": 2
           }
         ]
       }

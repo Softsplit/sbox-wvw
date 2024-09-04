@@ -6,14 +6,18 @@
       "Flags": 0,
       "Name": "NetworkHelper",
       "Enabled": true,
+      "NetworkMode": 1,
+      "NetworkOrphaned": 1,
       "Components": [
         {
-          "__type": "Sandbox.NetworkHelper",
-          "__guid": "23b35fe3-b4cb-4623-83fb-fa8c583c4c60",
+          "__type": "ModdedNetworkHelper",
+          "__guid": "32715805-336a-427a-ac54-3ae37ef7fa96",
           "PlayerPrefab": {
             "_type": "gameobject",
             "prefab": "prefabs/wizard.prefab"
           },
+          "Respawns": [],
+          "RespawnTime": 5,
           "SpawnPoints": [
             {
               "_type": "gameobject",
@@ -315,6 +319,33 @@
           "IsTrigger": false,
           "Scale": "100,100,10",
           "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "52cbd1ba-5169-4c2c-ade1-4d642c13c1cc",
+      "Flags": 0,
+      "Name": "Camera",
+      "Position": "247.0283,-23.95707,61.01962",
+      "Tags": "maincamera",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.CameraComponent",
+          "__guid": "7487363e-9571-4880-a30c-8d6c7234cc81",
+          "BackgroundColor": "0.33333,0.46275,0.52157,1",
+          "ClearFlags": "All",
+          "FieldOfView": 90,
+          "IsMainCamera": true,
+          "Orthographic": false,
+          "OrthographicHeight": 1204,
+          "Priority": 1,
+          "RenderExcludeTags": "",
+          "RenderTags": "",
+          "TargetEye": "None",
+          "Viewport": "0,0,1,1",
+          "ZFar": 10000,
+          "ZNear": 2
         }
       ]
     }
