@@ -20,6 +20,12 @@
         "CameraRollDamping": 0.015,
         "CameraRollEnabled": false,
         "CameraRollSmoothing": 0.2,
+        "CollisionBox": {
+          "_type": "component",
+          "component_id": "e75b4e3f-de3a-49c0-ac56-c802e6fc7529",
+          "go": "cf26fa8d-a8ee-47cc-b795-c9d170327f63",
+          "component_type": "BoxCollider"
+        },
         "CrouchCost": 0.1,
         "CrouchRecoveryRate": 0.33,
         "CrouchSpeed": 85,
@@ -54,6 +60,14 @@
         }
       },
       {
+        "__type": "Sandbox.BoxCollider",
+        "__guid": "e75b4e3f-de3a-49c0-ac56-c802e6fc7529",
+        "Center": "0,0,35",
+        "IsTrigger": false,
+        "Scale": "20,20,70",
+        "Static": false
+      },
+      {
         "__type": "PlayerManager",
         "__guid": "00e9a8fb-3099-4211-aea5-ab7636d7f40c",
         "DefaultLookPos": {
@@ -73,12 +87,6 @@
         "SpellCam": {
           "_type": "gameobject",
           "go": "1e5beefc-4450-413c-a36b-41d98e74598c"
-        },
-        "SpellMaker": {
-          "_type": "component",
-          "component_id": "ce15c6c0-f514-4591-a1ae-e4a60ca727eb",
-          "go": "edaa4961-7983-49ff-99ca-a5645b9e662c",
-          "component_type": "SpellMaker"
         },
         "ThirdPersonCam": {
           "_type": "gameobject",
@@ -392,7 +400,6 @@
                                         "Position": "0.7808611,7.126368,-10.004",
                                         "Rotation": "0.668978,-0.02701594,0.7410434,-0.05093301",
                                         "Enabled": true,
-                                        "NetworkMode": 0,
                                         "Children": [
                                           {
                                             "__guid": "edaa4961-7983-49ff-99ca-a5645b9e662c",

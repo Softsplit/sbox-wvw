@@ -334,6 +334,8 @@ public sealed class PlayerController : Component
     }
 
     protected override void OnFixedUpdate() {
+        if(IsProxy)
+            return;
         
 		if ( IsProxy )
 			return;
