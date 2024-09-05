@@ -18,7 +18,7 @@ using Softsplit;
 	[Property] public float MinLookDis {get;set;}
 	public PlayerController playerController;
 	WizardAnimator WizardAnimator;
-	SpellMaker SpellMaker;
+	[Property] public SpellMaker SpellMaker  {get;set;}
 	SpellUI SpellUI;
 	ModdedNetworkHelper NetworkHelper;
 	HealthComponent HealthComponent;
@@ -52,7 +52,6 @@ using Softsplit;
 		playerController = Components.Get<PlayerController>(true);
 		WizardAnimator = Components.GetInChildrenOrSelf<WizardAnimator>(true);
 		modelPhysics = WizardAnimator.Components.Get<ModelPhysics>(true);
-		SpellMaker = Components.GetInDescendants<SpellMaker>(true);
 		SpellUI = Components.Get<SpellUI>(true);
 		Transitioning = true;
 	}
@@ -60,12 +59,12 @@ using Softsplit;
 	{
 		if(IsProxy)
 			return;
-
 		if(HealthComponent.Health <= 0)
 		{
 			Kill(playerController.Velocity);
 			return;
 		}
+		 
 		Vector3 TargetPos = Vector3.Zero;
 		Rotation TargetRot = Rotation.Identity;
 		playerController.Enabled = !InSpell;
@@ -73,6 +72,9 @@ using Softsplit;
 		SpellUI.Enabled = SpellMaker.Enabled;
 		WizardAnimator.SettingSpell = InSpell;
 		Mouse.Visible = InSpell;
+
+		
+		
 		if(Input.Pressed("Score") && playerController.IsOnGround)
 		{
 			InSpell = !InSpell;
