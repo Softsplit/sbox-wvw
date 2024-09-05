@@ -48,7 +48,6 @@ public sealed class PlayerController : Component
     [Property, Title("Speed Multiplier"), Description("Useful for weapons that slow you down.")] public float Weight {get;set;} =  1f;
     [Property, Description("Add 'player' tag to disable collisions with other players.")] public TagSet IgnoreLayers { get; set; } = new TagSet();
     [Property] public GameObject Body {get;set;}
-    [Property] public BoxCollider CollisionBox {get;set;}
     [Property] public WizardAnimator WizardAnimator {get;set;}
 
     // State Bools
@@ -337,12 +336,6 @@ public sealed class PlayerController : Component
     protected override void OnFixedUpdate() {
         if(IsProxy)
             return;
-        if (CollisionBox == null) return;
-        
-        if (CollisionBox.Scale != LastSize) {
-            CollisionBox.Scale = LastSize;
-            CollisionBox.Center = new Vector3(0, 0, LastSize.z * 0.5f);
-        }
         
 		if ( IsProxy )
 			return;
