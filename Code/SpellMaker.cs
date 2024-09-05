@@ -249,7 +249,7 @@ public sealed class SpellMaker : Component
 				if(CurrentOutput.outputType == nodeInput.AcceptedType)
 				{
 					CurrentOutput.Connections.Add( 
-						new NodeOutput.Connection{ ConnectedNode = nodeInput.node, Index = nodeInput.index }
+						new NodeOutput.Connection{ ConnectedObject = nodeInput.node.GameObject, Index = nodeInput.index }
 						);
 					Log.Info(CurrentOutput.Connections.Count);
 					CurrentInteractionState = InteractionState.Finding;

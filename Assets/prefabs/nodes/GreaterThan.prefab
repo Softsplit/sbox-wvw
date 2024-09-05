@@ -18,6 +18,7 @@
         "__type": "GreaterThanNode",
         "__guid": "36e16549-6f79-40a5-bed0-2d8cdf41871b",
         "Cost": 3,
+        "Inputs": [],
         "Mana": 0,
         "MaxMana": 0,
         "Outputs": [
@@ -176,7 +177,7 @@
           {
             "__type": "NodeOutput",
             "__guid": "3c4c39e1-602f-48c5-a79a-1a90dd1f3b46",
-            "ConnectedInputs": [],
+            "Connections": [],
             "NeutralColour": "1,1,1,1",
             "outputType": "Normal",
             "SendColour": "0,1,0,1"
@@ -222,6 +223,16 @@
           {
             "Id": "3c4c39e1-602f-48c5-a79a-1a90dd1f3b46",
             "Property": "PathDetours"
+          }
+        ]
+      },
+      {
+        "Id": "Connections",
+        "Title": "Connections",
+        "Targets": [
+          {
+            "Id": "3c4c39e1-602f-48c5-a79a-1a90dd1f3b46",
+            "Property": "Connections"
           }
         ]
       }

@@ -54,7 +54,6 @@ public sealed class NodeOutput : Component
 	{
 		for(int i = 0; i < Connections.Count; i++)
         {
-            Log.Info(Connections[i].ConnectedNode.Inputs.Count);
             NodeInput nodeInput = Connections[i].NodeInput();
             if(nodeInput.IsValid())
                 DrawLineTo(nodeInput.Transform.Position);

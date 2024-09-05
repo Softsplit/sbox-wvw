@@ -17,7 +17,8 @@
       {
         "__type": "GeneratorNode",
         "__guid": "f012ebf7-51dc-4c60-954c-b0e8347c1413",
-        "Cost": 20,
+        "Cost": 40,
+        "Inputs": [],
         "Mana": 0,
         "MaxMana": 0,
         "Outputs": [
@@ -89,7 +90,7 @@
           {
             "__type": "NodeOutput",
             "__guid": "90d8cf65-c97a-4a92-8cdb-98110c05a7cd",
-            "ConnectedInputs": [],
+            "Connections": [],
             "NeutralColour": "0,1,1,1",
             "outputType": "Mana",
             "SendColour": "0,0,1,1"
@@ -186,6 +187,16 @@
           {
             "Id": "90d8cf65-c97a-4a92-8cdb-98110c05a7cd",
             "Property": "PathDetours"
+          }
+        ]
+      },
+      {
+        "Id": "Connections",
+        "Title": "Connections",
+        "Targets": [
+          {
+            "Id": "90d8cf65-c97a-4a92-8cdb-98110c05a7cd",
+            "Property": "Connections"
           }
         ]
       }
