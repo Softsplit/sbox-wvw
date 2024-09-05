@@ -18,6 +18,7 @@
         "__type": "TestOutputNode",
         "__guid": "3244cd9d-978b-4cca-8344-b58e271dbaa3",
         "Cost": 3,
+        "Inputs": [],
         "Key": "Attack2",
         "Mana": 0,
         "MaxMana": 0,
@@ -95,7 +96,7 @@
           {
             "__type": "NodeOutput",
             "__guid": "b6776b25-d808-4f8a-89a5-47108d89b504",
-            "ConnectedInputs": [],
+            "Connections": [],
             "NeutralColour": "1,1,1,1",
             "outputType": "Normal",
             "SendColour": "0,1,0,1"
@@ -174,6 +175,16 @@
           {
             "Id": "b6776b25-d808-4f8a-89a5-47108d89b504",
             "Property": "PathDetours"
+          }
+        ]
+      },
+      {
+        "Id": "Connections",
+        "Title": "Connections",
+        "Targets": [
+          {
+            "Id": "b6776b25-d808-4f8a-89a5-47108d89b504",
+            "Property": "Connections"
           }
         ]
       }

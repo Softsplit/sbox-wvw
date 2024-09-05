@@ -26,10 +26,6 @@ public sealed class SpellMaker : Component
 
 	public string GetSaveData()
 	{
-		foreach(GameObject c in GameObject.Children)
-		{
-			c.BreakFromPrefab();
-		}
 		JsonObject jsonObject = GameObject.Serialize();
 		jsonObject.Remove("Component");
 		SceneUtility.MakeIdGuidsUnique(jsonObject);
@@ -149,9 +145,9 @@ public sealed class SpellMaker : Component
 			if ( _mouseRay.GameObject.Tags.Contains( "output" ) )
 			{
 				var nodeOutput = _mouseRay.GameObject.Components.Get<NodeOutput>();
-				if ( nodeOutput.ConnectedInputs.Count > 0 )
+				if ( nodeOutput.Connections.Count > 0 )
 				{
-					nodeOutput.ConnectedInputs.RemoveAt( nodeOutput.ConnectedInputs.Count - 1 );
+					nodeOutput.Connections.RemoveAt( nodeOutput.Connections.Count - 1 );
 				}
 			}
 			else if (_mouseRay.GameObject.Tags.Contains( "node" ))
@@ -252,7 +248,10 @@ public sealed class SpellMaker : Component
 				var nodeInput = _mouseRay.GameObject.Components.Get<NodeInput>();
 				if(CurrentOutput.outputType == nodeInput.AcceptedType)
 				{
-					CurrentOutput.ConnectedInputs.Add( nodeInput );
+					CurrentOutput.Connections.Add( 
+						new NodeOutput.Connection{ ConnectedNode = nodeInput.node, Index = nodeInput.index }
+						);
+					Log.Info(CurrentOutput.Connections.Count);
 					CurrentInteractionState = InteractionState.Finding;
 					return;
 				}

@@ -17,6 +17,7 @@ public sealed class EmitterNode : Node
 
 	protected override void OnStart()
 	{
+		base.OnStart();
 		WizardAnimator = Components.GetInAncestors<WizardAnimator>(true);
 		PlayerManager = Components.GetInAncestors<PlayerManager>(true);
 		SpellMaker = Components.GetInAncestors<SpellMaker>(true);

@@ -18,6 +18,7 @@
         "__type": "AndNode",
         "__guid": "e5452b66-c7a4-42ce-9616-fd375b7abd96",
         "Cost": 2,
+        "Inputs": [],
         "Mana": 0,
         "MaxMana": 0,
         "Outputs": [
@@ -176,7 +177,7 @@
           {
             "__type": "NodeOutput",
             "__guid": "75b1c1fd-b4e0-4d86-8d09-803bbd23c803",
-            "ConnectedInputs": [],
+            "Connections": [],
             "NeutralColour": "1,1,1,1",
             "outputType": "Normal",
             "SendColour": "0,1,0,1"
@@ -222,6 +223,16 @@
           {
             "Id": "75b1c1fd-b4e0-4d86-8d09-803bbd23c803",
             "Property": "PathDetours"
+          }
+        ]
+      },
+      {
+        "Id": "Connections",
+        "Title": "Connections",
+        "Targets": [
+          {
+            "Id": "75b1c1fd-b4e0-4d86-8d09-803bbd23c803",
+            "Property": "Connections"
           }
         ]
       }

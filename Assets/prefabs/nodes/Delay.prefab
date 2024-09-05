@@ -18,6 +18,7 @@
         "__type": "DelayNode",
         "__guid": "031311cc-8ab0-45f9-9969-c038168c3b5a",
         "Cost": 4,
+        "Inputs": [],
         "Mana": 0,
         "MaxMana": 0,
         "NumberInput": {
@@ -94,7 +95,7 @@
           {
             "__type": "NodeOutput",
             "__guid": "e0bda127-0414-4e3c-b8df-d880e721f074",
-            "ConnectedInputs": [],
+            "Connections": [],
             "NeutralColour": "1,1,1,1",
             "outputType": "Normal",
             "SendColour": "0,1,0,1"
@@ -237,6 +238,26 @@
           {
             "Id": "e0bda127-0414-4e3c-b8df-d880e721f074",
             "Property": "PathDetours"
+          }
+        ]
+      },
+      {
+        "Id": "Text",
+        "Title": "Text",
+        "Targets": [
+          {
+            "Id": "b632b845-46e5-40b0-b359-6876e4da2da9",
+            "Property": "Text"
+          }
+        ]
+      },
+      {
+        "Id": "Value",
+        "Title": "Value",
+        "Targets": [
+          {
+            "Id": "0675bc7e-14c9-4368-a340-974abf7bed34",
+            "Property": "Value"
           }
         ]
       }

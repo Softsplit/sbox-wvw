@@ -18,6 +18,7 @@
         "__type": "XorNode",
         "__guid": "dd4f693f-fa05-4ab1-b9aa-789df5b5ed40",
         "Cost": 2,
+        "Inputs": [],
         "Mana": 0,
         "MaxMana": 0,
         "Outputs": [
@@ -176,7 +177,7 @@
           {
             "__type": "NodeOutput",
             "__guid": "0897c93a-6f2f-4bcd-a86c-4b9499f0aace",
-            "ConnectedInputs": [],
+            "Connections": [],
             "NeutralColour": "1,1,1,1",
             "outputType": "Normal",
             "SendColour": "0,1,0,1"
@@ -204,7 +205,18 @@
         ]
       }
     ],
-    "__variables": []
+    "__variables": [
+      {
+        "Id": "Connections",
+        "Title": "Connections",
+        "Targets": [
+          {
+            "Id": "0897c93a-6f2f-4bcd-a86c-4b9499f0aace",
+            "Property": "Connections"
+          }
+        ]
+      }
+    ]
   },
   "ShowInMenu": false,
   "MenuPath": null,

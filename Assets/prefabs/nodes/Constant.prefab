@@ -18,6 +18,7 @@
         "__type": "ConstantNode",
         "__guid": "3f0fcaeb-4568-40a0-a64b-3e8a3340bc09",
         "Cost": 4,
+        "Inputs": [],
         "Mana": 0,
         "MaxMana": 0,
         "NumberInput": {
@@ -94,7 +95,7 @@
           {
             "__type": "NodeOutput",
             "__guid": "93fe5a89-bd00-47a4-9734-ad28b8dad99a",
-            "ConnectedInputs": [],
+            "Connections": [],
             "NeutralColour": "0,1,1,1",
             "outputType": "Number",
             "SendColour": "0,0,1,1"
@@ -212,6 +213,16 @@
           {
             "Id": "93fe5a89-bd00-47a4-9734-ad28b8dad99a",
             "Property": "PathDetours"
+          }
+        ]
+      },
+      {
+        "Id": "Connections",
+        "Title": "Connections",
+        "Targets": [
+          {
+            "Id": "93fe5a89-bd00-47a4-9734-ad28b8dad99a",
+            "Property": "Connections"
           }
         ]
       }

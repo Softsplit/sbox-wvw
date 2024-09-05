@@ -3,10 +3,32 @@ using System;
 public abstract class Node : Component
 {
     [Property] public List<NodeOutput> Outputs {get;set;}
+    [Property] public List<NodeInput> Inputs {get;set;}
     [Property] public float Mana {get;set;}
     [Property] public float MaxMana {get;set;}
     [Property] public float Cost {get;set;} = 10f;
-    public void AddMana(Node Sender, float mana)
+	protected override void OnStart()
+	{
+        Outputs = new List<NodeOutput>();
+        Inputs = new List<NodeInput>();
+		foreach(GameObject c in GameObject.Children)
+        {
+            NodeInput nodeInput = c.Components.Get<NodeInput>(true);
+            if(nodeInput != null)
+            {
+                Inputs.Add(nodeInput);
+                nodeInput.index = Inputs.Count-1;
+            }
+
+
+            NodeOutput nodeOutput = c.Components.Get<NodeOutput>(true);
+            if(nodeOutput != null)
+            {
+                Outputs.Add(nodeOutput);
+            }
+        }
+	}
+	public void AddMana(Node Sender, float mana)
     {
         
         if (Sender != null)

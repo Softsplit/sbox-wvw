@@ -18,6 +18,7 @@
         "__type": "EmitterNode",
         "__guid": "dac49e33-0ede-48a3-b289-63112b3f7a44",
         "Cost": 20,
+        "Inputs": [],
         "Mana": 0,
         "MaxMana": 30,
         "Outputs": [
@@ -54,50 +55,6 @@
       }
     ],
     "Children": [
-      {
-        "__guid": "ee674359-2a69-404c-990f-5845bf185da3",
-        "Flags": 0,
-        "Name": "input (1)",
-        "Position": "0,-0.2,-0.5",
-        "Tags": "input",
-        "Enabled": true,
-        "Components": [
-          {
-            "__type": "Sandbox.BoxCollider",
-            "__guid": "64bb32b9-21cf-4b84-8257-e4f3ca478d20",
-            "Center": "0,0,0",
-            "IsTrigger": true,
-            "Scale": "0.1,0.1,0.1",
-            "Static": false
-          },
-          {
-            "__type": "NodeInput",
-            "__guid": "d1bfe146-e658-4065-ba10-671bb8bd4aa0",
-            "AcceptedType": "Normal",
-            "index": 0
-          }
-        ],
-        "Children": [
-          {
-            "__guid": "bf265018-c221-4a08-b1c5-92fba364f0b8",
-            "Flags": 0,
-            "Name": "Cube",
-            "Position": "0,0,0",
-            "Scale": "0.002,0.002,0.002",
-            "Enabled": true,
-            "Components": [
-              {
-                "__type": "Sandbox.ModelRenderer",
-                "__guid": "577cc20c-ceed-4727-9c38-0e5555759426",
-                "BodyGroups": 18446744073709551615,
-                "Model": "models/dev/box.vmdl",
-                "RenderType": "On",
-                "Tint": "0,1,0,1"
-              }
-            ]
-          }
-        ]
-      },
       {
         "__guid": "64186afb-781b-4f9f-8eab-1a63f885f884",
         "Flags": 0,
@@ -181,6 +138,50 @@
         ]
       },
       {
+        "__guid": "ee674359-2a69-404c-990f-5845bf185da3",
+        "Flags": 0,
+        "Name": "input (1)",
+        "Position": "0,-0.2,-0.5",
+        "Tags": "input",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.BoxCollider",
+            "__guid": "64bb32b9-21cf-4b84-8257-e4f3ca478d20",
+            "Center": "0,0,0",
+            "IsTrigger": true,
+            "Scale": "0.1,0.1,0.1",
+            "Static": false
+          },
+          {
+            "__type": "NodeInput",
+            "__guid": "d1bfe146-e658-4065-ba10-671bb8bd4aa0",
+            "AcceptedType": "Normal",
+            "index": 0
+          }
+        ],
+        "Children": [
+          {
+            "__guid": "bf265018-c221-4a08-b1c5-92fba364f0b8",
+            "Flags": 0,
+            "Name": "Cube",
+            "Position": "0,0,0",
+            "Scale": "0.002,0.002,0.002",
+            "Enabled": true,
+            "Components": [
+              {
+                "__type": "Sandbox.ModelRenderer",
+                "__guid": "577cc20c-ceed-4727-9c38-0e5555759426",
+                "BodyGroups": 18446744073709551615,
+                "Model": "models/dev/box.vmdl",
+                "RenderType": "On",
+                "Tint": "0,1,0,1"
+              }
+            ]
+          }
+        ]
+      },
+      {
         "__guid": "4183fe92-0df4-4a1c-8a76-6fbd55a8ecef",
         "Flags": 0,
         "Name": "output",
@@ -199,7 +200,7 @@
           {
             "__type": "NodeOutput",
             "__guid": "75d3f471-d44e-4ee8-9307-26526c3325f5",
-            "ConnectedInputs": [],
+            "Connections": [],
             "NeutralColour": "0,1,1,1",
             "outputType": "Number",
             "SendColour": "0,0,1,1"
@@ -245,6 +246,16 @@
           {
             "Id": "75d3f471-d44e-4ee8-9307-26526c3325f5",
             "Property": "PathDetours"
+          }
+        ]
+      },
+      {
+        "Id": "Connections",
+        "Title": "Connections",
+        "Targets": [
+          {
+            "Id": "75d3f471-d44e-4ee8-9307-26526c3325f5",
+            "Property": "Connections"
           }
         ]
       }
