@@ -2,8 +2,6 @@ using System;
 using System.Threading.Tasks;
 using Scene = Sandbox.Scene;
 
-namespace Softsplit;
-
 public static partial class GameObjectExtensions
 {
 	public static async void DestroyAsync(this GameObject src, float time)
