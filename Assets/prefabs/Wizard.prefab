@@ -159,6 +159,16 @@
         "Health": 100,
         "LastAttacker": "00000000-0000-0000-0000-000000000000",
         "MaxHealth": 100
+      },
+      {
+        "__type": "PlayerUI",
+        "__guid": "451fd681-c97a-4c9d-90bb-7f10b0de2ead",
+        "SpellMaker": {
+          "_type": "component",
+          "component_id": "ce15c6c0-f514-4591-a1ae-e4a60ca727eb",
+          "go": "edaa4961-7983-49ff-99ca-a5645b9e662c",
+          "component_type": "SpellMaker"
+        }
       }
     ],
     "Children": [

@@ -388,20 +388,24 @@ public sealed class PlayerController : Component
         Log.Info(SpellMaker.Mana());
         if(hasJumped)
         {
-            bool tookMana = SpellMaker.DistributeMana(-JumpCost * Time.Delta);
-            if(jumpTime+Time.Delta > MinJumpTime && !tookMana)
-            {
-                hasJumped = false;
-                return;
-            }
+            
             jumpTime+=Time.Delta;
             if((jumpTime+Time.Delta > MaxJumpTime || !Input.Down("Jump") || IsOnGround) && jumpTime+Time.Delta > MinJumpTime && !reachedMaxHeight)
             {
                 reachedMaxHeight = true;
                 maxHeight = GameObject.Transform.Position.z+10;
             }
+            bool tookMana = true;
             if(!reachedMaxHeight || (GameObject.Transform.Position.z < maxHeight && Input.Down("Jump")))
+            {
                 Punch(new Vector3(0, 0, JumpForce * Time.Delta));
+                tookMana = SpellMaker.DistributeMana(-JumpCost*Time.Delta);
+            }
+            if((jumpTime+Time.Delta > MinJumpTime && !tookMana) || IsOnGround)
+            {
+                hasJumped = false;
+                return;
+            }
         }
         
         AlreadyGrounded = IsOnGround;

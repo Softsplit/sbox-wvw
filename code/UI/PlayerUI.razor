@@ -1,0 +1,28 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+	<div class="container">
+		<div class="mana-container">
+			<div class="mana-fill" style=@($"height: {(SpellMaker.Mana()/SpellMaker.MaxMana)*100}%;")></div>
+		</div>
+
+		<div class="health-container">
+			<div class="health-fill" style=@($"width: {(healthComponent.Health/healthComponent.MaxHealth)*100}%;")></div>
+		</div>
+	</div>
+</root>
+
+
+
+@code
+{
+	HealthComponent healthComponent;
+	[Property] private SpellMaker SpellMaker {get;set;}
+	protected override void OnStart()
+	{
+		healthComponent = Components.Get<HealthComponent>();
+	}
+	protected override int BuildHash() => System.HashCode.Combine(healthComponent.Health,SpellMaker.Mana());
+}

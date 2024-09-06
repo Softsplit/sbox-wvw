@@ -56,7 +56,7 @@ public sealed class SpellMaker : Component
 
 	public bool DistributeMana(float totalMana)
 	{
-		if(Mana()+totalMana > MaxMana() || Mana()+totalMana < 0)
+		if(Mana()+totalMana > MaxMana || Mana()+totalMana < 0)
 			return false;
 		
 		var validNodes = Nodes.Where(node => node.Mana > 0).ToList();
@@ -78,14 +78,20 @@ public sealed class SpellMaker : Component
 		return true;
 	}
 
-	public float MaxMana()
+	float _maxMana = 0;
+	public float MaxMana
 	{
-		float max = 0;
-		foreach(var node in Nodes)
+		get
 		{
-			max += node.MaxMana;
+			if(_maxMana != 0 && !nodesUpdated)
+				return _maxMana;
+			float max = 0;
+			foreach(var node in Nodes)
+			{
+				max += node.MaxMana;
+			}
+			return max;
 		}
-		return max;
 	}
 
 	public float Mana()
