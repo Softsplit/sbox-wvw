@@ -31,6 +31,7 @@ public sealed class PlayerController : Component
     [Property, Group("Movement Properties"), Description("CS2 Default: 301.993378f")] public float JumpForce {get;set;} = 301.993378f;
     [Property, Group("Movement Properties")] public float MinJumpTime {get;set;} = 0.25f;
     [Property, Group("Movement Properties")] public float MaxJumpTime {get;set;} = 0.5f;
+    [Property, Group("Movement Properties")] public float JumpCost {get;set;} = 30f;
     
     // Stamina Properties
     [Property, Range(0f, 100f), Group("Stamina Properties"), Description("CS2 Default: 80f")] public float MaxStamina {get;set;} = 80f;
@@ -50,6 +51,7 @@ public sealed class PlayerController : Component
     [Property, Description("Add 'player' tag to disable collisions with other players.")] public TagSet IgnoreLayers { get; set; } = new TagSet();
     [Property] public GameObject Body {get;set;}
     [Property] public WizardAnimator WizardAnimator {get;set;}
+    [Property] public SpellMaker SpellMaker {get;set;}
 
     // State Bools
     public bool IsWalking = false;
@@ -383,19 +385,23 @@ public sealed class PlayerController : Component
             maxHeight = -1000;
         }
 
+        Log.Info(SpellMaker.Mana());
         if(hasJumped)
         {
+            bool tookMana = SpellMaker.DistributeMana(-JumpCost * Time.Delta);
+            if(jumpTime+Time.Delta > MinJumpTime && !tookMana)
+            {
+                hasJumped = false;
+                return;
+            }
             jumpTime+=Time.Delta;
             if((jumpTime+Time.Delta > MaxJumpTime || !Input.Down("Jump") || IsOnGround) && jumpTime+Time.Delta > MinJumpTime && !reachedMaxHeight)
             {
                 reachedMaxHeight = true;
                 maxHeight = GameObject.Transform.Position.z+10;
             }
-            Log.Info(maxHeight);
             if(!reachedMaxHeight || (GameObject.Transform.Position.z < maxHeight && Input.Down("Jump")))
                 Punch(new Vector3(0, 0, JumpForce * Time.Delta));
-
-            if (Stamina < 0) Stamina = 0;
         }
         
         AlreadyGrounded = IsOnGround;

@@ -27,6 +27,7 @@
         "CustomGravity": "0,0,-800",
         "Friction": 5.2,
         "IgnoreLayers": "",
+        "JumpCost": 20,
         "JumpForce": 1500,
         "MaxAirWishSpeed": 30,
         "MaxCrouchTime": 0.5,
@@ -38,6 +39,12 @@
         "MoveSpeed": 196,
         "Radius": 9.699995,
         "ShiftSpeed": 80,
+        "SpellMaker": {
+          "_type": "component",
+          "component_id": "ce15c6c0-f514-4591-a1ae-e4a60ca727eb",
+          "go": "edaa4961-7983-49ff-99ca-a5645b9e662c",
+          "component_type": "SpellMaker"
+        },
         "StaminaJumpCost": 0.08,
         "StaminaLandingCost": 0.05,
         "StaminaRecoveryRate": 60,
@@ -402,6 +409,7 @@
                                             "Name": "NodeDealer",
                                             "Position": "9.372932,0.0002965927,0.05092359",
                                             "Enabled": true,
+                                            "NetworkMode": 0,
                                             "Components": [
                                               {
                                                 "__type": "SpellMaker",

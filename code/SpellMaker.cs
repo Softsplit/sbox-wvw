@@ -14,6 +14,26 @@ public sealed class SpellMaker : Component
 
 	[Property] public InteractionState CurrentInteractionState { get; set; }
 	[Property] public GameObject SpawnRef { get; set; }
+	
+
+	List<Node> _nodes;
+	public List<Node> Nodes
+	{
+		get
+		{
+			if(_nodes != null && !nodesUpdated)
+				return _nodes;
+			
+			_nodes = new List<Node>();
+			foreach(GameObject c in GameObject.Children)
+			{
+				Node node = c.Components.Get<Node>(true);
+				if(node == null) continue;
+				_nodes.Add(node);
+			}
+			return _nodes;
+		}
+	}
 
 	private Vector3 _mouseDragOrigin;
 	private Vector3 _nodeDragOrigin;
@@ -24,12 +44,58 @@ public sealed class SpellMaker : Component
 
 	private List<Vector3> _temporaryDetours = new();
 
+	bool nodesUpdated;
+
 	public string GetSaveData()
 	{
 		JsonObject jsonObject = GameObject.Serialize();
 		jsonObject.Remove("Component");
 		SceneUtility.MakeIdGuidsUnique(jsonObject);
 		return jsonObject.ToJsonString();
+	}
+
+	public bool DistributeMana(float totalMana)
+	{
+		if(Mana()+totalMana > MaxMana() || Mana()+totalMana < 0)
+			return false;
+		
+		var validNodes = Nodes.Where(node => node.Mana > 0).ToList();
+		if (!validNodes.Any()) return false;
+
+		float manaPerNode = totalMana / validNodes.Count;
+
+		float overflow = 0;
+		foreach (var node in validNodes)
+		{
+			float newMana = node.Mana + manaPerNode + overflow;
+			node.Mana = MathX.Clamp(newMana,0,node.MaxMana);
+			if(node.Mana != newMana)
+				overflow = 0;
+			else
+				overflow = node.Mana - newMana;
+		}
+
+		return true;
+	}
+
+	public float MaxMana()
+	{
+		float max = 0;
+		foreach(var node in Nodes)
+		{
+			max += node.MaxMana;
+		}
+		return max;
+	}
+
+	public float Mana()
+	{
+		float mana = 0;
+		foreach(var node in Nodes)
+		{
+			mana += node.Mana;
+		}
+		return mana;
 	}
 
 	public const string PrefabDir = "prefabs/nodes";
@@ -80,7 +146,6 @@ public sealed class SpellMaker : Component
 		price = sum;
 		return sum;
 	}
-
 	public void CreateSpell(string file)
 	{
 		
@@ -94,6 +159,7 @@ public sealed class SpellMaker : Component
 			return;
 		}
 		spawned.SetParent(GameObject);
+		nodesUpdated = true;
 		spawned.Transform.LocalPosition = SpawnRef.Transform.LocalPosition;
 		spawned.Transform.LocalRotation = SpawnRef.Transform.LocalRotation;
 	}
@@ -153,6 +219,7 @@ public sealed class SpellMaker : Component
 			else if (_mouseRay.GameObject.Tags.Contains( "node" ))
 			{
 				_mouseRay.GameObject.DestroyImmediate();
+				nodesUpdated = true;
 				GetPrice();
 				return;
 			}
