@@ -29,7 +29,8 @@ public sealed class PlayerController : Component
     [Property, Group("Movement Properties"), Description("CS2 Default: 12f")] public float AirAcceleration {get;set;} = 12f;
     [Property, Group("Movement Properties"), Description("CS2 Default: 30f")] public float MaxAirWishSpeed {get;set;} = 30f;
     [Property, Group("Movement Properties"), Description("CS2 Default: 301.993378f")] public float JumpForce {get;set;} = 301.993378f;
-    [Property, Group("Movement Properties"), Description("CS2 Default: false")] private bool AutoBunnyhopping {get;set;} = false;
+    [Property, Group("Movement Properties")] public float MinJumpTime {get;set;} = 0.25f;
+    [Property, Group("Movement Properties")] public float MaxJumpTime {get;set;} = 0.5f;
     
     // Stamina Properties
     [Property, Range(0f, 100f), Group("Stamina Properties"), Description("CS2 Default: 80f")] public float MaxStamina {get;set;} = 80f;
@@ -302,15 +303,6 @@ public sealed class PlayerController : Component
             Velocity = Velocity.WithX(FixedVel.x).WithY(FixedVel.y);
         }
         if (Velocity.z < 0) Velocity = Velocity.WithZ(0);
-
-        if ((AutoBunnyhopping && Input.Down("Jump")) || Input.Pressed("Jump")) {
-            jumpStartHeight = GameObject.Transform.Position.z;
-            jumpHighestHeight = GameObject.Transform.Position.z;
-            Punch(new Vector3(0, 0, JumpForce * StaminaMultiplier));
-            Stamina -= Stamina * StaminaJumpCost * 2.9625f;
-            Stamina = (Stamina * 10).FloorToInt() * 0.1f;
-            if (Stamina < 0) Stamina = 0;
-        }
     }
 
     private void AirMove() {
@@ -332,7 +324,8 @@ public sealed class PlayerController : Component
         
         Height = StandingHeight;
     }
-
+    bool hasJumped;
+    float jumpTime;
     protected override void OnFixedUpdate() {
         if(IsProxy)
             return;
@@ -379,6 +372,31 @@ public sealed class PlayerController : Component
             GroundMove();
         } else {
             AirMove();
+        }
+
+        if (Input.Pressed("Jump") && IsOnGround) {
+            hasJumped = true;
+            jumpTime = 0;
+        }
+        if(Input.Released("Jump"))
+        {
+            hasJumped = false;
+        }
+
+        if(hasJumped)
+        {
+            jumpTime+=Time.Delta;
+            if((jumpTime+Time.Delta > MaxJumpTime || IsOnGround) && jumpTime+Time.Delta > MinJumpTime)
+            {
+                hasJumped = false;
+                Log.Info("sex");
+            }
+            jumpStartHeight = GameObject.Transform.Position.z;
+            jumpHighestHeight = GameObject.Transform.Position.z;
+            Punch(new Vector3(0, 0, JumpForce * StaminaMultiplier * Time.Delta * 20));
+            Stamina -= Stamina * StaminaJumpCost * 2.9625f;
+            Stamina = (Stamina * 10).FloorToInt() * 0.1f;
+            if (Stamina < 0) Stamina = 0;
         }
         
         AlreadyGrounded = IsOnGround;
