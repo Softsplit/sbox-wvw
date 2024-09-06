@@ -377,25 +377,19 @@ public sealed class PlayerController : Component
         if (Input.Pressed("Jump") && IsOnGround) {
             hasJumped = true;
             jumpTime = 0;
+            jumpStartHeight = GameObject.Transform.Position.z;
+            jumpHighestHeight = GameObject.Transform.Position.z;
         }
-        if(Input.Released("Jump"))
-        {
-            hasJumped = false;
-        }
-
+        Log.Info(IsOnGround);
         if(hasJumped)
         {
             jumpTime+=Time.Delta;
-            if((jumpTime+Time.Delta > MaxJumpTime || IsOnGround) && jumpTime+Time.Delta > MinJumpTime)
+            if((jumpTime+Time.Delta > MaxJumpTime || !Input.Down("Jump") || IsOnGround) && jumpTime+Time.Delta > MinJumpTime)
             {
                 hasJumped = false;
                 Log.Info("sex");
             }
-            jumpStartHeight = GameObject.Transform.Position.z;
-            jumpHighestHeight = GameObject.Transform.Position.z;
-            Punch(new Vector3(0, 0, JumpForce * StaminaMultiplier * Time.Delta * 20));
-            Stamina -= Stamina * StaminaJumpCost * 2.9625f;
-            Stamina = (Stamina * 10).FloorToInt() * 0.1f;
+            Punch(new Vector3(0, 0, JumpForce * Time.Delta));
             if (Stamina < 0) Stamina = 0;
         }
         
