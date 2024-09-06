@@ -1,7 +1,7 @@
 {
   "Title": "WizardVWizard",
   "Type": "game",
-  "Org": "tft",
+  "Org": "softsplit",
   "Ident": "wizardvwizard",
   "Schema": 1,
   "IncludeSourceFiles": false,

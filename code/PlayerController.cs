@@ -343,9 +343,6 @@ public sealed class PlayerController : Component
         }
 
         GatherInput();
-
-        // Crouching
-        var InitHeight = Height;
         
         InternalMoveSpeed = MoveSpeed;
         if (IsWalking) InternalMoveSpeed = ShiftSpeed;
