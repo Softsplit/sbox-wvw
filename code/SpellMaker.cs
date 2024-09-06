@@ -154,7 +154,7 @@ public sealed class SpellMaker : Component
 	}
 	public void CreateSpell(string file)
 	{
-		
+		nodesUpdated = true;
 		if ( !ResourceLibrary.TryGet($"{PrefabDir}/{file}", out PrefabFile prefab)) return;
 		var spawned = SceneUtility.GetPrefabScene( prefab ).Clone();
 		Node node = spawned.Components.Get<Node>();
