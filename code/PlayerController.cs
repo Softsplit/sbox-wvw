@@ -326,6 +326,9 @@ public sealed class PlayerController : Component
     }
     bool hasJumped;
     float jumpTime;
+
+    bool reachedMaxHeight;
+    float maxHeight;
     protected override void OnFixedUpdate() {
         if(IsProxy)
             return;
@@ -374,22 +377,27 @@ public sealed class PlayerController : Component
             AirMove();
         }
 
-        if (Input.Pressed("Jump") && IsOnGround) {
+        if (Input.Down("Jump") && IsOnGround) {
             hasJumped = true;
+            reachedMaxHeight = false;
             jumpTime = 0;
             jumpStartHeight = GameObject.Transform.Position.z;
             jumpHighestHeight = GameObject.Transform.Position.z;
+            maxHeight = -1000;
         }
-        Log.Info(IsOnGround);
+
         if(hasJumped)
         {
             jumpTime+=Time.Delta;
-            if((jumpTime+Time.Delta > MaxJumpTime || !Input.Down("Jump") || IsOnGround) && jumpTime+Time.Delta > MinJumpTime)
+            if((jumpTime+Time.Delta > MaxJumpTime || !Input.Down("Jump") || IsOnGround) && jumpTime+Time.Delta > MinJumpTime && !reachedMaxHeight)
             {
-                hasJumped = false;
-                Log.Info("sex");
+                reachedMaxHeight = true;
+                maxHeight = GameObject.Transform.Position.z+10;
             }
-            Punch(new Vector3(0, 0, JumpForce * Time.Delta));
+            Log.Info(maxHeight);
+            if(!reachedMaxHeight || (GameObject.Transform.Position.z < maxHeight && Input.Down("Jump")))
+                Punch(new Vector3(0, 0, JumpForce * Time.Delta));
+
             if (Stamina < 0) Stamina = 0;
         }
         
