@@ -11,7 +11,6 @@
         "__guid": "0005b0a5-78a9-4170-a837-b7faae144c3d",
         "Acceleration": 11,
         "AirAcceleration": 12,
-        "AutoBunnyhopping": false,
         "Body": {
           "_type": "gameobject",
           "go": "cf26fa8d-a8ee-47cc-b795-c9d170327f63"
@@ -20,12 +19,6 @@
         "CameraRollDamping": 0.015,
         "CameraRollEnabled": false,
         "CameraRollSmoothing": 0.2,
-        "CollisionBox": {
-          "_type": "component",
-          "component_id": "e75b4e3f-de3a-49c0-ac56-c802e6fc7529",
-          "go": "cf26fa8d-a8ee-47cc-b795-c9d170327f63",
-          "component_type": "BoxCollider"
-        },
         "CrouchCost": 0.1,
         "CrouchRecoveryRate": 0.33,
         "CrouchSpeed": 85,
@@ -34,12 +27,14 @@
         "CustomGravity": "0,0,-800",
         "Friction": 5.2,
         "IgnoreLayers": "",
-        "JumpForce": 301.99338,
+        "JumpForce": 1500,
         "MaxAirWishSpeed": 30,
         "MaxCrouchTime": 0.5,
+        "MaxJumpTime": 0.5,
         "MaxSpeed": 285.98,
         "MaxStamina": 80,
         "MinCrouchTime": 0.1,
+        "MinJumpTime": 0.25,
         "MoveSpeed": 196,
         "Radius": 9.699995,
         "ShiftSpeed": 80,
@@ -519,7 +514,7 @@
                                                       {
                                                         "__type": "NodeOutput",
                                                         "__guid": "5b4c6940-b344-4f57-be84-38fb7162ad55",
-                                                        "ConnectedInputs": [],
+                                                        "Connections": [],
                                                         "NeutralColour": "1,1,1,1",
                                                         "outputType": "Normal",
                                                         "SendColour": "0,1,0,1"
