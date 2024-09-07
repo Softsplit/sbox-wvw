@@ -384,8 +384,6 @@ public sealed class PlayerController : Component
             jumpHighestHeight = GameObject.Transform.Position.z;
             maxHeight = -1000;
         }
-
-        Log.Info(SpellMaker.Mana());
         if(hasJumped)
         {
             
@@ -396,10 +394,13 @@ public sealed class PlayerController : Component
                 maxHeight = GameObject.Transform.Position.z+10;
             }
             bool tookMana = true;
+            if(Input.Down("Jump") && jumpTime+Time.Delta > MinJumpTime)
+            {
+                tookMana = SpellMaker.DistributeMana(-JumpCost*Time.Delta);
+            }
             if(!reachedMaxHeight || (GameObject.Transform.Position.z < maxHeight && Input.Down("Jump")))
             {
                 Punch(new Vector3(0, 0, JumpForce * Time.Delta));
-                tookMana = SpellMaker.DistributeMana(-JumpCost*Time.Delta);
             }
             if((jumpTime+Time.Delta > MinJumpTime && !tookMana) || IsOnGround)
             {

@@ -419,7 +419,6 @@
                                             "Name": "NodeDealer",
                                             "Position": "9.372932,0.0002965927,0.05092359",
                                             "Enabled": true,
-                                            "NetworkMode": 0,
                                             "Components": [
                                               {
                                                 "__type": "SpellMaker",
