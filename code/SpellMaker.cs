@@ -54,6 +54,42 @@ public sealed class SpellMaker : Component
 		return jsonObject.ToJsonString();
 	}
 
+
+	public void LoadSpell(JsonObject jsonObject)
+	{
+		SceneUtility.MakeIdGuidsUnique(jsonObject);
+		if(jsonObject != null)
+		{
+			foreach(GameObject c in GameObject.Children)
+			{
+				c.Destroy();
+			}
+			GameObject maker =  new GameObject();
+					
+			maker.Deserialize(jsonObject);
+			if(GetPrice(maker) <= CostCapacity)
+			{
+				maker.Transform.Position = Transform.Position;
+				maker.Transform.Rotation = Transform.Rotation;
+				List<GameObject> children = new List<GameObject>();
+				foreach(GameObject c in maker.Children)
+				{
+					children.Add(c);
+				}
+				foreach(GameObject c in children)
+				{
+					c.SetParent(GameObject);
+				}
+			}
+			else
+			{
+				Sound.Play("sounds/player_use_fail.sound",Scene.Camera.Transform.Position);
+			}
+			maker.DestroyImmediate();
+			nodesUpdated = true;
+		}
+	}
+
 	public bool DistributeMana(float totalMana)
 	{
 		if(Mana()+totalMana > MaxMana || Mana()+totalMana < 0)
@@ -140,10 +176,11 @@ public sealed class SpellMaker : Component
         return Regex.Replace(PascalString, "(?!^)([A-Z])", " $1");
     }
 	public float price {get; set;}
-	public float GetPrice()
+	public float GetPrice(GameObject of = null)
 	{
+		if(of==null) of = GameObject;
 		float sum = 0;
-		foreach(GameObject c in GameObject.Children)
+		foreach(GameObject c in of.Children)
 		{
 			Node node = c.Components.Get<Node>();
 			if(node == null) continue;
@@ -160,7 +197,7 @@ public sealed class SpellMaker : Component
 		Node node = spawned.Components.Get<Node>();
 		if(GetPrice()+node.Cost > CostCapacity)
 		{
-			Sound.Play("sounds/player_use_fail.sound");
+			Sound.Play("sounds/player_use_fail.sound",Scene.Camera.Transform.Position);
 			spawned.DestroyImmediate();
 			return;
 		}

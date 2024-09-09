@@ -69,30 +69,7 @@
 			{
 				prevFile = CurrentFile;
 				JsonObject jsonObject = Json.Deserialize<JsonObject>(FileSystem.Data.ReadAllText(CurrentFile));
-				SceneUtility.MakeGameObjectsUnique(jsonObject);
-				if(jsonObject != null)
-				{
-					foreach(GameObject c in SpellMaker.GameObject.Children)
-					{
-						c.Destroy();
-					}
-					GameObject maker =  new GameObject();
-					
-					maker.Deserialize(jsonObject);
-					maker.Transform.Position = SpellMaker.Transform.Position;
-					maker.Transform.Rotation = SpellMaker.Transform.Rotation;
-					List<GameObject> children = new List<GameObject>();
-					foreach(GameObject c in maker.Children)
-					{
-						children.Add(c);
-					}
-					foreach(GameObject c in children)
-					{
-						c.SetParent(SpellMaker.GameObject);
-					}
-					maker.DestroyImmediate();
-					SpellMaker.nodesUpdated = true;
-				}
+				SpellMaker.LoadSpell(jsonObject);
 			}
 			prevFile = CurrentFile;
 		}
