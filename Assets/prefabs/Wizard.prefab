@@ -48,7 +48,7 @@
         "StaminaJumpCost": 0.08,
         "StaminaLandingCost": 0.05,
         "StaminaRecoveryRate": 60,
-        "StandingHeight": 72,
+        "StandingHeight": 62,
         "StopSpeed": 80,
         "ToggleCrouch": false,
         "UseCustomFOV": false,
@@ -64,9 +64,10 @@
       {
         "__type": "Sandbox.BoxCollider",
         "__guid": "e75b4e3f-de3a-49c0-ac56-c802e6fc7529",
+        "__enabled": false,
         "Center": "0,0,35",
         "IsTrigger": false,
-        "Scale": "20,20,70",
+        "Scale": "2.499993,2.5,70",
         "Static": false
       },
       {
@@ -168,6 +169,16 @@
           "component_id": "ce15c6c0-f514-4591-a1ae-e4a60ca727eb",
           "go": "edaa4961-7983-49ff-99ca-a5645b9e662c",
           "component_type": "SpellMaker"
+        }
+      },
+      {
+        "__type": "Sandbox.ModelHitboxes",
+        "__guid": "a1dc49cf-3481-428e-b0a1-a7db6aa69935",
+        "Renderer": {
+          "_type": "component",
+          "component_id": "a6e0a762-564c-4f00-ade4-111a2cf5835d",
+          "go": "0bdcdf2f-b025-409a-a1b6-87f7c1a8c005",
+          "component_type": "SkinnedModelRenderer"
         }
       }
     ],

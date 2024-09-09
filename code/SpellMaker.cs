@@ -44,7 +44,7 @@ public sealed class SpellMaker : Component
 
 	private List<Vector3> _temporaryDetours = new();
 
-	bool nodesUpdated;
+	public bool nodesUpdated;
 
 	public string GetSaveData()
 	{
