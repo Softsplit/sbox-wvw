@@ -56,6 +56,8 @@ public sealed class FireBall : Projectile
 					MathX.Lerp(MinExplosionDamage.x,MinExplosionDamage.y,Strength),
 					MathX.Lerp(MaxExplosionDamage.x,MaxExplosionDamage.y,Strength)
 				);
+
+				gameObject.NetworkSpawn();
 			}
 			else
 			{
