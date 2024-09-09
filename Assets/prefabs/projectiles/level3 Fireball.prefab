@@ -27,7 +27,7 @@
         "ExplosionRadius": "150,300",
         "InitialVelocity": "0,0,0",
         "Life": 10,
-        "MaxExplosionDamage": "70,100",
+        "MaxExplosionDamage": "70,120",
         "MinExplosionDamage": "20,25",
         "ScaleDamage": true,
         "SpeedRange": "500,600",

@@ -6,9 +6,13 @@ namespace Softsplit;
 
 public static partial class GameObjectExtensions
 {
-	public static async void DestroyAsync(this GameObject src, float time)
+	public static async void DestroyAsync(this GameObject src, float time, bool withChildren = true)
 	{
 		await Task.Delay((int)MathF.Round(time*1000f));
+		while(!withChildren && src.Children.Count > 0)
+		{
+			src.Children[0].SetParent(src.Parent);
+		}
 		src.Destroy();
 	}
 	public static void CopyPropertiesTo( this Component src, Component dst )

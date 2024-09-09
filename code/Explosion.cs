@@ -10,7 +10,7 @@ public sealed class Explosion : Component
 	{
 		if(!Networking.IsHost)
 			return;
-		var healthComponents = new List<HealthComponent>();
+		var hitObjects = new List<GameObject>();
         var origin = Transform.Position;
 		float increment = Radius*0.08f;
         float step = 360f / increment;
@@ -27,15 +27,30 @@ public sealed class Explosion : Component
                 var trace = Scene.Trace.Ray(origin+direction*sphereRadius, endPoint).Radius(sphereRadius).Run();
 				Gizmo.Draw.LineCapsule(new Capsule(origin,endPoint,sphereRadius));
                 var hitObject = trace.GameObject;
-                if (hitObject != null)
+                if (hitObject != null && !hitObjects.Contains(hitObject))
                 {
-					
+					hitObjects.Add(hitObject);
+
+					float damage = MathX.Lerp(Damage.x,Damage.y,(Radius-trace.Distance)/Radius);
+					float force = damage * 7;
+
                     var healthComponent = hitObject.Components.Get<HealthComponent>();
-                    if (healthComponent != null && !healthComponents.Contains(healthComponent))
+                    if (healthComponent != null )
                     {
-                        healthComponents.Add(healthComponent);
-						healthComponent.DoDamage(MathX.Lerp(Damage.x,Damage.y,trace.Distance/Radius),Shooter);
+						healthComponent.DoDamage(damage,Shooter);
                     }
+
+					var characterController = hitObject.Components.Get<PlayerController>();
+					if(characterController != null)
+					{
+						characterController.Punch(direction*force);
+					}
+
+					var rigidBody = hitObject.Components.Get<Rigidbody>();
+					if(rigidBody!=null)
+					{
+						rigidBody.ApplyForce(direction*force);
+					}
                 }
             }
         }

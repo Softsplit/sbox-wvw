@@ -23,22 +23,25 @@ using Softsplit;
 	ModdedNetworkHelper NetworkHelper;
 	HealthComponent HealthComponent;
 
-	[Button("Balls")] public void KillButton() => Kill(Vector3.Zero);
+	[Button("Kill")] public void KillButton() => Kill(Vector3.Zero);
 
 	[Broadcast]
 	public async void Kill(Vector3 vel)
 	{
+		Camera.SetParent(modelPhysics.GameObject);
+		Log.Info(vel.Length);
 		WizardAnimator.UnProcedualLookers();
 		WizardAnimator.Enabled = false;
 		modelPhysics.Enabled = true;
 		foreach(PhysicsBody physicsBody in modelPhysics.PhysicsGroup.Bodies)
         {
-            physicsBody.ApplyForce(vel);
+            physicsBody.ApplyForce(vel*200);
         }
 		modelPhysics.GameObject.SetParent(null);
 		modelPhysics.Renderer.UseAnimGraph = false;
 		GameObject.Destroy();
-		modelPhysics.GameObject.DestroyAsync(10);
+		modelPhysics.GameObject.DestroyAsync(10,false);
+
 		if ( !Networking.IsHost ) return;
 		NetworkHelper.AddRespawn(Network.OwnerId);
 		
@@ -49,6 +52,7 @@ using Softsplit;
 		HealthComponent = Components.Get<HealthComponent>();
 		NetworkHelper = Scene.Components.GetInChildren<ModdedNetworkHelper>();
 		Camera = Scene.Camera.GameObject;
+		Camera.SetParent(Scene);
 		playerController = Components.Get<PlayerController>(true);
 		WizardAnimator = Components.GetInChildrenOrSelf<WizardAnimator>(true);
 		modelPhysics = WizardAnimator.Components.Get<ModelPhysics>(true);
