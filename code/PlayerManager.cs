@@ -28,6 +28,7 @@ using Softsplit;
 	[Broadcast]
 	public async void Kill(Vector3 vel)
 	{
+		modelPhysics.GameObject.Children[0].Destroy();
 		Camera.SetParent(modelPhysics.GameObject);
 		Log.Info(vel.Length);
 		WizardAnimator.UnProcedualLookers();
@@ -58,6 +59,7 @@ using Softsplit;
 		modelPhysics = WizardAnimator.Components.Get<ModelPhysics>(true);
 		SpellMaker = Components.GetInDescendants<SpellMaker>(true);
 		SpellUI = Components.Get<SpellUI>(true);
+		SpellUI.Enabled = !IsProxy;
 		Transitioning = true;
 	}
 	protected override void OnPreRender()
