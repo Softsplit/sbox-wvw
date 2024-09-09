@@ -17,11 +17,13 @@ public sealed class SpellMaker : Component
 	
 
 	List<Node> _nodes;
+	int _nodesNodesUpdated;
 	public List<Node> Nodes
 	{
 		get
 		{
-			if(_nodes != null && !nodesUpdated)
+
+			if(_nodes != null && nodesUpdated == _nodesNodesUpdated)
 				return _nodes;
 			
 			_nodes = new List<Node>();
@@ -31,6 +33,8 @@ public sealed class SpellMaker : Component
 				if(node == null) continue;
 				_nodes.Add(node);
 			}
+
+			_nodesNodesUpdated = nodesUpdated;
 			return _nodes;
 		}
 	}
@@ -44,7 +48,7 @@ public sealed class SpellMaker : Component
 
 	private List<Vector3> _temporaryDetours = new();
 
-	public bool nodesUpdated;
+	public int nodesUpdated = 1;
 
 	public string GetSaveData()
 	{
@@ -86,7 +90,7 @@ public sealed class SpellMaker : Component
 				Sound.Play("sounds/player_use_fail.sound",Scene.Camera.Transform.Position);
 			}
 			maker.DestroyImmediate();
-			nodesUpdated = true;
+			nodesUpdated++;
 		}
 	}
 
@@ -115,17 +119,20 @@ public sealed class SpellMaker : Component
 	}
 
 	float _maxMana = 0;
+	int _maxManaNodesUpdated;
 	public float MaxMana
 	{
 		get
 		{
-			if(_maxMana != 0 && !nodesUpdated)
+			if(_maxMana != 0 && nodesUpdated == _maxManaNodesUpdated)
 				return _maxMana;
+			
 			float max = 0;
 			foreach(var node in Nodes)
 			{
 				max += node.MaxMana;
 			}
+			_maxManaNodesUpdated = nodesUpdated;
 			return max;
 		}
 	}
@@ -175,7 +182,18 @@ public sealed class SpellMaker : Component
     {
         return Regex.Replace(PascalString, "(?!^)([A-Z])", " $1");
     }
-	public float price {get; set;}
+	float _price;
+	int _priceNodesUpdated;
+	public float price {
+		get
+		{
+			if(nodesUpdated != _priceNodesUpdated)
+				_price = GetPrice();
+
+			_priceNodesUpdated = nodesUpdated;
+			return _price;
+		}
+	}
 	public float GetPrice(GameObject of = null)
 	{
 		if(of==null) of = GameObject;
@@ -186,12 +204,11 @@ public sealed class SpellMaker : Component
 			if(node == null) continue;
 			sum += node.Cost;
 		}
-		price = sum;
 		return sum;
 	}
 	public void CreateSpell(string file)
 	{
-		nodesUpdated = true;
+		nodesUpdated++;
 		if ( !ResourceLibrary.TryGet($"{PrefabDir}/{file}", out PrefabFile prefab)) return;
 		var spawned = SceneUtility.GetPrefabScene( prefab ).Clone();
 		Node node = spawned.Components.Get<Node>();
@@ -202,13 +219,14 @@ public sealed class SpellMaker : Component
 			return;
 		}
 		spawned.SetParent(GameObject);
-		nodesUpdated = true;
+		nodesUpdated++;
 		spawned.Transform.LocalPosition = SpawnRef.Transform.LocalPosition;
 		spawned.Transform.LocalRotation = SpawnRef.Transform.LocalRotation;
 	}
 
 	protected override void OnPreRender()
 	{
+		Log.Info(nodesUpdated);
 		if(Input.UsingController)
 		{
 			Mouse.Position -= new Vector2(Input.AnalogMove.y, Input.AnalogMove.x) * (Input.Down("View") ? 1f : 2.5f) * (Screen.Size.Length/1500f);
@@ -262,7 +280,7 @@ public sealed class SpellMaker : Component
 			else if (_mouseRay.GameObject.Tags.Contains( "node" ))
 			{
 				_mouseRay.GameObject.DestroyImmediate();
-				nodesUpdated = true;
+				nodesUpdated++;
 				GetPrice();
 				return;
 			}
