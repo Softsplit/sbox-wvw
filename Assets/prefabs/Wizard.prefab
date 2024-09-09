@@ -64,7 +64,6 @@
       {
         "__type": "Sandbox.BoxCollider",
         "__guid": "e75b4e3f-de3a-49c0-ac56-c802e6fc7529",
-        "__enabled": false,
         "Center": "0,0,35",
         "IsTrigger": false,
         "Scale": "2.499993,2.5,70",

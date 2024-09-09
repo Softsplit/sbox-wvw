@@ -23,10 +23,16 @@
         "__type": "FireBall",
         "__guid": "66d5642e-919c-414f-9983-6c51ff021ef7",
         "DamageRange": "0,0",
+        "Explode": true,
+        "ExplosionRadius": "150,300",
         "InitialVelocity": "0,0,0",
         "Life": 10,
+        "MaxExplosionDamage": "70,100",
+        "MinExplosionDamage": "20,25",
+        "ScaleDamage": true,
         "SpeedRange": "500,600",
         "Strength": 0,
+        "TargetPos": "0,0,0",
         "Visual": {
           "_type": "gameobject",
           "go": "2eabd8f7-ac7c-498e-83df-a7a18e39d11d"

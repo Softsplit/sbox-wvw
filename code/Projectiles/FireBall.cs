@@ -1,3 +1,4 @@
+using System;
 using Sandbox;
 
 public sealed class FireBall : Projectile
@@ -7,6 +8,11 @@ public sealed class FireBall : Projectile
 	[Property] public Curve Width {get;set;}
 	[Property] public GameObject Visual {get;set;}
 	[Property] public float Life {get;set;} = 5f;
+	[Property] public bool ScaleDamage {get;set;} = true;
+	[Property] public bool Explode {get;set;}
+	[Property] public Vector2 ExplosionRadius {get;set;} = new Vector2(150,300);
+	[Property] public Vector2 MaxExplosionDamage {get;set;} = new Vector2(70,100);
+	[Property] public Vector2 MinExplosionDamage {get;set;} = new Vector2(20,25);
 
 	Rigidbody Rigidbody;
 	float startTime;
@@ -39,25 +45,38 @@ public sealed class FireBall : Projectile
 
 		if(ray.Hit)
 		{
-			
-			hitSomething = true;
-			
-			HealthComponent healthComponent = ray.GameObject.Components.Get<HealthComponent>();
-			if(healthComponent != null)
+			if(Explode)
 			{
-				float damageMult = 1;
-				if(ray.Hitbox != null)
+				GameObject gameObject = new GameObject();
+				gameObject.Transform.Position = ray.HitPosition;
+				Explosion explosion = gameObject.Components.Create<Explosion>();
+				explosion.Shooter = Network.OwnerId;
+				explosion.Radius = MathX.Lerp(ExplosionRadius.x,ExplosionRadius.y,Strength);
+				explosion.Damage = new Vector2 (
+					MathX.Lerp(MinExplosionDamage.x,MinExplosionDamage.y,Strength),
+					MathX.Lerp(MaxExplosionDamage.x,MaxExplosionDamage.y,Strength)
+				);
+			}
+			else
+			{
+				hitSomething = true;
+				HealthComponent healthComponent = ray.GameObject.Components.Get<HealthComponent>();
+				if(healthComponent != null)
 				{
-					IEnumerable<string> tags = ray.Hitbox.Tags.TryGetAll();
-					
-					foreach(string s in tags)
+					float damageMult = 1;
+					if(ray.Hitbox != null && ScaleDamage)
 					{
-						if(float.TryParse(s, out damageMult)) break;
+						IEnumerable<string> tags = ray.Hitbox.Tags.TryGetAll();
+						
+						foreach(string s in tags)
+						{
+							if(float.TryParse(s, out damageMult)) break;
+						}
 					}
+					float damage = MathX.Lerp(DamageRange.x,DamageRange.y,Strength) * damageMult;
+					
+					healthComponent.DoDamage(damage, Network.OwnerId);
 				}
-				float damage = MathX.Lerp(DamageRange.x,DamageRange.y,Strength) * damageMult;
-				
-				healthComponent.DoDamage(damage, Network.OwnerId);
 			}
 			if(ray.Surface.Sounds.ImpactHard != null) Sound.Play(ray.Surface.Sounds.ImpactHard,ray.HitPosition);
 			GameObject.Destroy();

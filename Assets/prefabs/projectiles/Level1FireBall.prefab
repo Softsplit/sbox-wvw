@@ -25,6 +25,7 @@
         "DamageRange": "1,30",
         "InitialVelocity": "0,0,0",
         "Life": 3,
+        "ScaleDamage": false,
         "SpeedRange": "300,1000",
         "Strength": 0,
         "Visual": {

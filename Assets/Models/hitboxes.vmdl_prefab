@@ -19,7 +19,7 @@
 								parent_bone = "Head"
 								surface_property = "flesh"
 								translation_only = false
-								tags = "3"
+								tags = "2"
 								radius = 3.84
 								point0 = [ 0.0, 5.376, 0.48 ]
 								point1 = [ -0.384, 0.896, 3.04 ]

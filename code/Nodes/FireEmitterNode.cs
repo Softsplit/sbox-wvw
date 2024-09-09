@@ -52,6 +52,8 @@ public sealed class EmitterNode : Node
 				projectileComponent.Shooter = PlayerManager.GameObject;
 
 				projectileComponent.InitialVelocity = PlayerManager.playerController.Velocity;
+
+				projectileComponent.TargetPos = WizardAnimator.LookPos;
 			}
 			
 			
