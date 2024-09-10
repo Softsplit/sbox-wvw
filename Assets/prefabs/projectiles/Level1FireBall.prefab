@@ -23,11 +23,16 @@
         "__type": "FireBall",
         "__guid": "bf55cd03-c9de-4a44-bfb3-8478f2f7fa80",
         "DamageRange": "1,30",
+        "Explode": false,
+        "ExplosionRadius": "150,300",
         "InitialVelocity": "0,0,0",
         "Life": 3,
+        "MaxExplosionDamage": "70,100",
+        "MinExplosionDamage": "20,25",
         "ScaleDamage": false,
         "SpeedRange": "300,1000",
         "Strength": 0,
+        "TargetPos": "0,0,0",
         "Visual": {
           "_type": "gameobject",
           "go": "2eabd8f7-ac7c-498e-83df-a7a18e39d11d"
@@ -54,12 +59,130 @@
         "Enabled": true,
         "Components": [
           {
-            "__type": "Sandbox.ModelRenderer",
-            "__guid": "79c20a14-52ab-4579-adc8-7f8e3f477021",
-            "BodyGroups": 18446744073709551615,
-            "Model": "models/dev/sphere.vmdl",
-            "RenderType": "On",
-            "Tint": "1,0,0,1"
+            "__type": "Sandbox.ParticleEffect",
+            "__guid": "28b02732-0894-475c-a53f-17b526155610",
+            "__version": 1,
+            "Alpha": {
+              "Constants": "1,0,0,0"
+            },
+            "ApplyAlpha": false,
+            "ApplyColor": true,
+            "ApplyRotation": true,
+            "ApplyShape": false,
+            "Bounce": {
+              "Constants": "1,0,0,0"
+            },
+            "Brightness": {
+              "Constants": "1,0,0,0"
+            },
+            "Bumpiness": {},
+            "Collision": false,
+            "CollisionRadius": 1,
+            "Damping": {},
+            "DieOnCollisionChance": {},
+            "Force": false,
+            "ForceDirection": "0,0,0",
+            "ForceScale": {},
+            "Friction": {
+              "Constants": "1,0,0,0"
+            },
+            "Gradient": {
+              "Type": "Range",
+              "Evaluation": "Particle",
+              "GradientA": {
+                "color": [
+                  {
+                    "t": 0.5,
+                    "c": "1,1,1,1"
+                  }
+                ],
+                "alpha": []
+              },
+              "GradientB": {
+                "color": [
+                  {
+                    "t": 0.5,
+                    "c": "1,1,1,1"
+                  }
+                ],
+                "alpha": []
+              },
+              "ConstantA": "1,0.28333,0,1",
+              "ConstantB": "1,0.1,0,1"
+            },
+            "Lifetime": {
+              "Constants": "3,0,0,0"
+            },
+            "MaxParticles": 1,
+            "OrbitalForce": {},
+            "OrbitalPull": {},
+            "PerParticleTimeScale": {
+              "Constants": "1,0,0,0"
+            },
+            "Pitch": {},
+            "PreWarm": 0,
+            "PushStrength": {},
+            "Roll": {
+              "Constants": "360,0,0,0"
+            },
+            "Scale": {
+              "Constants": "1,0,0,0"
+            },
+            "SequenceId": {},
+            "SequenceSpeed": {
+              "Constants": "0.3,0,0,0"
+            },
+            "SequenceTime": {
+              "Constants": "1,0,0,0"
+            },
+            "SheetSequence": true,
+            "Space": "Local",
+            "StartDelay": {},
+            "StartVelocity": {},
+            "Stretch": {},
+            "TimeScale": 1,
+            "Tint": "1,1,1,1",
+            "Yaw": {}
+          },
+          {
+            "__type": "Sandbox.ParticleSphereEmitter",
+            "__guid": "3a24ca2b-ac72-4051-89d7-2e864fbb5053",
+            "Burst": 1,
+            "Delay": 0,
+            "DestroyOnEnd": false,
+            "Duration": 3,
+            "Loop": true,
+            "OnEdge": false,
+            "Radius": 0,
+            "Rate": 0,
+            "RateOverDistance": 0,
+            "Velocity": 0
+          },
+          {
+            "__type": "Sandbox.ParticleSpriteRenderer",
+            "__guid": "f00f0b98-d697-464b-9d83-ab1f24551bd4",
+            "Additive": false,
+            "Alignment": "LookAtCamera",
+            "BlurAmount": 0.5,
+            "BlurOpacity": 0.5,
+            "BlurSpacing": 0.5,
+            "DepthFeather": 0,
+            "FaceVelocity": false,
+            "FogStrength": 1,
+            "LeadingTrail": true,
+            "Lighting": false,
+            "MotionBlur": false,
+            "Opaque": false,
+            "RotationOffset": 0,
+            "Scale": 1,
+            "Shadows": false,
+            "SortMode": "Unsorted",
+            "Texture": "textures/particle/fire_02.vtex"
+          },
+          {
+            "__type": "ParticleScaler",
+            "__guid": "23b0bfd3-fb46-4410-8e1c-6343260e0903",
+            "ScaleMod": 10
           }
         ]
       }

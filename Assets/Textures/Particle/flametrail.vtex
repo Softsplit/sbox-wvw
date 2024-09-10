@@ -1,0 +1,13 @@
+{
+  "Sequences": [
+    {
+      "Source": "textures/particle/flametrail.png",
+      "IsLooping": true,
+      "FlipBook": true,
+      "Columns": 2,
+      "Rows": 2,
+      "Frames": 64
+    }
+  ],
+  "OutputTypeString": "2D"
+}

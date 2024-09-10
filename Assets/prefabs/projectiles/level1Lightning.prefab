@@ -18,6 +18,10 @@
         "OverrideMassCenter": false,
         "RigidbodyFlags": 0,
         "StartAsleep": false
+      },
+      {
+        "__type": "Lightning",
+        "__guid": "3cfbdb81-df26-40a5-bcfc-985fd6371f62"
       }
     ],
     "Children": [],
