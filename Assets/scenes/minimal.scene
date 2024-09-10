@@ -130,7 +130,6 @@
       "Name": "Cube",
       "Position": "1348.71,2095.003,309.5188",
       "Scale": "0.388,0.388,2",
-      "Enabled": true,
       "Components": [
         {
           "__type": "Sandbox.ModelRenderer",
