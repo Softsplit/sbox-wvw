@@ -22,7 +22,7 @@
       {
         "__type": "FireBall",
         "__guid": "bf55cd03-c9de-4a44-bfb3-8478f2f7fa80",
-        "DamageRange": "1,30",
+        "DamageRange": "0.5,15",
         "Explode": false,
         "ExplosionRadius": "150,300",
         "InitialVelocity": "0,0,0",

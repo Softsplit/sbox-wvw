@@ -20,11 +20,64 @@
         "StartAsleep": false
       },
       {
-        "__type": "Lightning",
-        "__guid": "3cfbdb81-df26-40a5-bcfc-985fd6371f62"
+        "__type": "Sandbox.VectorLineRenderer",
+        "__guid": "f4086df4-fe5e-478f-9948-06ef295f24c0",
+        "Color": {
+          "color": [
+            {
+              "t": 0.5,
+              "c": "0,1,1,1"
+            }
+          ],
+          "alpha": []
+        },
+        "EndCap": "None",
+        "IsOpaque": true,
+        "IsWireframe": false,
+        "Noise": 1,
+        "Points": [],
+        "RunBySelf": true,
+        "SplineBias": 0,
+        "SplineContinuity": 0,
+        "SplineInterpolation": 0,
+        "SplineTension": 0,
+        "StartCap": "None",
+        "Width": {
+          "rangey": "0,0.2",
+          "frames": [
+            {
+              "x": 0.5,
+              "y": 1
+            }
+          ]
+        }
+      },
+      {
+        "__type": "LightningProjectile",
+        "__guid": "cb81fca7-9a2c-4a73-bf1d-1207c5e868b4",
+        "Damage": "1,30",
+        "Distance": "150,1024",
+        "InitialVelocity": "0,0,0",
+        "ScaleDamage": false,
+        "Spread": "20,2",
+        "Strength": 0,
+        "TargetPos": "0,0,0",
+        "vectorLineRenderer": {
+          "_type": "component",
+          "component_id": "f4086df4-fe5e-478f-9948-06ef295f24c0",
+          "go": "19e6eb50-1c96-4992-9da4-02c6ffebf6bc",
+          "component_type": "VectorLineRenderer"
+        }
       }
     ],
-    "Children": [],
+    "Children": [
+      {
+        "__guid": "972cbb52-fa46-4914-8cd4-565df7aca4e7",
+        "Flags": 0,
+        "Name": "Object",
+        "Enabled": true
+      }
+    ],
     "__variables": []
   },
   "ShowInMenu": false,

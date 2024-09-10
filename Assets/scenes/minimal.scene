@@ -123,6 +123,52 @@
         }
       ],
       "Children": []
+    },
+    {
+      "__guid": "20ba9b55-5e21-40a6-9f00-b4816bc9e3cf",
+      "Flags": 0,
+      "Name": "Cube",
+      "Position": "1348.71,2095.003,309.5188",
+      "Scale": "0.388,0.388,2",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "93cc4c53-a1b2-4a51-b342-e0a4e192cb00",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.BoxCollider",
+          "__guid": "d4598332-806c-4403-8b61-e5f60b79ea72",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false
+        },
+        {
+          "__type": "DisplayHealth",
+          "__guid": "e96045db-e2d1-4435-b8da-1f4b9082d751",
+          "DamageInfo": 0,
+          "DisplayPos": "0,0,35",
+          "DistanceReference": 130,
+          "InfoBuffer": 0.3,
+          "Size": 60
+        },
+        {
+          "__type": "HealthComponent",
+          "__guid": "f589857a-ac1a-497c-a618-11634281216b",
+          "Health": 100,
+          "LastAttacker": "00000000-0000-0000-0000-000000000000",
+          "MaxHealth": 100
+        },
+        {
+          "__type": "Dummy",
+          "__guid": "c680315f-0a6a-478c-9b32-b22be4404050"
+        }
+      ]
     }
   ],
   "SceneProperties": {
