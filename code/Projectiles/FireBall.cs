@@ -3,8 +3,8 @@ using Sandbox;
 
 public sealed class FireBall : Projectile
 {
-	[Property] public Vector2 DamageRange {get;set;}
-	[Property] public Vector2 SpeedRange {get;set;}
+	[Property] public Curve DamageCurve {get;set;}
+	[Property] public Curve SpeedCurve {get;set;}
 	[Property] public Curve Width {get;set;}
 	[Property] public GameObject Visual {get;set;}
 	[Property] public float Life {get;set;} = 5f;
@@ -35,7 +35,7 @@ public sealed class FireBall : Projectile
 			return;
 		}
 
-		Rigidbody.Velocity = Transform.World.Forward * MathX.Lerp(SpeedRange.x,SpeedRange.y,Strength);
+		Transform.Position += Transform.World.Forward * SpeedCurve.Evaluate(Strength) * Time.Delta;
 
 		float w = Width.Evaluate((Time.Now-startTime)/Life);
 
@@ -75,7 +75,7 @@ public sealed class FireBall : Projectile
 							if(float.TryParse(s, out damageMult)) break;
 						}
 					}
-					float damage = MathX.Lerp(DamageRange.x,DamageRange.y,Strength) * damageMult;
+					float damage = DamageCurve.Evaluate(Strength) * damageMult;
 					
 					healthComponent.DoDamage(damage, Network.OwnerId);
 				}

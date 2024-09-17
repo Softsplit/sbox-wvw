@@ -44,6 +44,11 @@ public sealed class ModdedNetworkHelper : Component, Component.INetworkListener
 		}
 	}
 
+	protected override void OnStart()
+	{
+		
+	}
+
 	/// <summary>
 	/// A client is fully connected to the server. This is called on the host.
 	/// </summary>

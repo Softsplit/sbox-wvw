@@ -4,16 +4,16 @@ using Softsplit;
 public sealed class LightningProjectile : Projectile
 {
 	[Property] public VectorLineRenderer vectorLineRenderer {get;set;}
-	[Property] public Vector2 Damage {get;set;}
-	[Property] public Vector2 Distance {get;set;}
-	[Property] public Vector2 Spread {get;set;}
+	[Property] public Curve DamageCurve {get;set;}
+	[Property] public Curve DistanceCurve {get;set;}
+	[Property] public Curve SpreadCurve {get;set;}
 	[Property] public bool ScaleDamage {get;set;}
 	protected override void OnStart()
 	{
-		var spread = MathX.Lerp(Spread.x,Spread.y,Strength);
+		var spread = SpreadCurve.Evaluate(Strength);
 		TargetPos += Vector3.Random * (Game.Random.Next(0,100)/100f) * spread;
 		var dir = (TargetPos - Transform.Position).Normal;
-		var dis = MathX.Lerp(Distance.x,Distance.y,Strength);
+		var dis = DistanceCurve.Evaluate(Strength);
 		var ray = Scene.Trace.Ray(Transform.Position, Transform.Position+dir*dis).IgnoreGameObjectHierarchy(Shooter).UseHitboxes().Run();
 		Vector3 endPoint;
 		if(ray.Hit)
@@ -32,7 +32,7 @@ public sealed class LightningProjectile : Projectile
 						if(float.TryParse(s, out damageMult)) break;
 					}
 				}
-				float damage = MathX.Lerp(Damage.x,Damage.y,Strength) * damageMult;
+				float damage = DamageCurve.Evaluate(Strength) * damageMult;
 				
 				healthComponent.DoDamage(damage, Network.OwnerId);
 			}

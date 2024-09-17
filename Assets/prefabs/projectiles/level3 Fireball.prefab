@@ -6,20 +6,6 @@
     "Enabled": true,
     "Components": [
       {
-        "__type": "Sandbox.Rigidbody",
-        "__guid": "b4e1c41b-70b0-4da1-bb18-f2b9e3c13d58",
-        "AngularDamping": 0,
-        "Gravity": false,
-        "LinearDamping": 0,
-        "Locking": {},
-        "MassCenterOverride": "0,0,0",
-        "MassOverride": 0,
-        "MotionEnabled": true,
-        "OverrideMassCenter": false,
-        "RigidbodyFlags": 0,
-        "StartAsleep": false
-      },
-      {
         "__type": "FireBall",
         "__guid": "66d5642e-919c-414f-9983-6c51ff021ef7",
         "DamageRange": "0,0",
@@ -173,6 +159,12 @@
             "Lighting": false,
             "MotionBlur": false,
             "Opaque": false,
+            "RenderOptions": {
+              "GameLayer": true,
+              "OverlayLayer": false,
+              "BloomLayer": false,
+              "AfterUILayer": false
+            },
             "RotationOffset": 0,
             "Scale": 14,
             "Shadows": false,
@@ -185,6 +177,12 @@
             "__enabled": false,
             "BodyGroups": 18446744073709551615,
             "Model": "models/dev/sphere.vmdl",
+            "RenderOptions": {
+              "GameLayer": true,
+              "OverlayLayer": false,
+              "BloomLayer": false,
+              "AfterUILayer": false
+            },
             "RenderType": "On",
             "Tint": "1,1,1,1"
           },
