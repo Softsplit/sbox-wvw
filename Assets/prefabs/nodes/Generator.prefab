@@ -17,7 +17,7 @@
       {
         "__type": "GeneratorNode",
         "__guid": "f012ebf7-51dc-4c60-954c-b0e8347c1413",
-        "Cost": 20,
+        "Cost": 25,
         "Inputs": [],
         "Mana": 0,
         "MaxMana": 0,
@@ -45,6 +45,12 @@
             "__guid": "8acb56de-589a-468a-a9ad-54a80e48fcec",
             "BodyGroups": 18446744073709551615,
             "Model": "models/dev/box.vmdl",
+            "RenderOptions": {
+              "GameLayer": true,
+              "OverlayLayer": false,
+              "BloomLayer": false,
+              "AfterUILayer": false
+            },
             "RenderType": "On",
             "Tint": "1,1,1,1"
           }
@@ -65,6 +71,12 @@
             "FontFamily": "Poppins",
             "FontSize": 64,
             "FontWeight": 800,
+            "RenderOptions": {
+              "GameLayer": true,
+              "OverlayLayer": false,
+              "BloomLayer": false,
+              "AfterUILayer": false
+            },
             "Scale": 0.28,
             "Text": "Gen\n",
             "TextAlignment": "Center"
@@ -110,6 +122,12 @@
                 "__guid": "37bf2753-f46c-46ee-9720-cedd4c9bd416",
                 "BodyGroups": 18446744073709551615,
                 "Model": "models/dev/box.vmdl",
+                "RenderOptions": {
+                  "GameLayer": true,
+                  "OverlayLayer": false,
+                  "BloomLayer": false,
+                  "AfterUILayer": false
+                },
                 "RenderType": "On",
                 "Tint": "0.61569,0,1,1"
               }
@@ -161,6 +179,12 @@
                 "__guid": "572e9077-b2a5-4f41-a026-8f51c28ae30e",
                 "BodyGroups": 18446744073709551615,
                 "Model": "models/dev/box.vmdl",
+                "RenderOptions": {
+                  "GameLayer": true,
+                  "OverlayLayer": false,
+                  "BloomLayer": false,
+                  "AfterUILayer": false
+                },
                 "RenderType": "On",
                 "Tint": "0,1,0,1"
               }
