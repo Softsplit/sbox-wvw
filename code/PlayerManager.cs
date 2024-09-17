@@ -75,7 +75,7 @@ using Softsplit;
 		Vector3 TargetPos = Vector3.Zero;
 		Rotation TargetRot = Rotation.Identity;
 		playerController.Enabled = !InSpell;
-		SpellMaker.Enabled = InSpell && !Transitioning;
+		SpellMaker.Enabled = !Transitioning;
 		SpellUI.Enabled = SpellMaker.Enabled;
 		WizardAnimator.SettingSpell = InSpell;
 		Mouse.Visible = InSpell;
