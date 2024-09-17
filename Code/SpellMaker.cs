@@ -224,6 +224,30 @@ public sealed class SpellMaker : Component
 		spawned.Transform.LocalRotation = SpawnRef.Transform.LocalRotation;
 	}
 
+	public void RemoveInvalid()
+	{
+		foreach(GameObject g in GameObject.Children)
+		{
+			Node node = g.Components.Get<Node>();
+			if (node == null) continue;
+
+			
+			foreach (NodeOutput nodeOutput in node.Outputs)
+			{
+				List<NodeOutput.Connection> removeConnections = new List<NodeOutput.Connection>();
+				foreach(NodeOutput.Connection connection in nodeOutput.Connections)
+				{
+					if(connection.ConnectedNode.IsValid()) continue;
+					removeConnections.Add(connection);
+				}
+				foreach(var connection in removeConnections)
+				{
+					nodeOutput.Connections.Remove(connection);
+				}
+			}
+		}
+	}
+
 	protected override void OnPreRender()
 	{
 		Log.Info(nodesUpdated);
@@ -279,11 +303,13 @@ public sealed class SpellMaker : Component
 			}
 			else if (_mouseRay.GameObject.Tags.Contains( "node" ))
 			{
+				if(_mouseRay.GameObject.Components.Get<Node>() == null) return;
 				_mouseRay.GameObject.DestroyImmediate();
 				nodesUpdated++;
 				GetPrice();
-				return;
+				RemoveInvalid();
 			}
+			return;
 		}
 
 		if ( !Input.Pressed( "attack1" ) ) return;

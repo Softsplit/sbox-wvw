@@ -18,7 +18,7 @@ public sealed class GeneratorNode : Node
 	protected override void OnFixedUpdate()
 	{
 		if(SpellMaker.Enabled) return;
-		if(Input.Down("attack1") && generate)
+		if(generate)
 			ManaOutput(null,(Rate*Time.Delta)/Outputs[0].Connections.Count);
 		generate = true;
 	}
