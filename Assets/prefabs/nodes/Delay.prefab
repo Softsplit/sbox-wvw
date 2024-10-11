@@ -39,48 +39,10 @@
     ],
     "Children": [
       {
-        "__guid": "c4b26d8e-198b-4f53-aca9-0c0422abe29b",
-        "Flags": 0,
-        "Name": "Cube",
-        "Scale": "0.001,0.02,0.02",
-        "Enabled": true,
-        "Components": [
-          {
-            "__type": "Sandbox.ModelRenderer",
-            "__guid": "0a558f55-4b82-4146-89d6-f01b8e218c8d",
-            "BodyGroups": 18446744073709551615,
-            "Model": "models/dev/box.vmdl",
-            "RenderType": "On",
-            "Tint": "1,1,1,1"
-          }
-        ]
-      },
-      {
-        "__guid": "a36ffeda-73ab-4f5e-94e1-60a0a2d48118",
-        "Flags": 0,
-        "Name": "Delay",
-        "Position": "-0.02757883,0,0.3535614",
-        "Scale": "0.02003517,0.02003517,0.02003517",
-        "Enabled": true,
-        "Components": [
-          {
-            "__type": "Sandbox.TextRenderer",
-            "__guid": "21d6e57e-b9cd-437d-abdd-b6fd6009d393",
-            "Color": "0.45103,0.47149,0.5297,1",
-            "FontFamily": "Poppins",
-            "FontSize": 64,
-            "FontWeight": 800,
-            "Scale": 0.13,
-            "Text": "Delay\n",
-            "TextAlignment": "Center"
-          }
-        ]
-      },
-      {
         "__guid": "695e0746-ef42-497a-b4c1-b025038d214e",
         "Flags": 0,
         "Name": "output",
-        "Position": "0,0,-0.5",
+        "Position": "0,0.163,-0.75",
         "Tags": "output",
         "Enabled": true,
         "Components": [
@@ -89,7 +51,7 @@
             "__guid": "500b7c38-b782-4695-9dda-a51150b18b0d",
             "Center": "0,0,0",
             "IsTrigger": true,
-            "Scale": "0.1,0.1,0.1",
+            "Scale": "0.3,0.25,0.3",
             "Static": false
           },
           {
@@ -99,26 +61,6 @@
             "NeutralColour": "1,1,1,1",
             "outputType": "Normal",
             "SendColour": "0,1,0,1"
-          }
-        ],
-        "Children": [
-          {
-            "__guid": "525995d6-3702-430c-a649-be2a329f7745",
-            "Flags": 0,
-            "Name": "Cube",
-            "Position": "0,0,0",
-            "Scale": "0.002,0.002,0.002",
-            "Enabled": true,
-            "Components": [
-              {
-                "__type": "Sandbox.ModelRenderer",
-                "__guid": "ecc04cd0-8a49-43ac-be86-3105b87ab99b",
-                "BodyGroups": 18446744073709551615,
-                "Model": "models/dev/box.vmdl",
-                "RenderType": "On",
-                "Tint": "1,0,0,1"
-              }
-            ]
           }
         ]
       },
@@ -155,20 +97,26 @@
             "__guid": "ddb30424-a218-4006-9274-5c125ed52eea",
             "Flags": 0,
             "Name": "Text (1)",
-            "Position": "0,0,0",
+            "Position": "0,0.1562442,0",
             "Scale": "0.02003517,0.02003517,0.02003517",
             "Enabled": true,
             "Components": [
               {
                 "__type": "Sandbox.TextRenderer",
                 "__guid": "b632b845-46e5-40b0-b359-6876e4da2da9",
-                "Color": "0,0,0,1",
+                "Color": "1,1,1,1",
                 "FontFamily": "Poppins",
                 "FontSize": 64,
                 "FontWeight": 800,
+                "RenderOptions": {
+                  "GameLayer": false,
+                  "OverlayLayer": false,
+                  "BloomLayer": false,
+                  "AfterUILayer": true
+                },
                 "Scale": 0.27,
                 "Text": "0",
-                "TextAlignment": "Center"
+                "TextAlignment": "Left"
               }
             ]
           }
@@ -178,7 +126,7 @@
         "__guid": "514f8214-d88a-4d2d-83c7-231178e969bb",
         "Flags": 0,
         "Name": "input",
-        "Position": "-0.00008082297,0,0.5",
+        "Position": "-0.00008082297,0.163,0.75",
         "Rotation": "-1,0.00000002980232,0.00000008940697,0.00000002980232",
         "Tags": "input",
         "Enabled": true,
@@ -188,7 +136,7 @@
             "__guid": "0c0c2c64-e033-47e1-a212-7baf4474bd46",
             "Center": "0,0,0",
             "IsTrigger": true,
-            "Scale": "0.1,0.1,0.1",
+            "Scale": "0.3,0.25,0.3",
             "Static": false
           },
           {
@@ -197,25 +145,36 @@
             "AcceptedType": "Normal",
             "index": 0
           }
-        ],
-        "Children": [
+        ]
+      },
+      {
+        "__guid": "2a621d34-6843-4361-8ebf-46e5f2e5036c",
+        "Flags": 0,
+        "Name": "Glyph Visual",
+        "Position": "-0.006472164,0.04827198,-0.03492494",
+        "Scale": "0.057,0.057,0.057",
+        "Enabled": true,
+        "Components": [
           {
-            "__guid": "9f0e731f-2e3b-4f32-b460-19724c8726f9",
-            "Flags": 0,
-            "Name": "Cube",
-            "Position": "0,0,0",
-            "Scale": "0.002,0.002,0.002",
-            "Enabled": true,
-            "Components": [
-              {
-                "__type": "Sandbox.ModelRenderer",
-                "__guid": "f5865bdf-4ff9-4b0e-9af4-61191def93d7",
-                "BodyGroups": 18446744073709551615,
-                "Model": "models/dev/box.vmdl",
-                "RenderType": "On",
-                "Tint": "0,1,0,1"
-              }
-            ]
+            "__type": "GlyphVisual",
+            "__guid": "0059f918-09ab-4a2c-b798-3e8f87c8b142",
+            "Path": "textures/glyphs/delay.png"
+          },
+          {
+            "__type": "Sandbox.WorldPanel",
+            "__guid": "035c9b32-2255-4242-af3c-e61947853909",
+            "HorizontalAlign": "Center",
+            "InteractionRange": 1000,
+            "LookAtCamera": false,
+            "PanelSize": "512,512",
+            "RenderOptions": {
+              "GameLayer": false,
+              "OverlayLayer": false,
+              "BloomLayer": false,
+              "AfterUILayer": true
+            },
+            "RenderScale": 1,
+            "VerticalAlign": "Center"
           }
         ]
       }
@@ -266,7 +225,9 @@
   "ShowInMenu": false,
   "MenuPath": null,
   "MenuIcon": null,
+  "DontBreakAsTemplate": false,
   "ResourceVersion": 1,
   "__references": [],
+  "IsValid": true,
   "__version": 1
 }

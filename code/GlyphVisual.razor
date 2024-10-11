@@ -1,0 +1,14 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root style=@($"background-image: url({Path});")>
+</root>
+
+@code
+{
+
+	[Property] public string Path { get; set; }
+
+	protected override int BuildHash() => System.HashCode.Combine( Path );
+}

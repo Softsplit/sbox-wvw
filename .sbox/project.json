@@ -1,0 +1,157 @@
+{
+  "scene.lastopened": {
+    "Value": "[\u0022scenes/minimal.scene\u0022,\u0022prefabs/projectiles/level3 fireball.prefab\u0022,\u0022prefabs/projectiles/level2fireball.prefab\u0022,\u0022prefabs/projectiles/level1fireball.prefab\u0022,\u0022prefabs/nodes/fireemitter.prefab\u0022,\u0022prefabs/projectiles/level1lightning.prefab\u0022]",
+    "Timeout": 1731246157,
+    "DeleteAt": 0
+  },
+  "scenes/minimal.scene.Viewport0": {
+    "Value": "{\u0022CameraPosition\u0022:\u0022-938.666,297.7861,282.3047\u0022,\u0022CameraRotation\u0022:\u00220.02348148,0.1441822,-0.1590176,0.9764085\u0022,\u0022CameraOrthoHeight\u0022:32}",
+    "Timeout": 1731246379,
+    "DeleteAt": 0
+  },
+  ".Viewport0": {
+    "Value": "{\u0022CameraPosition\u0022:\u0022318.9992,2397.222,171.1355\u0022,\u0022CameraRotation\u0022:\u0022-0.02219378,0.042542,0.4619998,0.885581\u0022,\u0022CameraOrthoHeight\u0022:32}",
+    "Timeout": 1731246379,
+    "DeleteAt": 0
+  },
+  "prefabs/wizard.prefab.Viewport0": {
+    "Value": "{\u0022CameraPosition\u0022:\u0022-30.98782,-30.98782,43.82339\u0022,\u0022CameraRotation\u0022:\u0022-0.1464466,0.3535534,0.3535534,0.8535534\u0022,\u0022View\u0022:0,\u0022RenderMode\u0022:1,\u0022WireframeMode\u0022:false,\u0022EnablePostProcessing\u0022:true,\u0022ShowGrid\u0022:true,\u0022GridOpacity\u0022:0.2,\u0022GridAxis\u0022:0,\u0022CameraOrthoHeight\u0022:32}",
+    "Timeout": 1728579730,
+    "DeleteAt": 1728692832
+  },
+  "gizmo.settings": {
+    "Value": "{\u0022EditMode\u0022:\u0022position\u0022,\u0022Selection\u0022:true,\u0022ViewMode\u0022:\u00223d\u0022,\u0022GizmosEnabled\u0022:true,\u0022GizmoScale\u0022:1,\u0022GridSpacing\u0022:32,\u0022SnapToGrid\u0022:false,\u0022SnapToAngles\u0022:true,\u0022AngleSpacing\u0022:15,\u0022GlobalSpace\u0022:false,\u0022DebugActionGraphs\u0022:false}",
+    "Timeout": 1731243443,
+    "DeleteAt": 0
+  },
+  "AssetBrowser.History.AssetsBrowser.ViewMode": {
+    "Value": "2",
+    "Timeout": 1731245527,
+    "DeleteAt": 0
+  },
+  "AssetBrowser.History.AssetsBrowser.ShowJunkFiles": {
+    "Value": "false",
+    "Timeout": 1731245527,
+    "DeleteAt": 0
+  },
+  "AssetBrowser.History.AssetsBrowser.ShowRecursiveFiles": {
+    "Value": "false",
+    "Timeout": 1731245527,
+    "DeleteAt": 0
+  },
+  "expand.cf26fa8d-a8ee-47cc-b795-c9d170327f63.PlayerController": {
+    "Value": "false",
+    "Timeout": 1728551962,
+    "DeleteAt": 1728692832
+  },
+  "expand.cf26fa8d-a8ee-47cc-b795-c9d170327f63.BoxCollider": {
+    "Value": "false",
+    "Timeout": 1728579725,
+    "DeleteAt": 1728692832
+  },
+  "expand.cf26fa8d-a8ee-47cc-b795-c9d170327f63.PlayerManager": {
+    "Value": "false",
+    "Timeout": 1728579725,
+    "DeleteAt": 1728692832
+  },
+  "expand.cf26fa8d-a8ee-47cc-b795-c9d170327f63.SpellUI": {
+    "Value": "false",
+    "Timeout": 1728579725,
+    "DeleteAt": 1728692832
+  },
+  "expand.cf26fa8d-a8ee-47cc-b795-c9d170327f63.ScreenPanel": {
+    "Value": "false",
+    "Timeout": 1728579725,
+    "DeleteAt": 1728692832
+  },
+  "expand.cf26fa8d-a8ee-47cc-b795-c9d170327f63.PlayerInventory": {
+    "Value": "false",
+    "Timeout": 1728579725,
+    "DeleteAt": 1728692832
+  },
+  "expand.cf26fa8d-a8ee-47cc-b795-c9d170327f63.HealthComponent": {
+    "Value": "false",
+    "Timeout": 1728579725,
+    "DeleteAt": 1728692832
+  },
+  "prefabs/projectiles/level1fireball.prefab.Viewport0": {
+    "Value": "{\u0022CameraPosition\u0022:\u0022-1.347296,-1.347296,1.905365\u0022,\u0022CameraRotation\u0022:\u0022-0.1464466,0.3535534,0.3535534,0.8535534\u0022,\u0022CameraOrthoHeight\u0022:32}",
+    "Timeout": 1731246379,
+    "DeleteAt": 0
+  },
+  "prefabs/projectiles/level1lightning.prefab.Viewport0": {
+    "Value": "{\u0022CameraPosition\u0022:\u0022-30.98782,-30.98782,43.82339\u0022,\u0022CameraRotation\u0022:\u0022-0.2071464,0.3481814,0.467452,0.7857154\u0022,\u0022CameraOrthoHeight\u0022:32}",
+    "Timeout": 1731246379,
+    "DeleteAt": 0
+  },
+  "prefabs/projectiles/level2fireball.prefab.Viewport0": {
+    "Value": "{\u0022CameraPosition\u0022:\u00221608.509,2142.974,381.7297\u0022,\u0022CameraRotation\u0022:\u0022-0.09229612,0.003787075,0.9948872,0.040822\u0022,\u0022CameraOrthoHeight\u0022:32}",
+    "Timeout": 1731246379,
+    "DeleteAt": 0
+  },
+  "prefabs/projectiles/level3 fireball.prefab.Viewport0": {
+    "Value": "{\u0022CameraPosition\u0022:\u0022-1.347296,-1.347296,1.905365\u0022,\u0022CameraRotation\u0022:\u0022-0.1464466,0.3535534,0.3535534,0.8535534\u0022,\u0022CameraOrthoHeight\u0022:32}",
+    "Timeout": 1731246379,
+    "DeleteAt": 0
+  },
+  "expand.19e6eb50-1c96-4992-9da4-02c6ffebf6bc.VectorLineRenderer": {
+    "Value": "false",
+    "Timeout": 1731246281,
+    "DeleteAt": 0
+  },
+  "prefabs/nodes/fireemitter.prefab.Viewport0": {
+    "Value": "{\u0022CameraPosition\u0022:\u0022-30.98782,-30.98782,43.82339\u0022,\u0022CameraRotation\u0022:\u0022-0.1464466,0.3535534,0.3535534,0.8535534\u0022,\u0022CameraOrthoHeight\u0022:32}",
+    "Timeout": 1731246379,
+    "DeleteAt": 0
+  },
+  "prefabs/nodes/lightningemitter.prefab.Viewport0": {
+    "Value": "{\u0022CameraPosition\u0022:\u0022-1.347296,-1.347296,1.905365\u0022,\u0022CameraRotation\u0022:\u0022-0.1464466,0.3535534,0.3535534,0.8535534\u0022,\u0022View\u0022:0,\u0022RenderMode\u0022:1,\u0022WireframeMode\u0022:false,\u0022EnablePostProcessing\u0022:true,\u0022ShowGrid\u0022:true,\u0022GridOpacity\u0022:0.2,\u0022GridAxis\u0022:0,\u0022CameraOrthoHeight\u0022:32}",
+    "Timeout": 1728580824,
+    "DeleteAt": 1728692832
+  },
+  "prefabs/nodes/generator.prefab.Viewport0": {
+    "Value": "{\u0022CameraPosition\u0022:\u0022-1.347296,-1.347296,1.905365\u0022,\u0022CameraRotation\u0022:\u0022-0.1464466,0.3535534,0.3535534,0.8535534\u0022,\u0022View\u0022:0,\u0022RenderMode\u0022:1,\u0022WireframeMode\u0022:false,\u0022EnablePostProcessing\u0022:true,\u0022ShowGrid\u0022:true,\u0022GridOpacity\u0022:0.2,\u0022GridAxis\u0022:0,\u0022CameraOrthoHeight\u0022:32}",
+    "Timeout": 1728591097,
+    "DeleteAt": 1728692832
+  },
+  "prefabs/nodes/attack1out.prefab.Viewport0": {
+    "Value": "{\u0022CameraPosition\u0022:\u0022-15.86398,0.1485551,0.719626\u0022,\u0022CameraRotation\u0022:\u00220.0003167409,0.02791947,-0.01133965,0.9995458\u0022,\u0022View\u0022:0,\u0022RenderMode\u0022:1,\u0022WireframeMode\u0022:false,\u0022EnablePostProcessing\u0022:true,\u0022ShowGrid\u0022:true,\u0022GridOpacity\u0022:0.2,\u0022GridAxis\u0022:0,\u0022CameraOrthoHeight\u0022:32}",
+    "Timeout": 1729884575,
+    "DeleteAt": 0
+  },
+  "prefabs/nodes/and.prefab.Viewport0": {
+    "Value": "{\u0022CameraPosition\u0022:\u0022-15.86398,0.1485551,0.719626\u0022,\u0022CameraRotation\u0022:\u00220.0003167409,0.02791947,-0.01133965,0.9995458\u0022,\u0022View\u0022:0,\u0022RenderMode\u0022:1,\u0022WireframeMode\u0022:false,\u0022EnablePostProcessing\u0022:true,\u0022ShowGrid\u0022:true,\u0022GridOpacity\u0022:0.2,\u0022GridAxis\u0022:0,\u0022CameraOrthoHeight\u0022:32}",
+    "Timeout": 1729884579,
+    "DeleteAt": 0
+  },
+  "prefabs/nodes/attack2out.prefab.Viewport0": {
+    "Value": "{\u0022CameraPosition\u0022:\u0022-15.86398,0.1485551,0.719626\u0022,\u0022CameraRotation\u0022:\u00220.0003167409,0.02791947,-0.01133965,0.9995458\u0022,\u0022View\u0022:0,\u0022RenderMode\u0022:1,\u0022WireframeMode\u0022:false,\u0022EnablePostProcessing\u0022:true,\u0022ShowGrid\u0022:true,\u0022GridOpacity\u0022:0.2,\u0022GridAxis\u0022:0,\u0022CameraOrthoHeight\u0022:32}",
+    "Timeout": 1729884632,
+    "DeleteAt": 0
+  },
+  "prefabs/nodes/constant.prefab.Viewport0": {
+    "Value": "{\u0022CameraPosition\u0022:\u0022-1.347296,-1.347296,1.905365\u0022,\u0022CameraRotation\u0022:\u0022-0.1852387,0.3612106,0.4170323,0.8132021\u0022,\u0022View\u0022:0,\u0022RenderMode\u0022:1,\u0022WireframeMode\u0022:false,\u0022EnablePostProcessing\u0022:true,\u0022ShowGrid\u0022:true,\u0022GridOpacity\u0022:0.2,\u0022GridAxis\u0022:0,\u0022CameraOrthoHeight\u0022:32}",
+    "Timeout": 1729885255,
+    "DeleteAt": 0
+  },
+  "prefabs/nodes/delay.prefab.Viewport0": {
+    "Value": "{\u0022CameraPosition\u0022:\u0022-1.347296,-1.347296,1.905365\u0022,\u0022CameraRotation\u0022:\u0022-0.1852387,0.3612106,0.4170323,0.8132021\u0022,\u0022View\u0022:0,\u0022RenderMode\u0022:1,\u0022WireframeMode\u0022:false,\u0022EnablePostProcessing\u0022:true,\u0022ShowGrid\u0022:true,\u0022GridOpacity\u0022:0.2,\u0022GridAxis\u0022:0,\u0022CameraOrthoHeight\u0022:32}",
+    "Timeout": 1729885253,
+    "DeleteAt": 0
+  },
+  "prefabs/nodes/equal.prefab.Viewport0": {
+    "Value": "{\u0022CameraPosition\u0022:\u0022-4.226317,-1.30038,0.2684076\u0022,\u0022CameraRotation\u0022:\u0022-0.004896589,0.02748944,0.1752975,0.9841195\u0022,\u0022View\u0022:0,\u0022RenderMode\u0022:1,\u0022WireframeMode\u0022:false,\u0022EnablePostProcessing\u0022:true,\u0022ShowGrid\u0022:true,\u0022GridOpacity\u0022:0.2,\u0022GridAxis\u0022:0,\u0022CameraOrthoHeight\u0022:32}",
+    "Timeout": 1729886334,
+    "DeleteAt": 0
+  },
+  "SceneView.Viewport0.Settings": {
+    "Value": "{\u0022CameraPosition\u0022:\u0022-30.98782,-30.98782,43.82339\u0022,\u0022CameraRotation\u0022:\u0022-0.2071464,0.3481814,0.467452,0.7857154\u0022,\u0022View\u0022:0,\u0022RenderMode\u0022:0,\u0022WireframeMode\u0022:false,\u0022EnablePostProcessing\u0022:true,\u0022ShowGrid\u0022:true,\u0022GridOpacity\u0022:0.2,\u0022GridAxis\u0022:0,\u0022CameraOrthoHeight\u0022:32}",
+    "Timeout": 1731246379,
+    "DeleteAt": 0
+  },
+  "SceneView.Layout": {
+    "Value": "{\u0022Layout\u0022:0,\u0022SplitterState\u0022:[]}",
+    "Timeout": 1731246157,
+    "DeleteAt": 0
+  }
+}

@@ -8,7 +8,12 @@
       {
         "__type": "FireBall",
         "__guid": "66d5642e-919c-414f-9983-6c51ff021ef7",
-        "DamageRange": "0,0",
+        "DamageCurve": [
+          {
+            "x": 0.5,
+            "y": 0.5
+          }
+        ],
         "Explode": true,
         "ExplosionRadius": "150,300",
         "InitialVelocity": "0,0,0",
@@ -16,7 +21,22 @@
         "MaxExplosionDamage": "70,120",
         "MinExplosionDamage": "20,25",
         "ScaleDamage": true,
-        "SpeedRange": "500,600",
+        "SpeedCurve": {
+          "rangey": "500,2000",
+          "frames": [
+            {},
+            {
+              "x": 0.81696427,
+              "y": 0.38990292,
+              "in": -1.2313943,
+              "out": 1.2313943
+            },
+            {
+              "x": 1,
+              "y": 1
+            }
+          ]
+        },
         "Strength": 0,
         "TargetPos": "0,0,0",
         "Visual": {
@@ -33,6 +53,20 @@
             }
           ]
         }
+      },
+      {
+        "__type": "Sandbox.Rigidbody",
+        "__guid": "5f3e56c4-fe27-4058-97d5-29dd5b3f6a4b",
+        "AngularDamping": 0,
+        "Gravity": false,
+        "LinearDamping": 0,
+        "Locking": {},
+        "MassCenterOverride": "0,0,0",
+        "MassOverride": 0,
+        "MotionEnabled": true,
+        "OverrideMassCenter": false,
+        "RigidbodyFlags": 0,
+        "StartAsleep": false
       }
     ],
     "Children": [
@@ -199,6 +233,7 @@
   "ShowInMenu": false,
   "MenuPath": null,
   "MenuIcon": null,
+  "DontBreakAsTemplate": false,
   "ResourceVersion": 1,
   "__references": [],
   "__version": 1

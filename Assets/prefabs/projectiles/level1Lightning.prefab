@@ -55,11 +55,39 @@
       {
         "__type": "LightningProjectile",
         "__guid": "cb81fca7-9a2c-4a73-bf1d-1207c5e868b4",
-        "Damage": "1,30",
-        "Distance": "150,1024",
+        "DamageCurve": {
+          "rangey": "1,30",
+          "frames": [
+            {},
+            {
+              "x": 1,
+              "y": 1
+            }
+          ]
+        },
+        "DistanceCurve": {
+          "rangey": "150,1024",
+          "frames": [
+            {},
+            {
+              "x": 1,
+              "y": 1
+            }
+          ]
+        },
         "InitialVelocity": "0,0,0",
         "ScaleDamage": false,
-        "Spread": "20,2",
+        "SpreadCurve": {
+          "rangey": "2,20",
+          "frames": [
+            {
+              "y": 1
+            },
+            {
+              "x": 1
+            }
+          ]
+        },
         "Strength": 0,
         "TargetPos": "0,0,0",
         "vectorLineRenderer": {
@@ -83,6 +111,7 @@
   "ShowInMenu": false,
   "MenuPath": null,
   "MenuIcon": null,
+  "DontBreakAsTemplate": false,
   "ResourceVersion": 1,
   "__references": [],
   "__version": 1
